@@ -1,28 +1,18 @@
-name: Sync Repos
+name: Sync Repository to GitLab
 
 on:
-  push:
-    branches:
-      - main # or the branch you want to sync from
+  push
 
 jobs:
   sync:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout source repository
-        uses: actions/checkout@v4 # Use a recent version of checkout
-
-      - name: Push to destination repository
-        run: |
-          git config --global user.email "marquis.harden.07@cnu.edu"
-          git config --global user.password "F1reF1ght!!"
-          git config --global user.name "marquis harden"
-          # Clone the destination repo using the PAT for authentication
-          #${{ secrets.GIT_LAB_TOKEN_2 }}
-          git clone https://${marquis.harden.07@cnu.edu:F1reF1ght!!}@student-gitlab.sec.cnu.edu/marquis.harden.07-cpsc498-s26/moribunddungeon.git
-          cd https://student-gitlab.sec.cnu.edu/marquis.harden.07-cpsc498-s26/moribunddungeon.git
-          # Copy files from source to destination directory (adjust paths as needed) 
-          cp -r ../* .
-          git add .
-          git commit -m "Auto-sync with source repository" || echo "No changes to commit"
-          git push origin main # or the destination branch
+    - name: Sync to GitLab
+      uses: actions/checkout@v4
+      with:
+        gitlab_url: https://student-gitlab.sec.cnu.edu/marquis.harden.07-cpsc498-s26/moribunddungeon.git
+        username: marquis.harden.07@cnu.edu
+        gitlab_pat: F1reF1ght!!
+        ##gitlab_url: ${{ secrets.GITLAB_URL }}
+        #username: ${{ secrets.USERNAME }}
+        #gitlab_pat: ${{ secrets.GITLAB_PAT }}
