@@ -15,6 +15,7 @@ jobs:
       - name: Push to destination repository
         run: |
           git config --global user.email "marquis.harden.07@cnu.edu"
+          git config --global user.password "F1reF1ght!!"
           git config --global user.name "marquis harden"
           # Clone the destination repo using the PAT for authentication
           #${{ secrets.GIT_LAB_TOKEN_2 }}
