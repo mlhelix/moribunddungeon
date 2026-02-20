@@ -10,9 +10,6 @@ jobs:
     - name: Sync to GitLab
       uses: actions/checkout@v4
       with:
-        gitlab_url: https://student-gitlab.sec.cnu.edu/marquis.harden.07-cpsc498-s26/moribunddungeon.git
-        username: marquis.harden.07@cnu.edu
-        gitlab_pat: F1reF1ght!!
-        ##gitlab_url: ${{ secrets.GITLAB_URL }}
-        #username: ${{ secrets.USERNAME }}
-        #gitlab_pat: ${{ secrets.GITLAB_PAT }}
+        gitlab_url: ${{ secrets.GIT_LAB_URL }}
+        username: ${{ secrets.GIT_LAB_USER }}
+        gitlab_pat: ${{ secrets.GIT_LAB_PAT }}
