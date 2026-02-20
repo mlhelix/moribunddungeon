@@ -19,7 +19,7 @@ jobs:
           # Clone the destination repo using the PAT for authentication
           git clone https://${{ secrets.GIT_LAB_TOKEN_2 }}@student-gitlab.sec.cnu.edu
           cd https://student-gitlab.sec.cnu.edu/marquis.harden.07/moribunddungeon.git
-          # Copy files from source to destination directory (adjust paths as needed)
+          # Copy files from source to destination directory (adjust paths as needed) 
           cp -r ../* .
           git add .
           git commit -m "Auto-sync with source repository" || echo "No changes to commit"
