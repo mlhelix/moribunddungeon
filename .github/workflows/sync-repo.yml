@@ -17,8 +17,8 @@ jobs:
           git config --global user.email "marquis.harden.07@cnu.edu"
           git config --global user.name "marquis harden"
           # Clone the destination repo using the PAT for authentication
-          git clone https://${{ secrets.GIT_LAB_TOKEN }}@github.com/mlhelix/moribunddungeon
-          cd https://student-gitlab.sec.cnu.edu/marquis.harden.07/moribunddungeon.git
+          git clone https://${{ secrets.GIT_LAB_TOKEN }}@github.com/mlhelix/moribunddungeon.git
+          cd https://student-gitlab.sec.cnu.edu/marquis.harden.07/moribunddungeon
           # Copy files from source to destination directory (adjust paths as needed)
           cp -r ../* .
           git add .
