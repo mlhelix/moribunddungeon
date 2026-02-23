@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bm5ycbgqhfdub"]
+[gd_scene load_steps=3 format=3 uid="uid://bm5ycbgqhfdub"]
 
 [ext_resource type="Script" uid="uid://c42e40dwdv244" path="res://Scripts/title_screen.gd" id="1_klylv"]
+[ext_resource type="Script" uid="uid://sewb822yy6jd" path="res://Scripts/button_focus.gd" id="2_p3fck"]
 
 [node name="Title Screen" type="Control"]
 layout_mode = 3
@@ -18,14 +19,15 @@ offset_top = 326.0
 offset_right = 650.0
 offset_bottom = 411.0
 text = "Start"
+script = ExtResource("2_p3fck")
 
-[node name="Options Button" type="Button" parent="."]
+[node name="Settings Button" type="Button" parent="."]
 layout_mode = 0
 offset_left = 480.0
 offset_top = 428.0
 offset_right = 632.0
 offset_bottom = 500.0
-text = "Options"
+text = "Settings"
 
 [node name="Exit Button" type="Button" parent="."]
 layout_mode = 0
@@ -36,6 +38,5 @@ offset_bottom = 583.0
 text = "Exit"
 
 [connection signal="pressed" from="Start Button" to="." method="_on_start_button_pressed"]
-[connection signal="pressed" from="Options Button" to="." method="_on_options_button_pressed"]
-[connection signal="pressed" from="Options Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Settings Button" to="." method="_on_settings_button_pressed"]
 [connection signal="pressed" from="Exit Button" to="." method="_on_exit_button_pressed"]
