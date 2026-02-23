@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://c07sel17yjtrg"]
+
+[ext_resource type="Script" uid="uid://bdwfi3sbws13n" path="res://Scripts/options.gd" id="1_prnvy"]
+
+[node name="Options" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_prnvy")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 562.0
+offset_right = 185.0
+offset_bottom = 622.0
+text = "Back"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
