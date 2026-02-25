@@ -8,19 +8,20 @@
 
 [node name="Title Screen" type="Control" unique_id=660405576]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_right = 1.667
+anchor_bottom = 1.667
+offset_right = -0.3840332
+offset_bottom = -0.21606445
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_klylv")
 
 [node name="TextureButton" type="TextureButton" parent="." unique_id=657441285]
 layout_mode = 0
-offset_left = 529.0
-offset_top = 353.0
-offset_right = 1079.0
-offset_bottom = 903.0
+offset_left = 937.0
+offset_top = 630.0
+offset_right = 1487.0
+offset_bottom = 1180.0
 scale = Vector2(0.1, 0.1)
 texture_normal = ExtResource("2_twnyg")
 texture_focused = ExtResource("3_55kwv")
@@ -29,20 +30,20 @@ script = ExtResource("2_p3fck")
 
 [node name="Settings Button" type="Button" parent="." unique_id=2046097902]
 layout_mode = 0
-offset_left = 528.0
-offset_top = 422.0
-offset_right = 1152.0
-offset_bottom = 980.0
+offset_left = 936.0
+offset_top = 699.0
+offset_right = 1560.0
+offset_bottom = 1257.0
 scale = Vector2(0.1, 0.1)
 text = "Settings"
 icon = ExtResource("4_55kwv")
 
 [node name="Exit Button" type="Button" parent="." unique_id=1300564381]
 layout_mode = 0
-offset_left = 494.0
-offset_top = 524.0
-offset_right = 613.0
-offset_bottom = 583.0
+offset_left = 902.0
+offset_top = 801.0
+offset_right = 1021.0
+offset_bottom = 860.0
 text = "Exit"
 
 [connection signal="pressed" from="Settings Button" to="." method="_on_settings_button_pressed"]
