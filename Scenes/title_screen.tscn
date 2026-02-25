@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://bm5ycbgqhfdub"]
+[gd_scene load_steps=5 format=3 uid="uid://bm5ycbgqhfdub"]
 
 [ext_resource type="Script" uid="uid://c42e40dwdv244" path="res://Scripts/title_screen.gd" id="1_klylv"]
 [ext_resource type="Script" uid="uid://sewb822yy6jd" path="res://Scripts/button_focus.gd" id="2_p3fck"]
+[ext_resource type="Texture2D" uid="uid://bi1pmtjgwwdes" path="res://Letterforms/Videogame Letterforms(A2).png" id="2_twnyg"]
+[ext_resource type="Texture2D" uid="uid://cy7kteqmata0u" path="res://Letterforms/Videogame Letterforms(B2).png" id="4_55kwv"]
 
 [node name="Title Screen" type="Control"]
 layout_mode = 3
@@ -14,20 +16,23 @@ script = ExtResource("1_klylv")
 
 [node name="Start Button" type="Button" parent="."]
 layout_mode = 0
-offset_left = 463.0
-offset_top = 326.0
-offset_right = 650.0
-offset_bottom = 411.0
-text = "Start"
+offset_left = 532.0
+offset_top = 348.0
+offset_right = 1090.0
+offset_bottom = 906.0
+scale = Vector2(0.1, 0.1)
+icon = ExtResource("2_twnyg")
 script = ExtResource("2_p3fck")
 
 [node name="Settings Button" type="Button" parent="."]
 layout_mode = 0
-offset_left = 480.0
-offset_top = 428.0
-offset_right = 632.0
-offset_bottom = 500.0
+offset_left = 528.0
+offset_top = 422.0
+offset_right = 1152.0
+offset_bottom = 980.0
+scale = Vector2(0.1, 0.1)
 text = "Settings"
+icon = ExtResource("4_55kwv")
 
 [node name="Exit Button" type="Button" parent="."]
 layout_mode = 0
