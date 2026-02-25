@@ -1,11 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://bm5ycbgqhfdub"]
+[gd_scene format=3 uid="uid://bm5ycbgqhfdub"]
 
 [ext_resource type="Script" uid="uid://c42e40dwdv244" path="res://Scripts/title_screen.gd" id="1_klylv"]
 [ext_resource type="Script" uid="uid://sewb822yy6jd" path="res://Scripts/button_focus.gd" id="2_p3fck"]
 [ext_resource type="Texture2D" uid="uid://bi1pmtjgwwdes" path="res://Letterforms/Videogame Letterforms(A2).png" id="2_twnyg"]
+[ext_resource type="Texture2D" uid="uid://dorv44vqvorug" path="res://Letterforms/Videogame Letterforms(R2).png" id="3_55kwv"]
 [ext_resource type="Texture2D" uid="uid://cy7kteqmata0u" path="res://Letterforms/Videogame Letterforms(B2).png" id="4_55kwv"]
 
-[node name="Title Screen" type="Control"]
+[node name="Title Screen" type="Control" unique_id=660405576]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -14,17 +15,19 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_klylv")
 
-[node name="Start Button" type="Button" parent="."]
+[node name="TextureButton" type="TextureButton" parent="." unique_id=657441285]
 layout_mode = 0
-offset_left = 532.0
-offset_top = 348.0
-offset_right = 1090.0
-offset_bottom = 906.0
+offset_left = 529.0
+offset_top = 353.0
+offset_right = 1079.0
+offset_bottom = 903.0
 scale = Vector2(0.1, 0.1)
-icon = ExtResource("2_twnyg")
+texture_normal = ExtResource("2_twnyg")
+texture_focused = ExtResource("3_55kwv")
+stretch_mode = 3
 script = ExtResource("2_p3fck")
 
-[node name="Settings Button" type="Button" parent="."]
+[node name="Settings Button" type="Button" parent="." unique_id=2046097902]
 layout_mode = 0
 offset_left = 528.0
 offset_top = 422.0
@@ -34,7 +37,7 @@ scale = Vector2(0.1, 0.1)
 text = "Settings"
 icon = ExtResource("4_55kwv")
 
-[node name="Exit Button" type="Button" parent="."]
+[node name="Exit Button" type="Button" parent="." unique_id=1300564381]
 layout_mode = 0
 offset_left = 494.0
 offset_top = 524.0
@@ -42,6 +45,5 @@ offset_right = 613.0
 offset_bottom = 583.0
 text = "Exit"
 
-[connection signal="pressed" from="Start Button" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="Settings Button" to="." method="_on_settings_button_pressed"]
 [connection signal="pressed" from="Exit Button" to="." method="_on_exit_button_pressed"]
