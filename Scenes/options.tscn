@@ -1,9 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://c07sel17yjtrg"]
+[gd_scene format=3 uid="uid://c07sel17yjtrg"]
 
 [ext_resource type="Script" uid="uid://bdwfi3sbws13n" path="res://Scripts/options.gd" id="1_prnvy"]
 [ext_resource type="Script" uid="uid://sewb822yy6jd" path="res://Scripts/button_focus.gd" id="2_4tmxy"]
+[ext_resource type="Texture2D" uid="uid://bbkpjgbcnr3e1" path="res://Letterforms/Videogame Letterforms(Q2).png" id="2_qyyw6"]
 
-[node name="Options" type="Control"]
+[node name="Options" type="Control" unique_id=965105187]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -12,13 +13,14 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_prnvy")
 
-[node name="Button" type="Button" parent="."]
+[node name="TextureButton" type="TextureButton" parent="." unique_id=127451411]
 layout_mode = 0
-offset_left = 48.0
-offset_top = 562.0
-offset_right = 185.0
-offset_bottom = 622.0
-text = "Back"
+offset_left = 17.999998
+offset_top = 580.99994
+offset_right = 568.0
+offset_bottom = 1131.0
+scale = Vector2(0.1, 0.1)
+texture_normal = ExtResource("2_qyyw6")
 script = ExtResource("2_4tmxy")
 
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
