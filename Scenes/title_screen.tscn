@@ -1,48 +1,43 @@
 [gd_scene format=3 uid="uid://bm5ycbgqhfdub"]
 
 [ext_resource type="Script" uid="uid://c42e40dwdv244" path="res://Scripts/title_screen.gd" id="1_klylv"]
-[ext_resource type="Script" uid="uid://sewb822yy6jd" path="res://Scripts/button_focus.gd" id="2_p3fck"]
-[ext_resource type="Texture2D" uid="uid://bi1pmtjgwwdes" path="res://Letterforms/Videogame Letterforms(A2).png" id="2_twnyg"]
-[ext_resource type="Texture2D" uid="uid://dorv44vqvorug" path="res://Letterforms/Videogame Letterforms(R2).png" id="3_55kwv"]
-[ext_resource type="Texture2D" uid="uid://cy7kteqmata0u" path="res://Letterforms/Videogame Letterforms(B2).png" id="4_55kwv"]
+[ext_resource type="Texture2D" uid="uid://dtgt5885vrfs" path="res://assets/Moribund Dungeon Title.png" id="2_p3fck"]
 
 [node name="Title Screen" type="Control" unique_id=660405576]
 layout_mode = 3
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_klylv")
+metadata/_edit_lock_ = true
 
-[node name="TextureButton" type="TextureButton" parent="." unique_id=657441285]
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1721867346]
 layout_mode = 0
-offset_left = 937.0
-offset_top = 630.0
-offset_right = 1487.0
-offset_bottom = 1180.0
-scale = Vector2(0.1, 0.1)
-texture_normal = ExtResource("2_twnyg")
-texture_focused = ExtResource("3_55kwv")
-stretch_mode = 3
-script = ExtResource("2_p3fck")
-
-[node name="Settings Button" type="Button" parent="." unique_id=2046097902]
-layout_mode = 0
-offset_left = 936.0
-offset_top = 699.0
-offset_right = 1560.0
-offset_bottom = 1257.0
-scale = Vector2(0.1, 0.1)
-text = "Settings"
-icon = ExtResource("4_55kwv")
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("2_p3fck")
+expand_mode = 3
+metadata/_edit_lock_ = true
 
 [node name="Exit Button" type="Button" parent="." unique_id=1300564381]
 layout_mode = 0
-offset_left = 902.0
-offset_top = 801.0
-offset_right = 1021.0
-offset_bottom = 860.0
+offset_left = 1701.0001
+offset_top = 721.0
+offset_right = 1771.0001
+offset_bottom = 752.0
+scale = Vector2(3, 3)
 text = "Exit"
 
-[connection signal="pressed" from="Settings Button" to="." method="_on_settings_button_pressed"]
+[node name="Settings Button" type="Button" parent="." unique_id=572877788]
+layout_mode = 0
+offset_left = 1701.0
+offset_top = 606.0
+offset_right = 1771.0
+offset_bottom = 637.0
+scale = Vector2(3, 3)
+text = "Settings"
+
 [connection signal="pressed" from="Exit Button" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="Settings Button" to="." method="_on_settings_button_pressed"]

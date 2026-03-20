@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://dv2ux6rg6cwf7"]
+
+[ext_resource type="Script" uid="uid://c2v6yothfqrop" path="res://Scripts/Player.gd" id="1_88kja"]
+[ext_resource type="Texture2D" uid="uid://dmyol4yf6hpoy" path="res://assets/Cactynee.png" id="1_ymxaj"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_88kja"]
+radius = 41.0
+height = 164.0
+
+[node name="Player" type="CharacterBody2D" unique_id=1761386539]
+script = ExtResource("1_88kja")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=12867128]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_ymxaj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1926136278]
+position = Vector2(14, 0)
+shape = SubResource("CapsuleShape2D_88kja")
