@@ -1,9 +1,15 @@
 extends CharacterBody2D
 
+@export var stats: Player_Stats
+@onready var healthBar = $"HealthBar"
+@onready var animated_sprite = $AnimatedSprite2D
 
-const SPEED = 300.0
-const JUMP_VELOCITY = -400.0
+const SPEED = 450.0
+const JUMP_VELOCITY = -600.0
 
+var mystats = stats
+
+var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -19,7 +25,20 @@ func _physics_process(delta: float) -> void:
 	var direction := Input.get_axis("ui_left", "ui_right")
 	if direction:
 		velocity.x = direction * SPEED
+		animated_sprite.play("running")
+		animated_sprite.flip_h = direction < 0
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
+		animated_sprite.play("standingidle")
 
 	move_and_slide()
+
+func _ready() -> void:
+	stats.setup_stats()
+	healthBar.set_health_bar(stats.current_max_health, stats.base_max_health)
+	stats.health_depleted.connect(queue_free)
+
+func take_damage(damage:int):
+	stats.current_max_health -= damage
+	healthBar.change_health(-damage)
+	

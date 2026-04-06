@@ -39,5 +39,15 @@ offset_bottom = 637.0
 scale = Vector2(3, 3)
 text = "Settings"
 
+[node name="Arena" type="Button" parent="." unique_id=1893856831]
+layout_mode = 0
+offset_left = 1469.0
+offset_top = 606.0
+offset_right = 1539.0
+offset_bottom = 637.0
+scale = Vector2(3, 3)
+text = "Arena"
+
 [connection signal="pressed" from="Exit Button" to="." method="_on_exit_button_pressed"]
 [connection signal="pressed" from="Settings Button" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="Arena" to="." method="_on_arena_pressed"]

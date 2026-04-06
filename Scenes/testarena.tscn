@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://dajd50trgbq52"]
+
+[ext_resource type="Texture2D" uid="uid://q5beafrapbc4" path="res://assets/Moribund Dungeon Floorthingy.png" id="1_bkg1a"]
+[ext_resource type="Script" uid="uid://dwyc3tx2uriyw" path="res://Scripts/testarena.gd" id="1_fl7sg"]
+[ext_resource type="PackedScene" uid="uid://dv2ux6rg6cwf7" path="res://Scenes/character_body_2d.tscn" id="2_5hb0q"]
+[ext_resource type="Texture2D" uid="uid://cn2v1sbv5bffm" path="res://icon.svg" id="3_5hb0q"]
+[ext_resource type="Script" uid="uid://c5jvjvknol8mw" path="res://Scripts/Enemy2.gd" id="4_dqcy4"]
+[ext_resource type="Texture2D" uid="uid://b0hucggqcy0rb" path="res://Letterforms/Videogame Letterforms(C2).png" id="8_boqko"]
+[ext_resource type="Script" uid="uid://ddjyckdqblov2" path="res://Scripts/damage_zone.gd" id="8_hrjto"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fl7sg"]
+size = Vector2(1921, 128)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_boqko"]
+
+[node name="TestArena" type="Node2D" unique_id=1312225794]
+script = ExtResource("1_fl7sg")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1263241964]
+offset_right = 3840.0
+offset_bottom = 2160.0
+texture = ExtResource("1_bkg1a")
+metadata/_edit_lock_ = true
+
+[node name="Enemy" parent="." unique_id=1130149263 instance=ExtResource("2_5hb0q")]
+position = Vector2(1403, 663)
+script = ExtResource("4_dqcy4")
+
+[node name="Player" parent="." unique_id=1761386539 instance=ExtResource("2_5hb0q")]
+position = Vector2(690, 731)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=25423715]
+position = Vector2(594, 1027)
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" unique_id=1962889237]
+visible = false
+position = Vector2(369, 0)
+scale = Vector2(15, 1)
+texture = ExtResource("3_5hb0q")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1317680397]
+position = Vector2(366.5, 0)
+shape = SubResource("RectangleShape2D_fl7sg")
+
+[node name="Exit Button" type="Button" parent="." unique_id=1658517273]
+offset_left = 1688.0001
+offset_top = 24.0
+offset_right = 1758.0001
+offset_bottom = 55.0
+scale = Vector2(3, 3)
+text = "Exit"
+
+[node name="DamageZone" type="Area2D" parent="." unique_id=1262171411]
+position = Vector2(976, 822)
+script = ExtResource("8_hrjto")
+
+[node name="Sprite2D" type="Sprite2D" parent="DamageZone" unique_id=529916423]
+position = Vector2(-614, 65.00003)
+scale = Vector2(0.2718182, 0.2718182)
+texture = ExtResource("8_boqko")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DamageZone" unique_id=1734130391]
+position = Vector2(-607, 68)
+shape = SubResource("CircleShape2D_boqko")
+debug_color = Color(0.99231786, 0, 0.26002723, 0.41960785)
+
+[connection signal="pressed" from="Exit Button" to="." method="_on_exit_button_pressed"]
+[connection signal="body_entered" from="DamageZone" to="DamageZone" method="_on_body_entered"]
