@@ -2,6 +2,126 @@
 
 [ext_resource type="Script" uid="uid://c42e40dwdv244" path="res://Scripts/title_screen.gd" id="1_klylv"]
 [ext_resource type="Texture2D" uid="uid://dtgt5885vrfs" path="res://assets/Moribund Dungeon Title.png" id="2_p3fck"]
+[ext_resource type="Texture2D" uid="uid://ums66c51xy6f" path="res://assets/Options.png" id="3_6vd4x"]
+[ext_resource type="Texture2D" uid="uid://cpp6xobyyocnp" path="res://assets/Start Game.png" id="3_n82rj"]
+[ext_resource type="Script" uid="uid://sewb822yy6jd" path="res://Scripts/button_focus.gd" id="4_0061g"]
+[ext_resource type="Texture2D" uid="uid://cjhxcbbjw4bkx" path="res://assets/Exit.png" id="4_n82rj"]
+[ext_resource type="Texture2D" uid="uid://bs82ukot87lcb" path="res://assets/Arena.png" id="5_0061g"]
+[ext_resource type="Texture2D" uid="uid://ct38c001wyqor" path="res://assets/Options/options_0021.png" id="7_6vd4x"]
+[ext_resource type="Texture2D" uid="uid://ck0gewp7sq2go" path="res://assets/Start Game/Start_Game_0021.png" id="7_sqelc"]
+[ext_resource type="Texture2D" uid="uid://bsnifsefktsgo" path="res://assets/Exit/Exit_0021.png" id="10_sqelc"]
+[ext_resource type="Texture2D" uid="uid://cduo4qe5fhqj1" path="res://assets/Arena/Arena_0021.png" id="11_w5sh6"]
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_w5sh6"]
+
+[sub_resource type="Animation" id="Animation_o1e67"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Start Game:texture_focused")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("AnimatedTexture_w5sh6")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Options:texture_focused")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_6vd4x")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Exit:texture_focused")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("4_n82rj")]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Arena:texture_focused")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("5_0061g")]
+}
+
+[sub_resource type="Animation" id="Animation_ycay6"]
+resource_name = "startgame_anim"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Start Game:texture_focused")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("3_n82rj"), ExtResource("7_sqelc")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Options:texture_focused")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("3_6vd4x"), ExtResource("7_6vd4x")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Exit:texture_focused")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("4_n82rj"), ExtResource("10_sqelc")]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Arena:texture_focused")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("5_0061g"), ExtResource("11_w5sh6")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bsy20"]
+_data = {
+&"RESET": SubResource("Animation_o1e67"),
+&"startgame_anim": SubResource("Animation_ycay6")
+}
 
 [node name="Title Screen" type="Control" unique_id=660405576]
 layout_mode = 3
@@ -21,33 +141,58 @@ texture = ExtResource("2_p3fck")
 expand_mode = 3
 metadata/_edit_lock_ = true
 
-[node name="Exit Button" type="Button" parent="." unique_id=1300564381]
+[node name="Start Game" type="TextureButton" parent="." unique_id=780264637]
 layout_mode = 0
-offset_left = 1701.0001
-offset_top = 721.0
-offset_right = 1771.0001
-offset_bottom = 752.0
-scale = Vector2(3, 3)
-text = "Exit"
+offset_left = 1585.0
+offset_top = 575.0
+offset_right = 2166.0
+offset_bottom = 709.0
+scale = Vector2(0.5, 0.5)
+focus_next = NodePath("../Options")
+texture_normal = ExtResource("3_n82rj")
+texture_focused = SubResource("AnimatedTexture_w5sh6")
+script = ExtResource("4_0061g")
 
-[node name="Settings Button" type="Button" parent="." unique_id=572877788]
+[node name="Options" type="TextureButton" parent="." unique_id=643646131]
 layout_mode = 0
-offset_left = 1701.0
-offset_top = 606.0
-offset_right = 1771.0
-offset_bottom = 637.0
-scale = Vector2(3, 3)
-text = "Settings"
+offset_left = 1585.0
+offset_top = 665.0
+offset_right = 2166.0
+offset_bottom = 799.0
+scale = Vector2(0.5, 0.5)
+focus_next = NodePath("../Exit")
+focus_previous = NodePath("../Start Game")
+texture_normal = ExtResource("3_6vd4x")
+texture_focused = ExtResource("3_6vd4x")
 
-[node name="Arena" type="Button" parent="." unique_id=1893856831]
+[node name="Exit" type="TextureButton" parent="." unique_id=555924069]
 layout_mode = 0
-offset_left = 1469.0
-offset_top = 606.0
-offset_right = 1539.0
-offset_bottom = 637.0
-scale = Vector2(3, 3)
-text = "Arena"
+offset_left = 1585.0
+offset_top = 755.0
+offset_right = 2166.0
+offset_bottom = 889.0
+scale = Vector2(0.5, 0.5)
+focus_next = NodePath("../Arena")
+focus_previous = NodePath("../Options")
+texture_normal = ExtResource("4_n82rj")
+texture_focused = ExtResource("4_n82rj")
 
-[connection signal="pressed" from="Exit Button" to="." method="_on_exit_button_pressed"]
-[connection signal="pressed" from="Settings Button" to="." method="_on_settings_button_pressed"]
+[node name="Arena" type="TextureButton" parent="." unique_id=357497666]
+layout_mode = 0
+offset_left = 1585.0
+offset_top = 990.0
+offset_right = 2166.0
+offset_bottom = 1124.0
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("5_0061g")
+texture_focused = ExtResource("5_0061g")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=566767366]
+libraries/ = SubResource("AnimationLibrary_bsy20")
+
+[connection signal="focus_entered" from="." to="." method="_on_focus_entered"]
+[connection signal="focus_entered" from="Start Game" to="." method="_on_start_game_focus_entered"]
+[connection signal="focus_entered" from="Options" to="." method="_on_options_focus_entered"]
+[connection signal="pressed" from="Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
 [connection signal="pressed" from="Arena" to="." method="_on_arena_pressed"]
