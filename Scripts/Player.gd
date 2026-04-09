@@ -6,7 +6,7 @@ class_name Player
 @onready var healthBar = $"../HUD/HealthBar"
 @onready var animated_sprite = $AnimatedSprite2D
 
-const SPEED = 450.0
+var SPEED = 450.0
 const JUMP_VELOCITY = -600.0
 
 var myhealthbar = healthBar
@@ -36,15 +36,17 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 
+
 func _ready() -> void:
 	stats.setup_stats()
-	healthBar.set_health_bar(stats.current_max_health, stats.base_max_health)
+	healthBar.set_health_bar(stats.current_health, stats.base_max_health)
 	stats.health_depleted.connect(queue_free)
 
 func take_damage(damage:int):
 	if (damage - stats.current_defense) <= 0:
-		stats.current_max_health - 1
+		stats.current_health -= 1
+		healthBar.change_health(-1)
 	else:
-		stats.current_max_health -= damage - stats.current_defense
-	healthBar.change_health(-damage)
+		stats.current_health -= damage - stats.current_defense
+		healthBar.change_health(-(damage - stats.current_defense))
 	

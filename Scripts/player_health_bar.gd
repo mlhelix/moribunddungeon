@@ -9,6 +9,6 @@ func _ready():
 	update()
 
 func update():
-	bar.value = player.mystats.current_max_health
-	value = player.mystats.current_max_health
+	bar.value = player.mystats.current_health
+	value = player.mystats.current_health
 	

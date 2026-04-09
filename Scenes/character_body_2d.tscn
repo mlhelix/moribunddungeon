@@ -62,30 +62,6 @@ animations = [{
 radius = 23.0
 height = 164.0
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_88kja"]
-bg_color = Color(0.43320936, 0.008085328, 0.016503168, 1)
-border_width_left = 3
-border_width_top = 3
-border_width_right = 3
-border_width_bottom = 3
-border_color = Color(0.22999525, 0.021886792, 0, 1)
-corner_radius_top_left = 3
-corner_radius_top_right = 3
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 3
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_it8n0"]
-bg_color = Color(0.12471699, 0.72471625, 0, 1)
-border_width_left = 3
-border_width_top = 3
-border_width_right = 3
-border_width_bottom = 3
-border_color = Color(0.0932168, 0.30079293, 4.813075e-08, 1)
-corner_radius_top_left = 3
-corner_radius_top_right = 3
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 3
-
 [node name="Player" type="CharacterBody2D" unique_id=1761386539]
 script = ExtResource("1_88kja")
 stats = SubResource("Resource_pbq55")
@@ -99,20 +75,3 @@ animation = &"running"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1926136278]
 position = Vector2(0, 2)
 shape = SubResource("CapsuleShape2D_88kja")
-
-[node name="HealthBar(old)" type="ProgressBar" parent="." unique_id=1466920259]
-offset_left = -79.0
-offset_top = -162.0
-offset_right = 78.0
-offset_bottom = -133.0
-theme_override_styles/background = SubResource("StyleBoxFlat_88kja")
-theme_override_styles/fill = SubResource("StyleBoxFlat_it8n0")
-step = 1.0
-value = 80.0
-metadata/_edit_use_anchors_ = true
-
-[node name="Label" type="Label" parent="HealthBar(old)" unique_id=1908734541]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
-metadata/_edit_use_anchors_ = true
