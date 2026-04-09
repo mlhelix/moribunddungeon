@@ -1,5 +1,9 @@
 extends Control
 	
+func _ready():
+	#$AnimationPlayer.play("RESET")
+	pass
+	
 func _on_start_button_pressed() -> void:
 	#get_tree().change_scene_to_file()
 	pass # Replace with function body.

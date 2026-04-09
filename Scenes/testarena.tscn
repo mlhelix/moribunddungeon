@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://c5jvjvknol8mw" path="res://Scripts/Enemy2.gd" id="4_dqcy4"]
 [ext_resource type="Texture2D" uid="uid://b0hucggqcy0rb" path="res://Letterforms/Videogame Letterforms(C2).png" id="8_boqko"]
 [ext_resource type="Script" uid="uid://ddjyckdqblov2" path="res://Scripts/damage_zone.gd" id="8_hrjto"]
+[ext_resource type="PackedScene" uid="uid://duhk5yrp2k3qa" path="res://Scenes/pause_menu.tscn" id="8_pawyy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fl7sg"]
 size = Vector2(1921, 128)
@@ -63,6 +64,10 @@ texture = ExtResource("8_boqko")
 position = Vector2(-607, 68)
 shape = SubResource("CircleShape2D_boqko")
 debug_color = Color(0.99231786, 0, 0.26002723, 0.41960785)
+
+[node name="PauseMenuLayer" type="CanvasLayer" parent="." unique_id=674850790]
+
+[node name="Pause Menu" parent="PauseMenuLayer" unique_id=1878498693 instance=ExtResource("8_pawyy")]
 
 [connection signal="pressed" from="Exit Button" to="." method="_on_exit_button_pressed"]
 [connection signal="body_entered" from="DamageZone" to="DamageZone" method="_on_body_entered"]
