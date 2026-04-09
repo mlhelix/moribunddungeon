@@ -3,13 +3,13 @@ class_name Player
 
 @export var stats: Player_Stats
 @export var healthbar: Health_Bar
-#@onready var healthBar = $"HealthBar"
+@onready var healthBar = $"../HUD/HealthBar"
 @onready var animated_sprite = $AnimatedSprite2D
 
 const SPEED = 450.0
 const JUMP_VELOCITY = -600.0
 
-var myhealthbar = healthbar
+var myhealthbar = healthBar
 var mystats = stats
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -38,10 +38,13 @@ func _physics_process(delta: float) -> void:
 
 func _ready() -> void:
 	stats.setup_stats()
-	#myhealthbar.set_health_bar(stats.current_max_health, stats.base_max_health)
+	healthBar.set_health_bar(stats.current_max_health, stats.base_max_health)
 	stats.health_depleted.connect(queue_free)
 
 func take_damage(damage:int):
-	stats.current_max_health -= damage
-	#myhealthbar.change_health(-damage)
+	if (damage - stats.current_defense) <= 0:
+		stats.current_max_health - 1
+	else:
+		stats.current_max_health -= damage - stats.current_defense
+	healthBar.change_health(-damage)
 	

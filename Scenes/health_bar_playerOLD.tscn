@@ -1,7 +1,6 @@
-[gd_scene format=3 uid="uid://b3fd6efftjlv1"]
+[gd_scene format=3 uid="uid://t62cds4omde7"]
 
 [ext_resource type="Texture2D" uid="uid://dntajpgx2j3l1" path="res://assets/Healthbar_Health.png" id="2_46g4w"]
-[ext_resource type="Script" uid="uid://dny626mwo7e18" path="res://Scripts/healthbar.gd" id="2_ycgvm"]
 [ext_resource type="Texture2D" uid="uid://d2rin68os5gt4" path="res://assets/Healthbar_Border.png" id="3_8u5j8"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_q5sql"]
@@ -11,7 +10,14 @@ texture = ExtResource("2_46g4w")
 texture_margin_left = 43.0
 texture_margin_right = 57.0
 
-[node name="HealthBar" type="ProgressBar" unique_id=2083968175]
+[node name="HealthbarBG" type="ProgressBar" unique_id=609578543]
+offset_right = 1004.0
+offset_bottom = 290.0
+scale = Vector2(0.4, 0.4)
+
+[node name="HealthBar" type="ProgressBar" parent="." unique_id=970772524]
+visible = false
+layout_mode = 0
 offset_left = 243.0
 offset_top = 40.0
 offset_right = 988.0
@@ -21,9 +27,9 @@ theme_override_styles/background = SubResource("StyleBoxEmpty_q5sql")
 theme_override_styles/fill = SubResource("StyleBoxTexture_4cfhr")
 step = 1.0
 value = 80.0
-script = ExtResource("2_ycgvm")
 
-[node name="Label" type="Label" parent="." unique_id=1644489908]
+[node name="Label" type="Label" parent="HealthBar" unique_id=1022615179]
+visible = false
 layout_direction = 3
 layout_mode = 1
 anchors_preset = -1
@@ -39,10 +45,9 @@ grow_vertical = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.38431373)
 theme_override_font_sizes/font_size = 32
 
-[node name="HealthbarBorder" type="TextureRect" parent="." unique_id=326859748]
+[node name="HealthbarBorder" type="TextureRect" parent="." unique_id=2049326350]
+visible = false
 layout_mode = 0
-offset_left = -243.0
-offset_top = -40.0
-offset_right = 761.0
-offset_bottom = 250.0
+offset_right = 40.0
+offset_bottom = 40.0
 texture = ExtResource("3_8u5j8")
