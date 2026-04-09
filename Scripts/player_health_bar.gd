@@ -1,11 +1,15 @@
-extends ProgressBar
+#extends ProgressBar
+extends TextureRect
 
-@export var player: Player
+#@export var player: Player
+@onready var player: Player
+@onready var bar = $HealthBar
 
 func _ready():
 	player.mystats.health_changed.connect(update)
 	update()
 
 func update():
-	value = player.stats.current_max_health
+	bar.value = player.mystats.current_max_health
+	#value = player.mystats.current_max_health
 	
