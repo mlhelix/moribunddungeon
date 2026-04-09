@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://t62cds4omde7"]
+
+[ext_resource type="Texture2D" uid="uid://ck68syfbobx7v" path="res://assets/Healthbar_BG.png" id="1_ycgvm"]
+[ext_resource type="Texture2D" uid="uid://dntajpgx2j3l1" path="res://assets/Healthbar_Health.png" id="2_46g4w"]
+[ext_resource type="Texture2D" uid="uid://d2rin68os5gt4" path="res://assets/Healthbar_Border.png" id="3_8u5j8"]
+[ext_resource type="Script" uid="uid://2dj1f7j46ohb" path="res://Scripts/player_health_bar.gd" id="3_46g4w"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_q5sql"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4cfhr"]
+texture = ExtResource("2_46g4w")
+texture_margin_left = 43.0
+texture_margin_right = 57.0
+
+[node name="HealthbarBG" type="TextureRect" unique_id=1567087997]
+offset_right = 4.0
+offset_bottom = 27.0
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("1_ycgvm")
+
+[node name="HealthBar" type="ProgressBar" parent="." unique_id=970772524]
+layout_mode = 0
+offset_left = 243.0
+offset_top = 40.0
+offset_right = 988.0
+offset_bottom = 137.0
+theme_override_font_sizes/font_size = 34
+theme_override_styles/background = SubResource("StyleBoxEmpty_q5sql")
+theme_override_styles/fill = SubResource("StyleBoxTexture_4cfhr")
+step = 1.0
+value = 80.0
+script = ExtResource("3_46g4w")
+
+[node name="Label" type="Label" parent="HealthBar" unique_id=1022615179]
+layout_direction = 3
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.081
+anchor_top = 0.24700001
+anchor_right = 0.384
+anchor_bottom = 0.74700004
+offset_left = -0.34500122
+offset_top = 0.04099846
+offset_right = -0.08001709
+offset_bottom = 0.040992737
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.38431373)
+theme_override_font_sizes/font_size = 32
+
+[node name="HealthbarBorder" type="TextureRect" parent="." unique_id=2049326350]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("3_8u5j8")

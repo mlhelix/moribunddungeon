@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://b0hucggqcy0rb" path="res://Letterforms/Videogame Letterforms(C2).png" id="8_boqko"]
 [ext_resource type="Script" uid="uid://ddjyckdqblov2" path="res://Scripts/damage_zone.gd" id="8_hrjto"]
 [ext_resource type="PackedScene" uid="uid://duhk5yrp2k3qa" path="res://Scenes/pause_menu.tscn" id="8_pawyy"]
+[ext_resource type="PackedScene" uid="uid://t62cds4omde7" path="res://Scenes/health_bar_player.tscn" id="9_boqko"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fl7sg"]
 size = Vector2(1921, 128)
@@ -68,6 +69,14 @@ debug_color = Color(0.99231786, 0, 0.26002723, 0.41960785)
 [node name="PauseMenuLayer" type="CanvasLayer" parent="." unique_id=674850790]
 
 [node name="Pause Menu" parent="PauseMenuLayer" unique_id=1878498693 instance=ExtResource("8_pawyy")]
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=2038993441]
+
+[node name="HealthbarBG" parent="HUD" unique_id=1567087997 instance=ExtResource("9_boqko")]
+offset_left = 18.0
+offset_top = 18.0
+offset_right = 1022.0
+offset_bottom = 308.0
 
 [connection signal="pressed" from="Exit Button" to="." method="_on_exit_button_pressed"]
 [connection signal="body_entered" from="DamageZone" to="DamageZone" method="_on_body_entered"]

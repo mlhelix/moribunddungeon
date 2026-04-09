@@ -1,5 +1,5 @@
 extends ProgressBar
-
+class_name Health_Bar
 
 @onready var healthlabel = $Label
 

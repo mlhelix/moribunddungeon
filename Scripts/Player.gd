@@ -1,7 +1,8 @@
 extends CharacterBody2D
+class_name Player
 
 @export var stats: Player_Stats
-@onready var healthBar = $"HealthBar"
+#@onready var healthBar = $"HealthBar"
 @onready var animated_sprite = $AnimatedSprite2D
 
 const SPEED = 450.0
@@ -35,10 +36,10 @@ func _physics_process(delta: float) -> void:
 
 func _ready() -> void:
 	stats.setup_stats()
-	healthBar.set_health_bar(stats.current_max_health, stats.base_max_health)
+	#healthBar.set_health_bar(stats.current_max_health, stats.base_max_health)
 	stats.health_depleted.connect(queue_free)
 
 func take_damage(damage:int):
 	stats.current_max_health -= damage
-	healthBar.change_health(-damage)
+	#healthBar.change_health(-damage)
 	
