@@ -87,7 +87,7 @@ modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_left = -32.0
 offset_top = -10.0
-offset_right = 765.0
+offset_right = 485.0
 offset_bottom = 1090.0
 theme = ExtResource("3_1och7")
 
@@ -98,31 +98,38 @@ layout_mode = 2
 layout_mode = 2
 focus_next = NodePath("../Settings")
 focus_previous = NodePath("../Quit")
+theme_override_font_sizes/font_size = 24
 text = "Resume"
 
 [node name="Bag" type="Button" parent="PanelContainer/VBoxContainer" unique_id=187029088]
 layout_mode = 2
+theme_override_font_sizes/font_size = 24
 text = "Bag"
 
 [node name="Equipment" type="Button" parent="PanelContainer/VBoxContainer" unique_id=977891491]
 layout_mode = 2
+theme_override_font_sizes/font_size = 24
 text = "Equipment"
 
 [node name="Settings" type="Button" parent="PanelContainer/VBoxContainer" unique_id=1376550828]
 layout_mode = 2
 focus_next = NodePath("../Quit")
 focus_previous = NodePath("../Resume")
+theme_override_font_sizes/font_size = 24
 text = "Settings"
 
 [node name="Quit" type="Button" parent="PanelContainer/VBoxContainer" unique_id=2142603977]
 layout_mode = 2
 focus_next = NodePath("../Resume")
 focus_previous = NodePath("../Settings")
+theme_override_font_sizes/font_size = 24
 text = "Quit"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=286674761]
 libraries/ = SubResource("AnimationLibrary_vmyb1")
 
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
+[connection signal="focus_exited" from="PanelContainer/VBoxContainer/Equipment" to="." method="_on_equipment_focus_exited"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/Equipment" to="." method="_on_equipment_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

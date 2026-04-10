@@ -2,16 +2,21 @@
 
 [ext_resource type="Texture2D" uid="uid://q5beafrapbc4" path="res://assets/Moribund Dungeon Floorthingy.png" id="1_bkg1a"]
 [ext_resource type="Script" uid="uid://dwyc3tx2uriyw" path="res://Scripts/testarena.gd" id="1_fl7sg"]
-[ext_resource type="PackedScene" uid="uid://dv2ux6rg6cwf7" path="res://Scenes/character_body_2d.tscn" id="2_5hb0q"]
+[ext_resource type="PackedScene" uid="uid://dv2ux6rg6cwf7" path="res://Scenes/Player_body_2d.tscn" id="2_5hb0q"]
 [ext_resource type="Texture2D" uid="uid://cn2v1sbv5bffm" path="res://icon.svg" id="3_5hb0q"]
-[ext_resource type="Script" uid="uid://c5jvjvknol8mw" path="res://Scripts/Enemy2.gd" id="4_dqcy4"]
+[ext_resource type="Script" uid="uid://c5jvjvknol8mw" path="res://Scripts/Enemy.gd" id="4_dqcy4"]
+[ext_resource type="PackedScene" uid="uid://beahysk81t5al" path="res://Scenes/equipment_menu.tscn" id="8_3hlc8"]
 [ext_resource type="Texture2D" uid="uid://b0hucggqcy0rb" path="res://Letterforms/Videogame Letterforms(C2).png" id="8_boqko"]
 [ext_resource type="Script" uid="uid://ddjyckdqblov2" path="res://Scripts/damage_zone.gd" id="8_hrjto"]
 [ext_resource type="PackedScene" uid="uid://duhk5yrp2k3qa" path="res://Scenes/pause_menu.tscn" id="8_pawyy"]
 [ext_resource type="PackedScene" uid="uid://b3fd6efftjlv1" path="res://Scenes/health_bar_player.tscn" id="9_boqko"]
+[ext_resource type="Texture2D" uid="uid://ck68syfbobx7v" path="res://assets/Healthbar_BG.png" id="9_pawyy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fl7sg"]
-size = Vector2(1921, 128)
+size = Vector2(1921, 125)
+
+[sub_resource type="SystemFont" id="SystemFont_3hlc8"]
+font_names = PackedStringArray("Cambria")
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_boqko"]
 
@@ -28,9 +33,6 @@ metadata/_edit_lock_ = true
 position = Vector2(1403, 663)
 script = ExtResource("4_dqcy4")
 
-[node name="Player" parent="." unique_id=1761386539 instance=ExtResource("2_5hb0q")]
-position = Vector2(690, 731)
-
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=25423715]
 position = Vector2(594, 1027)
 
@@ -41,15 +43,16 @@ scale = Vector2(15, 1)
 texture = ExtResource("3_5hb0q")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1317680397]
-position = Vector2(366.5, 0)
+position = Vector2(366.5, 1.5)
 shape = SubResource("RectangleShape2D_fl7sg")
 
 [node name="Exit Button" type="Button" parent="." unique_id=1658517273]
-offset_left = 1688.0001
-offset_top = 24.0
-offset_right = 1758.0001
-offset_bottom = 55.0
-scale = Vector2(3, 3)
+offset_left = 1760.0
+offset_top = 18.0
+offset_right = 1875.0
+offset_bottom = 109.0
+theme_override_fonts/font = SubResource("SystemFont_3hlc8")
+theme_override_font_sizes/font_size = 60
 text = "Exit"
 
 [node name="DamageZone" type="Area2D" parent="." unique_id=1262171411]
@@ -72,7 +75,22 @@ layer = 8
 [node name="Pause Menu" parent="PauseMenuLayer" unique_id=1878498693 instance=ExtResource("8_pawyy")]
 metadata/_edit_use_anchors_ = true
 
+[node name="Equipment" parent="PauseMenuLayer" unique_id=623914126 instance=ExtResource("8_3hlc8")]
+offset_left = 483.0
+offset_top = -10.0
+offset_right = 800.0
+offset_bottom = 315.99997
+
 [node name="HUD" type="CanvasLayer" parent="." unique_id=2038993441]
+
+[node name="TextureRect" type="TextureRect" parent="HUD" unique_id=40416185]
+offset_left = 16.0
+offset_top = 12.0
+offset_right = 421.06207
+offset_bottom = 130.0
+texture = ExtResource("9_pawyy")
+expand_mode = 1
+metadata/_edit_lock_ = true
 
 [node name="HealthBar" parent="HUD" unique_id=2083968175 instance=ExtResource("9_boqko")]
 offset_left = 113.99999
@@ -81,6 +99,10 @@ offset_right = 859.0
 offset_bottom = 126.0
 scale = Vector2(0.4, 0.4)
 metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
+
+[node name="Player" parent="." unique_id=1761386539 instance=ExtResource("2_5hb0q")]
+position = Vector2(690, 731)
 
 [connection signal="pressed" from="Exit Button" to="." method="_on_exit_button_pressed"]
 [connection signal="body_entered" from="DamageZone" to="DamageZone" method="_on_body_entered"]

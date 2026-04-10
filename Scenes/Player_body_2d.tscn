@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://c1ug0pewyc40k" path="res://assets/Giana Run/Timeline 1_0020.png" id="8_x0qg5"]
 [ext_resource type="Texture2D" uid="uid://cnccjiodxx1t4" path="res://assets/Giana Run/Timeline 1_0024.png" id="9_l447x"]
 [ext_resource type="Texture2D" uid="uid://d1j0sl818klfa" path="res://assets/Giana Run/Timeline 1_0028.png" id="10_u736u"]
+[ext_resource type="Texture2D" uid="uid://deafchkwek8e0" path="res://assets/Char 01 - Giana (stand).png" id="11_p20bj"]
 
 [sub_resource type="Resource" id="Resource_pbq55"]
 script = ExtResource("2_gbyq6")
@@ -48,10 +49,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("6_3d168")
-}, {
-"duration": 1.0,
-"texture": ExtResource("10_u736u")
+"texture": ExtResource("11_p20bj")
 }],
 "loop": true,
 "name": &"standingidle",
@@ -70,7 +68,7 @@ stats = SubResource("Resource_pbq55")
 position = Vector2(1, -18)
 scale = Vector2(0.33, 0.33)
 sprite_frames = SubResource("SpriteFrames_glyrq")
-animation = &"running"
+animation = &"standingidle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1926136278]
 position = Vector2(0, 2)
