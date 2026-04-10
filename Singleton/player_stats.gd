@@ -1,5 +1,4 @@
-extends Resource
-class_name Player_Stats
+extends Node
 
 signal health_depleted
 signal health_changed(cur_health: int, max_health: int)

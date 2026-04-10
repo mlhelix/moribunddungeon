@@ -27,14 +27,22 @@ func init_stats(maxhp, hp, maxsp, sp, atk, def, mag, mgd, res, crt):
 	crit_value.text = str(crt)
 	
 func update_stats():
-	hp_value.text = str(player.stats.current_health) + "/" + str(player.stats.base_max_health)
-	sp_value.text = str(player.stats.current_sp) + "/" +str(player.stats.base_max_sp)
-	atk_value.text = str(player.stats.current_attack)
-	def_value.text = str(player.stats.current_defense)
-	mag_value.text = str(player.stats.current_magic)
-	mgd_value.text = str(player.stats.current_magdef)
-	res_value.text = str(player.stats.current_resist)
-	crit_value.text = str(player.stats.current_crit)
+	#hp_value.text = str(player.stats.current_health) + "/" + str(player.stats.base_max_health)
+	#sp_value.text = str(player.stats.current_sp) + "/" +str(player.stats.base_max_sp)
+	#atk_value.text = str(player.stats.current_attack)
+	#def_value.text = str(player.stats.current_defense)
+	#mag_value.text = str(player.stats.current_magic)
+	#mgd_value.text = str(player.stats.current_magdef)
+	#res_value.text = str(player.stats.current_resist)
+	#crit_value.text = str(player.stats.current_crit)
+	hp_value.text = str(PlayerStats.current_health) + "/" + str(PlayerStats.base_max_health)
+	sp_value.text = str(PlayerStats.current_sp) + "/" +str(PlayerStats.base_max_sp)
+	atk_value.text = str(PlayerStats.current_attack)
+	def_value.text = str(PlayerStats.current_defense)
+	mag_value.text = str(PlayerStats.current_magic)
+	mgd_value.text = str(PlayerStats.current_magdef)
+	res_value.text = str(PlayerStats.current_resist)
+	crit_value.text = str(PlayerStats.current_crit)
 	pass
 
 func change_hp(newValue):

@@ -1,7 +1,7 @@
 extends CharacterBody2D
 class_name Player
 
-@export var stats: Player_Stats
+#var stats = PlayerStats
 @export var healthbar: Health_Bar
 @export var statsmenu: Stats_Menu
 @onready var healthBar = $"../HUD/HealthBar"
@@ -12,7 +12,7 @@ var SPEED = 450.0
 const JUMP_VELOCITY = -600.0
 
 #var myhealthbar = healthBar
-var mystats = stats
+#var mystats = stats
 var knockback = Vector2.ZERO
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -42,17 +42,22 @@ func _physics_process(delta: float) -> void:
 
 
 func _ready() -> void:
-	stats.setup_stats()
-	healthBar.set_health_bar(stats.current_health, stats.base_max_health)
-	stats.health_depleted.connect(queue_free)
-	mystatsmenu.init_stats(stats.base_max_health, stats.current_health, stats.base_max_sp, stats.current_sp, stats.current_attack, stats.current_defense, stats.current_magic, stats.current_magdef, stats.current_resist, stats.current_crit)
+	#stats.setup_stats()
+	#healthBar.set_health_bar(stats.current_health, stats.base_max_health)
+	#stats.health_depleted.connect(queue_free)
+	#mystatsmenu.init_stats(stats.base_max_health, stats.current_health, stats.base_max_sp, stats.current_sp, stats.current_attack, stats.current_defense, stats.current_magic, stats.current_magdef, stats.current_resist, stats.current_crit)
+	PlayerStats.setup_stats()
+	healthBar.set_health_bar(PlayerStats.current_health, PlayerStats.base_max_health)
+	PlayerStats.health_depleted.connect(queue_free)
+	mystatsmenu.init_stats(PlayerStats.base_max_health, PlayerStats.current_health, PlayerStats.base_max_sp, PlayerStats.current_sp, PlayerStats.current_attack, PlayerStats.current_defense, PlayerStats.current_magic, PlayerStats.current_magdef, PlayerStats.current_resist, PlayerStats.current_crit)
+
 
 func take_damage(damage:int):
-	if (damage - stats.current_defense) <= 0:
-		stats.current_health -= 1
+	if (damage - PlayerStats.current_defense) <= 0:
+		PlayerStats.current_health -= 1
 		healthBar.change_health(-1)
 	else:
-		stats.current_health -= damage - stats.current_defense
-		healthBar.change_health(-(damage - stats.current_defense))
+		PlayerStats.current_health -= damage - PlayerStats.current_defense
+		healthBar.change_health(-(damage - PlayerStats.current_defense))
 	#var knockback_dir = (global_position).normalized()
 	

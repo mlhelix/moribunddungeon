@@ -5,10 +5,10 @@ extends ProgressBar
 @onready var bar = $"."
 
 func _ready():
-	player.mystats.health_changed.connect(update)
+	PlayerStats.health_changed.connect(update)
 	update()
 
 func update():
-	bar.value = player.mystats.current_health
-	value = player.mystats.current_health
+	bar.value = PlayerStats.current_health
+	value = PlayerStats.current_health
 	

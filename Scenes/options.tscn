@@ -4,13 +4,8 @@
 [ext_resource type="Script" uid="uid://sewb822yy6jd" path="res://Scripts/texturebutton_focus.gd" id="2_4tmxy"]
 [ext_resource type="Texture2D" uid="uid://q5beafrapbc4" path="res://assets/Moribund Dungeon Floorthingy.png" id="2_663nc"]
 [ext_resource type="Texture2D" uid="uid://bbkpjgbcnr3e1" path="res://Letterforms/Videogame Letterforms(Q2).png" id="2_qyyw6"]
-[ext_resource type="PackedScene" uid="uid://dv2ux6rg6cwf7" path="res://Scenes/Player_body_2d.tscn" id="4_ww8vx"]
-[ext_resource type="Texture2D" uid="uid://cn2v1sbv5bffm" path="res://icon.svg" id="6_hvj8k"]
 [ext_resource type="Texture2D" uid="uid://ck68syfbobx7v" path="res://assets/Healthbar_BG.png" id="7_38txh"]
 [ext_resource type="PackedScene" uid="uid://b3fd6efftjlv1" path="res://Scenes/health_bar_player.tscn" id="7_hvj8k"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_38txh"]
-size = Vector2(128, 128)
 
 [node name="Options" type="Control" unique_id=965105187]
 layout_mode = 3
@@ -38,18 +33,6 @@ offset_bottom = 1478.0
 scale = Vector2(0.1, 0.1)
 texture_normal = ExtResource("2_qyyw6")
 script = ExtResource("2_4tmxy")
-
-[node name="Player" parent="." unique_id=1761386539 instance=ExtResource("4_ww8vx")]
-position = Vector2(731, 317)
-
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1506368072]
-position = Vector2(740, 733)
-
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" unique_id=1354227906]
-texture = ExtResource("6_hvj8k")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=307233430]
-shape = SubResource("RectangleShape2D_38txh")
 
 [node name="HUD" type="CanvasLayer" parent="." unique_id=1252973788]
 

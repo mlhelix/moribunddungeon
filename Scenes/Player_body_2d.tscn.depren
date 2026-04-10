@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dv2ux6rg6cwf7"]
 
 [ext_resource type="Script" uid="uid://c2v6yothfqrop" path="res://Scripts/Player.gd" id="1_88kja"]
-[ext_resource type="Script" uid="uid://8dkarh5mop4k" path="res://Singleton/player_stats.gd" id="2_gbyq6"]
+[ext_resource type="Script" uid="uid://8dkarh5mop4k" path="res://Singleton/player_statsOLD.gd" id="2_gbyq6"]
 [ext_resource type="Texture2D" uid="uid://bp4imwl2fivsc" path="res://assets/Giana Run/Timeline 1_0000.png" id="3_ancw4"]
 [ext_resource type="Texture2D" uid="uid://djubhqsddjedw" path="res://assets/Giana Run/Timeline 1_0004.png" id="4_8ldn0"]
 [ext_resource type="Texture2D" uid="uid://cixxkj3ucfpwe" path="res://assets/Giana Run/Timeline 1_0008.png" id="5_o8di4"]
