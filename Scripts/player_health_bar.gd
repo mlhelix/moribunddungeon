@@ -1,14 +1,15 @@
 extends ProgressBar
+class_name Health_Bar
 
-@export var player: Player
-#@onready var player: Player
+
+
+@onready var healthlabel = $Label
 @onready var bar = $"."
 
-func _ready():
+func _ready() -> void:
 	PlayerStats.health_changed.connect(update)
-	update()
-
-func update():
-	bar.value = PlayerStats.current_health
-	value = PlayerStats.current_health
 	
+func update(newHealth, maxHealth):
+	bar.value = maxHealth
+	value = newHealth
+	healthlabel.text = str(newHealth)
