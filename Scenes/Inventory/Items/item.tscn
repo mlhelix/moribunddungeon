@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://rr6uo04yj8xa"]
+
+[ext_resource type="Script" uid="uid://c0m6cv2unqhcv" path="res://Global/item.gd" id="1_6o3fl"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_0yvdu"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_6o3fl"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0yvdu"]
+
+[node name="Item" type="Area2D" unique_id=656421343]
+script = ExtResource("1_6o3fl")
+item_name = "Potion"
+icon = SubResource("PlaceholderTexture2D_0yvdu")
+is_stackable = true
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1508253959]
+texture = SubResource("PlaceholderTexture2D_6o3fl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1250503023]
+shape = SubResource("CapsuleShape2D_0yvdu")
+disabled = true

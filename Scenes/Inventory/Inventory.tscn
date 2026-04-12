@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://d0lm40xtcycf4"]
+
+[ext_resource type="PackedScene" uid="uid://byhgn24ncd8ao" path="res://Scenes/Inventory/tooltip.tscn" id="2_qx8s5"]
+[ext_resource type="Theme" uid="uid://b1glnlol0o36p" path="res://assets/panelstheme.tres" id="3_nqetm"]
+
+[node name="Inventory" type="Control" unique_id=1409958260]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="GridContainer" type="GridContainer" parent="." unique_id=2048497301]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme = ExtResource("3_nqetm")
+
+[node name="Tooltip" parent="." unique_id=1166530980 instance=ExtResource("2_qx8s5")]
+layout_mode = 0

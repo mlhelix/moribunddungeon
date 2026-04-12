@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://2d1moiqv2vkp"]
+
+[ext_resource type="Texture2D" uid="uid://dm2n6ukn0te5w" path="res://assets/Items_Potion01.png" id="2_4xr6c"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0yvdu"]
+
+[node name="Potion" type="Area2D" unique_id=656421343]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1508253959]
+texture = ExtResource("2_4xr6c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1250503023]
+shape = SubResource("CapsuleShape2D_0yvdu")
+disabled = true

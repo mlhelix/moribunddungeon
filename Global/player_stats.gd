@@ -21,6 +21,7 @@ signal crit_changed(new_crit)
 @export var magdef: int = 10
 @export var resist: int = 10
 @export var crit: int = 2
+@export var inventory: Inventory
 #@export var current_dodge: int = 2
 
 

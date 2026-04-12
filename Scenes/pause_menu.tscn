@@ -3,6 +3,10 @@
 [ext_resource type="Shader" uid="uid://cxhst8hbwqx6e" path="res://assets/menu_shader.gdshader" id="1_emv3i"]
 [ext_resource type="Script" uid="uid://dcradup6l7exs" path="res://Scripts/pause_menu.gd" id="1_k0w1u"]
 [ext_resource type="Theme" uid="uid://b1glnlol0o36p" path="res://assets/panelstheme.tres" id="3_1och7"]
+[ext_resource type="PackedScene" uid="uid://d0lm40xtcycf4" path="res://Scenes/Inventory/Inventory.tscn" id="4_bpi0q"]
+[ext_resource type="PackedScene" uid="uid://byhgn24ncd8ao" path="res://Scenes/Inventory/tooltip.tscn" id="4_sjs17"]
+[ext_resource type="PackedScene" uid="uid://oqpetrffoe3m" path="res://Scenes/Inventory/InventorySlot.tscn" id="5_u8tnp"]
+[ext_resource type="PackedScene" uid="uid://cqixbjc7sqkw7" path="res://Scenes/Inventory/InventoryItem.tscn" id="6_stj27"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_k0w1u"]
 shader = ExtResource("1_emv3i")
@@ -110,6 +114,25 @@ text = "Bag"
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
 text = "Equipment"
+
+[node name="Tooltip" parent="PanelContainer/VBoxContainer/Equipment" unique_id=1166530980 instance=ExtResource("4_sjs17")]
+visible = false
+layout_mode = 0
+
+[node name="InventorySlot" parent="PanelContainer/VBoxContainer/Equipment" unique_id=549903250 instance=ExtResource("5_u8tnp")]
+visible = false
+layout_mode = 0
+
+[node name="InventoryItem" parent="PanelContainer/VBoxContainer/Equipment" unique_id=1862648145 instance=ExtResource("6_stj27")]
+visible = false
+layout_mode = 1
+
+[node name="Inventory" parent="PanelContainer/VBoxContainer/Equipment" unique_id=1409958260 instance=ExtResource("4_bpi0q")]
+layout_mode = 0
+offset_left = 928.0
+offset_top = 47.0
+offset_right = 968.0
+offset_bottom = 87.0
 
 [node name="Settings" type="Button" parent="PanelContainer/VBoxContainer" unique_id=1376550828]
 layout_mode = 2

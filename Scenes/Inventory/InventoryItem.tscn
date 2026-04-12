@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://cqixbjc7sqkw7"]
+
+[ext_resource type="Script" uid="uid://cwahkplanj2oo" path="res://Global/inventory_item.gd" id="1_3pf8p"]
+
+[sub_resource type="ImageTexture" id="ImageTexture_3pf8p"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_e060s"]
+
+[node name="InventoryItem" type="Control" unique_id=1862648145 node_paths=PackedStringArray("sprite", "label")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3pf8p")
+sprite = NodePath("Sprite2D")
+label = NodePath("Label")
+icon = SubResource("ImageTexture_3pf8p")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1964293310]
+texture = SubResource("PlaceholderTexture2D_e060s")
+
+[node name="Label" type="Label" parent="." unique_id=1221156099]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
