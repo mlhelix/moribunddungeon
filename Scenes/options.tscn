@@ -4,8 +4,6 @@
 [ext_resource type="Script" uid="uid://sewb822yy6jd" path="res://Scripts/texturebutton_focus.gd" id="2_4tmxy"]
 [ext_resource type="Texture2D" uid="uid://q5beafrapbc4" path="res://assets/Moribund Dungeon Floorthingy.png" id="2_663nc"]
 [ext_resource type="Texture2D" uid="uid://bbkpjgbcnr3e1" path="res://Letterforms/Videogame Letterforms(Q2).png" id="2_qyyw6"]
-[ext_resource type="Texture2D" uid="uid://ck68syfbobx7v" path="res://assets/Healthbar_BG.png" id="7_38txh"]
-[ext_resource type="PackedScene" uid="uid://b3fd6efftjlv1" path="res://Scenes/health_bar_player.tscn" id="7_hvj8k"]
 
 [node name="Options" type="Control" unique_id=965105187]
 layout_mode = 3
@@ -33,23 +31,5 @@ offset_bottom = 1478.0
 scale = Vector2(0.1, 0.1)
 texture_normal = ExtResource("2_qyyw6")
 script = ExtResource("2_4tmxy")
-
-[node name="HUD" type="CanvasLayer" parent="." unique_id=1252973788]
-
-[node name="TextureRect" type="TextureRect" parent="HUD" unique_id=367281929]
-offset_left = 16.0
-offset_top = 12.0
-offset_right = 421.06204
-offset_bottom = 130.0
-texture = ExtResource("7_38txh")
-expand_mode = 1
-
-[node name="HealthBar" parent="HUD" unique_id=2083968175 instance=ExtResource("7_hvj8k")]
-offset_left = 113.99999
-offset_top = 29.000002
-offset_right = 859.0
-offset_bottom = 126.0
-scale = Vector2(0.4, 0.4)
-metadata/_edit_use_anchors_ = true
 
 [connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]

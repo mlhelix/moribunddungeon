@@ -2,37 +2,15 @@
 
 [ext_resource type="Script" uid="uid://bn6p3y5dqip6v" path="res://Scripts/menu_stat_values.gd" id="1_4i724"]
 [ext_resource type="Theme" uid="uid://b1glnlol0o36p" path="res://assets/panelstheme.tres" id="2_1g1xw"]
+[ext_resource type="Resource" uid="uid://b3xnkkm1v444m" path="res://Scripts/Global/player_stats.tres" id="2_887e1"]
+[ext_resource type="Texture2D" uid="uid://c03bu6pgiyjrv" path="res://assets/Panels.png" id="3_akoub"]
 
 [sub_resource type="Animation" id="Animation_1g1xw"]
 length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("PanelContainer:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
-}
 
 [sub_resource type="Animation" id="Animation_akoub"]
 resource_name = "fade_inout"
 length = 0.3
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("PanelContainer:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_3un58"]
 _data = {
@@ -40,28 +18,33 @@ _data = {
 &"fade_inout": SubResource("Animation_akoub")
 }
 
-[node name="Equipment" type="Control" unique_id=623914126]
-process_mode = 3
+[node name="PlayerStatsMenu" type="Control" unique_id=623914126]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 317.0
 offset_bottom = 326.0
 script = ExtResource("1_4i724")
+player_stats = ExtResource("2_887e1")
 
-[node name="PanelContainer" type="PanelContainer" parent="." unique_id=461980637]
-modulate = Color(1, 1, 1, 0)
+[node name="PanelContainer" type="NinePatchRect" parent="." unique_id=1448773638]
 layout_mode = 0
 offset_right = 315.0
 offset_bottom = 324.0
 theme = ExtResource("2_1g1xw")
+texture = ExtResource("3_akoub")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer" unique_id=1132136598]
-layout_mode = 2
+layout_mode = 0
+offset_left = 31.0
+offset_top = 29.891617
+offset_right = 284.0
+offset_bottom = 294.1084
 alignment = 1
 
 [node name="Stat Name" type="VBoxContainer" parent="PanelContainer/HBoxContainer" unique_id=350463957]
 layout_mode = 2
 size_flags_horizontal = 3
+alignment = 1
 
 [node name="HP" type="Label" parent="PanelContainer/HBoxContainer/Stat Name" unique_id=694923018]
 layout_mode = 2
@@ -98,6 +81,7 @@ text = "Crit"
 [node name="Stat Value" type="VBoxContainer" parent="PanelContainer/HBoxContainer" unique_id=791355212]
 layout_mode = 2
 size_flags_horizontal = 3
+alignment = 1
 
 [node name="HP" type="Label" parent="PanelContainer/HBoxContainer/Stat Value" unique_id=279810905]
 layout_mode = 2

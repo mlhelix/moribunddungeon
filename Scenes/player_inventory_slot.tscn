@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://cxl4m1jlnf7wq"]
+
+[ext_resource type="Script" uid="uid://cnpf4swf5fqf5" path="res://Scripts/player_inventory_slot.gd" id="1_gceos"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sdkde"]
+bg_color = Color(0.21055609, 0.20343795, 0.29667026, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.45162678, 0.42149493, 0.63491976, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[node name="Slot" type="Panel" unique_id=867390411]
+custom_minimum_size = Vector2(80, 80)
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_sdkde")
+script = ExtResource("1_gceos")
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=861405666]
+custom_minimum_size = Vector2(38, 38)
+layout_mode = 0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 76.0
+offset_bottom = 76.0
+
+[node name="Panel" type="Panel" parent="CenterContainer" unique_id=1928947493]
+layout_mode = 2
+
+[node name="Item" type="Sprite2D" parent="CenterContainer/Panel" unique_id=1398057410]

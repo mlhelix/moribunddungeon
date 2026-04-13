@@ -1,9 +1,12 @@
 extends CharacterBody2D
 class_name Player
 
+@export var player_stats: PlayerStats
+@export var inventory: Inventory
+
 @onready var healthBar = $"../HUD/HealthBar"
-@onready var animated_sprite = $AnimatedSprite2D
-@onready var mystatsmenu = $"../PauseMenuLayer/Equipment"
+@onready var animated_sprite = $"AnimatedSprite2D"
+#@onready var mystatsmenu = $"../PauseMenuLayer/Equipment"
 
 var SPEED = 450.0
 const JUMP_VELOCITY = -600.0
@@ -26,24 +29,26 @@ func _physics_process(delta: float) -> void:
 	var direction := Input.get_axis("ui_left", "ui_right")
 	if direction:
 		velocity.x = direction * SPEED
-		animated_sprite.play("running")
-		animated_sprite.flip_h = direction < 0
+		$AnimatedSprite2D.play("running")
+		$AnimatedSprite2D.flip_h = direction < 0
+		#animated_sprite.flip_h = direction < 0
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-		animated_sprite.play("standingidle")
+		$AnimatedSprite2D.play("standingidle")
 	
 	move_and_slide()
 	knockback = knockback.lerp(Vector2.ZERO, 0.1)
 
 
 func _ready() -> void:
-	#healthBar.update(PlayerStats.current_health, PlayerStats.max_health)
-	PlayerStats.health = PlayerStats.current_health
-	PlayerStats.health_depleted.connect(queue_free)
+	healthBar.update(player_stats.current_health, player_stats.max_health)
+	player_stats.health = player_stats.current_health
+	player_stats.health_depleted.connect(queue_free)
 
 func take_damage(damage:int):
-	PlayerStats.take_damage(damage)
+	player_stats.take_damage(damage)
+	print(player_stats.current_health)
 
 func heal_damage(heal:int):
-	PlayerStats.heal_damage(heal)
+	player_stats.heal_damage(heal)
 	

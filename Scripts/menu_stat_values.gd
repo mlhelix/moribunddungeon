@@ -10,28 +10,31 @@ class_name Stats_Menu
 @onready var res_value = $"PanelContainer/HBoxContainer/Stat Value/Res"
 @onready var crit_value = $"PanelContainer/HBoxContainer/Stat Value/Crit"
 
+@export var player_stats: PlayerStats
+
 #@onready var player = get_node("../../Player")
 
 func _ready() -> void:
-	hp_value.text = str(PlayerStats.current_health)+"/"+str(PlayerStats.max_health)
-	sp_value.text = str(PlayerStats.current_sp)+"/"+str(PlayerStats.max_sp)
-	atk_value.text = str(PlayerStats.attack)
-	def_value.text = str(PlayerStats.defense)
-	mag_value.text = str(PlayerStats.magic)
-	mgd_value.text = str(PlayerStats.magdef)
-	res_value.text = str(PlayerStats.resist)
-	crit_value.text = str(PlayerStats.crit)
+	hp_value.text = str(player_stats.current_health)+"/"+str(player_stats.max_health)
+	sp_value.text = str(player_stats.current_sp)+"/"+str(player_stats.max_sp)
+	atk_value.text = str(player_stats.attack)
+	def_value.text = str(player_stats.defense)
+	mag_value.text = str(player_stats.magic)
+	mgd_value.text = str(player_stats.magdef)
+	res_value.text = str(player_stats.resist)
+	crit_value.text = str(player_stats.crit)
+	pass
 
 
 func update_stats():
-	#hp_value.text = str(PlayerStats.current_health) + "/" + str(PlayerStats.max_health)
-	#sp_value.text = str(PlayerStats.current_sp) + "/" +str(PlayerStats.max_sp)
-	#atk_value.text = str(PlayerStats.attack)
-	#def_value.text = str(PlayerStats.defense)
-	#mag_value.text = str(PlayerStats.magic)
-	#mgd_value.text = str(PlayerStats.magdef)
-	#res_value.text = str(PlayerStats.resist)
-	#crit_value.text = str(PlayerStats.crit)
+	hp_value.text = str(player_stats.current_health) + "/" + str(player_stats.max_health)
+	sp_value.text = str(player_stats.current_sp) + "/" +str(player_stats.max_sp)
+	atk_value.text = str(player_stats.attack)
+	def_value.text = str(player_stats.defense)
+	mag_value.text = str(player_stats.magic)
+	mgd_value.text = str(player_stats.magdef)
+	res_value.text = str(player_stats.resist)
+	crit_value.text = str(player_stats.crit)
 	pass
 
 

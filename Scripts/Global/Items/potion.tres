@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Usable_Item" format=3 uid="uid://cft2vmuuo3a7"]
+
+[ext_resource type="Script" uid="uid://bumbtkkwc3ruh" path="res://Scripts/Global/Items/item_usable.gd" id="1_4kvri"]
+[ext_resource type="Texture2D" uid="uid://dm2n6ukn0te5w" path="res://assets/Items_Potion01.png" id="2_fpb2l"]
+
+[resource]
+script = ExtResource("1_4kvri")
+item_name = "Potion"
+sprite = ExtResource("2_fpb2l")
+metadata/_custom_type_script = "uid://bumbtkkwc3ruh"

@@ -1,0 +1,108 @@
+[gd_scene format=3 uid="uid://bno76mruow2nm"]
+
+[ext_resource type="Script" uid="uid://sxldsji6k850" path="res://Scripts/player_inventory_gui.gd" id="1_g7xe2"]
+[ext_resource type="Texture2D" uid="uid://c03bu6pgiyjrv" path="res://assets/Panels.png" id="1_nwplk"]
+[ext_resource type="PackedScene" uid="uid://cxl4m1jlnf7wq" path="res://Scenes/player_inventory_slot.tscn" id="2_8khf3"]
+
+[sub_resource type="Animation" id="Animation_8khf3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_g7xe2"]
+resource_name = "fadein_out"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_g3vtq"]
+_data = {
+&"RESET": SubResource("Animation_8khf3"),
+&"fadein_out": SubResource("Animation_g7xe2")
+}
+
+[node name="PlayerInventoryGUI" type="Control" unique_id=1750056301]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1540.0
+offset_bottom = -700.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_g7xe2")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=1508837295]
+layout_mode = 0
+offset_right = 380.0
+offset_bottom = 380.0
+texture = ExtResource("1_nwplk")
+patch_margin_left = 60
+patch_margin_top = 60
+patch_margin_right = 60
+patch_margin_bottom = 60
+
+[node name="GridContainer" type="GridContainer" parent="NinePatchRect" unique_id=407208848]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 64.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 3
+
+[node name="Slot1" parent="NinePatchRect/GridContainer" unique_id=867390411 instance=ExtResource("2_8khf3")]
+layout_mode = 2
+
+[node name="Slot2" parent="NinePatchRect/GridContainer" unique_id=1512733365 instance=ExtResource("2_8khf3")]
+layout_mode = 2
+
+[node name="Slot3" parent="NinePatchRect/GridContainer" unique_id=1541870548 instance=ExtResource("2_8khf3")]
+layout_mode = 2
+
+[node name="Slot4" parent="NinePatchRect/GridContainer" unique_id=1313527257 instance=ExtResource("2_8khf3")]
+layout_mode = 2
+
+[node name="Slot5" parent="NinePatchRect/GridContainer" unique_id=1922227849 instance=ExtResource("2_8khf3")]
+layout_mode = 2
+
+[node name="Slot6" parent="NinePatchRect/GridContainer" unique_id=1777417449 instance=ExtResource("2_8khf3")]
+layout_mode = 2
+
+[node name="Slot7" parent="NinePatchRect/GridContainer" unique_id=1873163784 instance=ExtResource("2_8khf3")]
+layout_mode = 2
+
+[node name="Slot8" parent="NinePatchRect/GridContainer" unique_id=1400913179 instance=ExtResource("2_8khf3")]
+layout_mode = 2
+
+[node name="Slot9" parent="NinePatchRect/GridContainer" unique_id=1747224381 instance=ExtResource("2_8khf3")]
+layout_mode = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=430407242]
+libraries/ = SubResource("AnimationLibrary_g3vtq")

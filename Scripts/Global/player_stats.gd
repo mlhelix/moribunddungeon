@@ -1,4 +1,6 @@
-extends Node
+class_name PlayerStats
+extends Resource
+
 
 signal health_depleted
 signal health_changed(cur_health: int, maximum_health: int)
@@ -21,7 +23,7 @@ signal crit_changed(new_crit)
 @export var magdef: int = 10
 @export var resist: int = 10
 @export var crit: int = 2
-@export var inventory: Inventory
+
 #@export var current_dodge: int = 2
 
 
@@ -29,7 +31,11 @@ var health: int = 0: set = _on_health_set
 var sp: int = 0: set = _on_sp_set
 
 func _init() -> void:
+	setup_stats.call_deferred()
 	pass
+	
+func setup_stats() -> void:
+	health = max_health
 
 func take_damage(damage:int) -> void:
 	var damage_value = clampi(damage - defense, 1, max_health)
@@ -39,8 +45,8 @@ func take_damage(damage:int) -> void:
 		health_depleted.emit()
 
 func heal_damage(heal:int) -> void:
-	PlayerStats.current_health += heal
-	PlayerStats.health_changed.emit(PlayerStats.current_health, PlayerStats.max_health)
+	current_health += heal
+	health_changed.emit(current_health, max_health)
 
 func _on_health_set(new_value: int) -> void:
 	health = clampi(new_value, 0, max_health)

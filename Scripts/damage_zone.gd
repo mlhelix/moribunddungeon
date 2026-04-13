@@ -13,9 +13,9 @@ func _onready():
 	pass
 	
 
-func _on_body_entered(body):
+func _on_body_entered(body) -> void:
 	if "Player" in body.name:
-		body.take_damage(5)
+		body.take_damage(12)
 		var direction = global_position.direction_to(body.global_position)
 		var explosive_force = direction * knockback_strength
 		body.knockback = explosive_force
