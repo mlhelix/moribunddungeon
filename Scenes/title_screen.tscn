@@ -197,7 +197,7 @@ offset_top = 1046.0
 offset_right = 157.0
 offset_bottom = 1080.0
 theme_override_font_sizes/font_size = 24
-text = "ver 0.26.0410"
+text = "ver 0.26.0413"
 
 [connection signal="focus_entered" from="." to="." method="_on_focus_entered"]
 [connection signal="focus_entered" from="Start Game" to="." method="_on_start_game_focus_entered"]
