@@ -10,3 +10,7 @@ func update():
 	for i in range(min(inventory.items.size(), slots.size())):
 		slots[i].update(inventory.items[i])
 		
+
+
+func _on_bag_pressed() -> void:
+	update() # Replace with function body.

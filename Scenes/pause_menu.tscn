@@ -154,6 +154,7 @@ libraries/ = SubResource("AnimationLibrary_vmyb1")
 
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Bag" to="." method="_on_bag_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/Bag" to="PanelContainer/VBoxContainer/Bag/PlayerInventoryGUI" method="_on_bag_pressed"]
 [connection signal="focus_exited" from="PanelContainer/VBoxContainer/Equipment" to="." method="_on_equipment_focus_exited"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Equipment" to="." method="_on_equipment_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Settings" to="." method="_on_settings_pressed"]

@@ -1,5 +1,6 @@
 extends Item
-class_name Usable_Item
+class_name Item_Usable
+
 
 func _on_use():
 	pass

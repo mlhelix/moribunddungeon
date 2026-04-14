@@ -47,7 +47,6 @@ func _ready() -> void:
 
 func take_damage(damage:int):
 	player_stats.take_damage(damage)
-	print(player_stats.current_health)
 
 func heal_damage(heal:int):
 	player_stats.heal_damage(heal)

@@ -3,8 +3,8 @@ class_name DamageZone
 
 
 #@onready var sprite_texture: Texture2D
-#@onready var potion: InventoryItem
-
+var potion = load("res://Scripts/Global/Items/potion.tres") as Item_Usable
+var playerinv = Inventory
 var knockback_strength = 10.0
 
 
@@ -19,6 +19,8 @@ func _on_body_entered(body) -> void:
 		var direction = global_position.direction_to(body.global_position)
 		var explosive_force = direction * knockback_strength
 		body.knockback = explosive_force
+		
+		body.inventory.add_item(potion)
 		#
 		#
 		#sprite_texture.texture.load("res://assets/Items_Potion01.png")
