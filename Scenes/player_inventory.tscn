@@ -95,14 +95,5 @@ layout_mode = 2
 [node name="Slot6" parent="NinePatchRect/GridContainer" unique_id=1777417449 instance=ExtResource("2_8khf3")]
 layout_mode = 2
 
-[node name="Slot7" parent="NinePatchRect/GridContainer" unique_id=1873163784 instance=ExtResource("2_8khf3")]
-layout_mode = 2
-
-[node name="Slot8" parent="NinePatchRect/GridContainer" unique_id=1400913179 instance=ExtResource("2_8khf3")]
-layout_mode = 2
-
-[node name="Slot9" parent="NinePatchRect/GridContainer" unique_id=1747224381 instance=ExtResource("2_8khf3")]
-layout_mode = 2
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=430407242]
 libraries/ = SubResource("AnimationLibrary_g3vtq")

@@ -51,3 +51,5 @@ func take_damage(damage:int):
 func heal_damage(heal:int):
 	player_stats.heal_damage(heal)
 	
+func add_item(item:Item):
+	inventory.add_item(item)

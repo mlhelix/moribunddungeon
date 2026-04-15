@@ -13,12 +13,12 @@
 [ext_resource type="Resource" uid="uid://cujal2qpmcsue" path="res://Scripts/Global/player_inventory.tres" id="12_l5du1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fl7sg"]
-size = Vector2(1921, 125)
+size = Vector2(3307, 125)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_boqko"]
 
 [sub_resource type="SystemFont" id="SystemFont_3hlc8"]
 font_names = PackedStringArray("Cambria")
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_boqko"]
 
 [node name="TestArena" type="Node2D" unique_id=1312225794]
 script = ExtResource("1_fl7sg")
@@ -28,10 +28,6 @@ offset_right = 3840.0
 offset_bottom = 2160.0
 texture = ExtResource("1_bkg1a")
 metadata/_edit_lock_ = true
-
-[node name="Enemy" parent="." unique_id=1130149263 instance=ExtResource("2_5hb0q")]
-position = Vector2(1403, 663)
-script = ExtResource("4_dqcy4")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=25423715]
 position = Vector2(594, 1027)
@@ -43,17 +39,8 @@ scale = Vector2(15, 1)
 texture = ExtResource("3_5hb0q")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1317680397]
-position = Vector2(366.5, 1.5)
+position = Vector2(1060, 1.5)
 shape = SubResource("RectangleShape2D_fl7sg")
-
-[node name="Exit Button" type="Button" parent="." unique_id=1658517273]
-offset_left = 1760.0
-offset_top = 18.0
-offset_right = 1875.0
-offset_bottom = 109.0
-theme_override_fonts/font = SubResource("SystemFont_3hlc8")
-theme_override_font_sizes/font_size = 60
-text = "Exit"
 
 [node name="DamageZone" type="Area2D" parent="." unique_id=1262171411]
 position = Vector2(976, 822)
@@ -95,9 +82,22 @@ scale = Vector2(0.4, 0.4)
 metadata/_edit_use_anchors_ = true
 metadata/_edit_lock_ = true
 
+[node name="Exit Button" type="Button" parent="HUD" unique_id=1658517273]
+offset_left = 1760.0
+offset_top = 18.0
+offset_right = 1875.0
+offset_bottom = 109.0
+theme_override_fonts/font = SubResource("SystemFont_3hlc8")
+theme_override_font_sizes/font_size = 60
+text = "Exit"
+
 [node name="Player" parent="." unique_id=1761386539 instance=ExtResource("2_5hb0q")]
 position = Vector2(690, 731)
 inventory = ExtResource("12_l5du1")
 
-[connection signal="pressed" from="Exit Button" to="." method="_on_exit_button_pressed"]
+[node name="Enemy" parent="." unique_id=1130149263 instance=ExtResource("2_5hb0q")]
+position = Vector2(1403, 663)
+script = ExtResource("4_dqcy4")
+
 [connection signal="body_entered" from="DamageZone" to="DamageZone" method="_on_body_entered"]
+[connection signal="pressed" from="HUD/Exit Button" to="." method="_on_exit_button_pressed"]

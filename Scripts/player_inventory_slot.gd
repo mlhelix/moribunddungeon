@@ -1,6 +1,9 @@
-extends Panel
+extends Button
 
 @onready var itemSprite: Sprite2D = $CenterContainer/Panel/Item
+
+func _ready() -> void:
+	grab_focus()
 
 func update(item: Item):
 	if !item:

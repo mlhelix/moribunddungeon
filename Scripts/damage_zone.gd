@@ -15,12 +15,14 @@ func _onready():
 
 func _on_body_entered(body) -> void:
 	if "Player" in body.name:
-		body.take_damage(12)
+		body.take_damage(42)
 		var direction = global_position.direction_to(body.global_position)
 		var explosive_force = direction * knockback_strength
 		body.knockback = explosive_force
 		
-		body.inventory.add_item(potion)
+		print("Inventory size: " + str(body.inventory.items.size()))
+		print("OUCH! Add a potion!")
+		body.add_item(potion)
 		#
 		#
 		#sprite_texture.texture.load("res://assets/Items_Potion01.png")

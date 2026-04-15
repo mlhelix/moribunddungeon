@@ -7,3 +7,5 @@ extends Resource
 func _to_string() -> String:
 	return item_name
 	
+func _set_name(name: String):
+	item_name = name

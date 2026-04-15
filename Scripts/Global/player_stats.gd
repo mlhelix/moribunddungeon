@@ -11,6 +11,7 @@ signal magic_changed(new_magic)
 signal magdef_changed(new_magdef)
 signal resist_changed(new_resist)
 signal crit_changed(new_crit)
+signal currency_changed(new_curr)
 
 
 @export var max_health: int = 100
@@ -23,6 +24,7 @@ signal crit_changed(new_crit)
 @export var magdef: int = 10
 @export var resist: int = 10
 @export var crit: int = 2
+@export var currency: int = 420
 
 #@export var current_dodge: int = 2
 

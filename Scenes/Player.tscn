@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dv2ux6rg6cwf7"]
 
-[ext_resource type="Script" uid="uid://c2v6yothfqrop" path="res://Scripts/player.gd" id="1_88kja"]
+[ext_resource type="Script" uid="uid://c2v6yothfqrop" path="res://Scripts/Player.gd" id="1_88kja"]
 [ext_resource type="Resource" uid="uid://b3xnkkm1v444m" path="res://Scripts/Global/player_stats.tres" id="2_ksbbd"]
 [ext_resource type="Texture2D" uid="uid://bp4imwl2fivsc" path="res://assets/Giana Run/Timeline 1_0000.png" id="3_ancw4"]
 [ext_resource type="Texture2D" uid="uid://djubhqsddjedw" path="res://assets/Giana Run/Timeline 1_0004.png" id="4_8ldn0"]
@@ -69,3 +69,10 @@ animation = &"standingidle"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1926136278]
 position = Vector2(0, 2)
 shape = SubResource("CapsuleShape2D_88kja")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1886186785]
+limit_left = 0
+limit_top = 0
+limit_right = 2636
+limit_bottom = 1080
+editor_draw_limits = true
