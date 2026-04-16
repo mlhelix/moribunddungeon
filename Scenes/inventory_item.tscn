@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://dug2bbj6efba4"]
+
+[ext_resource type="Script" uid="uid://b8q80m6qw4yd" path="res://Scripts/Global/Items/inventory_item.gd" id="1_gj4io"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qpiqe"]
+radius = 15.0
+height = 56.0
+
+[node name="Inventory_Item" type="Node2D" unique_id=261727559 groups=["Items"]]
+script = ExtResource("1_gj4io")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=173801172]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1220461873]
+shape = SubResource("CapsuleShape2D_qpiqe")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=93705718]
+scale = Vector2(0.1, 0.1)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

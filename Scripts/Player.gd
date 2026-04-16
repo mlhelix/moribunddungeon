@@ -2,10 +2,11 @@ extends CharacterBody2D
 class_name Player
 
 @export var player_stats: PlayerStats
-@export var inventory: Inventory
+#@export var inventory: Inventory
 
 @onready var healthBar = $"../HUD/HealthBar"
 @onready var animated_sprite = $"AnimatedSprite2D"
+@onready var inventory_ui = $InventoryUI
 #@onready var mystatsmenu = $"../PauseMenuLayer/Equipment"
 
 var SPEED = 450.0
@@ -41,9 +42,15 @@ func _physics_process(delta: float) -> void:
 
 
 func _ready() -> void:
+	
 	healthBar.update(player_stats.current_health, player_stats.max_health)
 	player_stats.health = player_stats.current_health
 	player_stats.health_depleted.connect(queue_free)
+	
+func _input(event):
+	if event.is_action_pressed("ui_inventory"):
+		inventory_ui.visible = !inventory_ui.visible
+		get_tree().paused = !get_tree().paused
 
 func take_damage(damage:int):
 	player_stats.take_damage(damage)
@@ -52,4 +59,5 @@ func heal_damage(heal:int):
 	player_stats.heal_damage(heal)
 	
 func add_item(item:Item):
-	inventory.add_item(item)
+	#inventory.add_item(item)
+	pass
