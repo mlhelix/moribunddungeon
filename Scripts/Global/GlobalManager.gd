@@ -7,6 +7,7 @@ var stats = preload("res://Scripts/Global/player_stats.tres")
 var inventory = []
 
 var player_node: Node = null
+@onready var inventory_slot_scene = preload("res://Scenes/player_inventory_slot.tscn")
 
 func _ready():
 	inventory.resize(9)
