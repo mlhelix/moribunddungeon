@@ -6,7 +6,7 @@
 radius = 15.0
 height = 56.0
 
-[node name="Inventory_Item" type="Node2D" unique_id=261727559 groups=["Items"]]
+[node name="Inventory_Item" type="Node2D" unique_id=464058434 groups=["Items"]]
 script = ExtResource("1_gj4io")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=173801172]

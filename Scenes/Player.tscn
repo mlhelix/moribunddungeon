@@ -11,7 +11,6 @@
 [ext_resource type="Texture2D" uid="uid://cnccjiodxx1t4" path="res://assets/Giana Run/Timeline 1_0024.png" id="9_l447x"]
 [ext_resource type="Texture2D" uid="uid://d1j0sl818klfa" path="res://assets/Giana Run/Timeline 1_0028.png" id="10_u736u"]
 [ext_resource type="Texture2D" uid="uid://deafchkwek8e0" path="res://assets/Char 01 - Giana (stand).png" id="11_p20bj"]
-[ext_resource type="PackedScene" uid="uid://bnvaew7oovd3c" path="res://Scenes/inventory_ui.tscn" id="12_glx4g"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_glyrq"]
 animations = [{
@@ -58,7 +57,7 @@ radius = 23.0
 height = 164.0
 
 [node name="Player" type="CharacterBody2D" unique_id=1761386539 groups=["Player"]]
-process_mode = 3
+process_mode = 1
 script = ExtResource("1_88kja")
 player_stats = ExtResource("2_ksbbd")
 
@@ -103,9 +102,3 @@ offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
 text = "Press \"E\" to pick up!"
-
-[node name="InventoryUI" type="CanvasLayer" parent="." unique_id=55803722]
-process_mode = 3
-visible = false
-
-[node name="Inventory_UI" parent="InventoryUI" unique_id=1582478301 instance=ExtResource("12_glx4g")]

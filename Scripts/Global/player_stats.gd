@@ -6,12 +6,12 @@ signal health_depleted
 signal health_changed(cur_health: int, maximum_health: int)
 signal sp_changed(cur_sp: int, maximum_sp: int)
 signal attack_changed(new_attack)
-signal defense_changed(new_defense)
-signal magic_changed(new_magic)
-signal magdef_changed(new_magdef)
-signal resist_changed(new_resist)
-signal crit_changed(new_crit)
-signal currency_changed(new_curr)
+#signal defense_changed(new_defense)
+#signal magic_changed(new_magic)
+#signal magdef_changed(new_magdef)
+#signal resist_changed(new_resist)
+#signal crit_changed(new_crit)
+#signal currency_changed(new_curr)
 
 
 @export var max_health: int = 100
@@ -47,8 +47,12 @@ func take_damage(damage:int) -> void:
 		health_depleted.emit()
 
 func heal_damage(heal:int) -> void:
-	current_health += heal
+	health = current_health + heal
 	health_changed.emit(current_health, max_health)
+
+func _change_attack(atk):
+	attack += attack + atk
+	attack_changed.emit()
 
 func _on_health_set(new_value: int) -> void:
 	health = clampi(new_value, 0, max_health)

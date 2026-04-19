@@ -21,3 +21,8 @@ func clear_grid_container():
 		var child = grid_container.get_child(0)
 		grid_container.remove_child(child)
 		child.queue_free()
+
+func _grab_focus():
+	grid_container.get_child(0).get_node("ItemButton").grab_focus()
+	#grid_container.get_child(0)
+	pass

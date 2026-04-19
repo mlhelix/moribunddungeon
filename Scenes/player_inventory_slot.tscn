@@ -9,10 +9,8 @@
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 3
 anchors_preset = 0
-offset_left = 10.0
-offset_top = 10.0
-offset_right = 90.0
-offset_bottom = 90.0
+offset_right = 80.0
+offset_bottom = 80.0
 script = ExtResource("1_gceos")
 
 [node name="OuterBorder" type="ColorRect" parent="." unique_id=204188126]
@@ -59,6 +57,7 @@ grow_vertical = 2
 theme_override_styles/normal = SubResource("StyleBoxEmpty_ysxd8")
 
 [node name="Detail Panel" type="ColorRect" parent="." unique_id=1276427730]
+visible = false
 layout_mode = 0
 offset_top = -95.0
 offset_right = 140.0
@@ -103,6 +102,7 @@ theme_override_font_sizes/font_size = 10
 text = "EFFECT"
 
 [node name="UsagePanel" type="ColorRect" parent="." unique_id=2065880951]
+visible = false
 layout_mode = 0
 offset_top = -95.0
 offset_right = 140.0
@@ -134,6 +134,10 @@ grow_horizontal = 2
 grow_vertical = 0
 text = "Drop"
 
+[connection signal="focus_entered" from="ItemButton" to="." method="_on_item_button_focus_entered"]
+[connection signal="focus_exited" from="ItemButton" to="." method="_on_item_button_focus_exited"]
 [connection signal="mouse_entered" from="ItemButton" to="." method="_on_item_button_mouse_entered"]
 [connection signal="mouse_exited" from="ItemButton" to="." method="_on_item_button_mouse_exited"]
 [connection signal="pressed" from="ItemButton" to="." method="_on_item_button_pressed"]
+[connection signal="pressed" from="UsagePanel/UseButton" to="." method="_on_use_button_pressed"]
+[connection signal="pressed" from="UsagePanel/DropButton" to="." method="_on_drop_button_pressed"]

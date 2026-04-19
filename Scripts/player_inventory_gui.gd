@@ -5,6 +5,7 @@ extends Control
 
 func _ready():
 	update()
+	pass
 
 func update():
 	for i in range(min(inventory.items.size(), slots.size())):
