@@ -2,7 +2,7 @@
 
 [ext_resource type="Shader" uid="uid://cxhst8hbwqx6e" path="res://assets/menu_shader.gdshader" id="1_emv3i"]
 [ext_resource type="Script" uid="uid://dcradup6l7exs" path="res://Scripts/pause_menu.gd" id="1_k0w1u"]
-[ext_resource type="Texture2D" uid="uid://c03bu6pgiyjrv" path="res://assets/Panels.png" id="3_1och7"]
+[ext_resource type="Texture2D" uid="uid://bbqplm021igbk" path="res://assets/Panels-small.png" id="3_vmyb1"]
 [ext_resource type="PackedScene" uid="uid://bnvaew7oovd3c" path="res://Scenes/inventory_ui.tscn" id="4_vmyb1"]
 [ext_resource type="PackedScene" uid="uid://beahysk81t5al" path="res://Scenes/player_stats_menu.tscn" id="5_vmyb1"]
 
@@ -87,11 +87,10 @@ offset_bottom = 1080.0
 [node name="PanelContainer" type="NinePatchRect" parent="." unique_id=73315073]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 0
-offset_left = -32.0
-offset_top = -10.0
-offset_right = 485.0
-offset_bottom = 1090.0
-texture = ExtResource("3_1och7")
+offset_left = -33.0
+offset_right = 477.0
+offset_bottom = 1080.0
+texture = ExtResource("3_vmyb1")
 patch_margin_left = 60
 patch_margin_top = 60
 patch_margin_right = 60
@@ -130,10 +129,10 @@ text = "Equipment"
 
 [node name="PlayerStatsMenu" parent="PanelContainer/VBoxContainer/Equipment" unique_id=623914126 instance=ExtResource("5_vmyb1")]
 layout_mode = 0
-offset_left = 1577.0
-offset_top = 614.0
-offset_right = 1894.0
-offset_bottom = 940.0
+offset_left = 1580.0
+offset_top = 606.0
+offset_right = 1897.0
+offset_bottom = 932.0
 
 [node name="Settings" type="Button" parent="PanelContainer/VBoxContainer" unique_id=1376550828]
 layout_mode = 2

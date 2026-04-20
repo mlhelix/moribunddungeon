@@ -23,7 +23,7 @@ func _ready() -> void:
 	mgd_value.text = str(player_stats.magdef)
 	res_value.text = str(player_stats.resist)
 	crit_value.text = str(player_stats.crit)
-	pass
+	player_stats.health_changed.connect(update_hp)
 
 
 func update_stats():
@@ -35,7 +35,10 @@ func update_stats():
 	mgd_value.text = str(player_stats.magdef)
 	res_value.text = str(player_stats.resist)
 	crit_value.text = str(player_stats.crit)
-	pass
+
+
+func update_hp(newHealth, maxHealth):
+	hp_value.text = str(newHealth) + "/" + str(maxHealth)
 
 
 func change_hp(newValue):

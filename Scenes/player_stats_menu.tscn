@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://bn6p3y5dqip6v" path="res://Scripts/menu_stat_values.gd" id="1_4i724"]
 [ext_resource type="Theme" uid="uid://b1glnlol0o36p" path="res://assets/panelstheme.tres" id="2_1g1xw"]
 [ext_resource type="Resource" uid="uid://b3xnkkm1v444m" path="res://Scripts/Global/player_stats.tres" id="2_887e1"]
-[ext_resource type="Texture2D" uid="uid://c03bu6pgiyjrv" path="res://assets/Panels.png" id="3_akoub"]
+[ext_resource type="Texture2D" uid="uid://bbqplm021igbk" path="res://assets/Panels-small.png" id="4_887e1"]
 
 [sub_resource type="Animation" id="Animation_1g1xw"]
 length = 0.001
@@ -31,7 +31,7 @@ layout_mode = 0
 offset_right = 315.0
 offset_bottom = 324.0
 theme = ExtResource("2_1g1xw")
-texture = ExtResource("3_akoub")
+texture = ExtResource("4_887e1")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer" unique_id=1132136598]
 layout_mode = 0

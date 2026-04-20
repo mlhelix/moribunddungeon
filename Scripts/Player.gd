@@ -2,13 +2,10 @@ extends CharacterBody2D
 class_name Player
 
 @export var player_stats: PlayerStats
-#@export var inventory: Inventory
 
 @onready var healthBar = $"../HUD/HealthBar"
 @onready var animated_sprite = $"AnimatedSprite2D"
 @onready var ui_interact = $InteractUI
-#@onready var inventory_ui = $InventoryUI
-#@onready var mystatsmenu = $"../PauseMenuLayer/Equipment"
 
 var SPEED = 450.0
 const JUMP_VELOCITY = -600.0
@@ -33,7 +30,6 @@ func _physics_process(delta: float) -> void:
 		velocity.x = direction * SPEED
 		$AnimatedSprite2D.play("running")
 		$AnimatedSprite2D.flip_h = direction < 0
-		#animated_sprite.flip_h = direction < 0
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		$AnimatedSprite2D.play("standingidle")

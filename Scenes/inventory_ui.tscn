@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bnvaew7oovd3c"]
 
-[ext_resource type="Texture2D" uid="uid://c03bu6pgiyjrv" path="res://assets/Panels.png" id="1_8su62"]
 [ext_resource type="Script" uid="uid://dbs7vdb7i224a" path="res://Scripts/Global/inventory_ui.gd" id="1_os1l6"]
+[ext_resource type="Texture2D" uid="uid://bbqplm021igbk" path="res://assets/Panels-small.png" id="2_os1l6"]
 
 [node name="Inventory_UI" type="Control" unique_id=1582478301]
 process_mode = 3
@@ -32,7 +32,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture = ExtResource("1_8su62")
+texture = ExtResource("2_os1l6")
 patch_margin_left = 60
 patch_margin_top = 60
 patch_margin_right = 60
