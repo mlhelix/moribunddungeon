@@ -129,10 +129,17 @@ text = "Equipment"
 
 [node name="PlayerStatsMenu" parent="PanelContainer/VBoxContainer/Equipment" unique_id=623914126 instance=ExtResource("5_vmyb1")]
 layout_mode = 0
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
 offset_left = 1580.0
-offset_top = 606.0
+offset_top = 684.0
 offset_right = 1897.0
-offset_bottom = 932.0
+offset_bottom = 933.0
+grow_horizontal = 1
+grow_vertical = 1
 
 [node name="Settings" type="Button" parent="PanelContainer/VBoxContainer" unique_id=1376550828]
 layout_mode = 2

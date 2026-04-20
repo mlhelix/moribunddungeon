@@ -22,12 +22,12 @@ config/icon="res://icon.svg"
 [autoload]
 
 GlobalManager="*uid://e4i7icifuqps"
+SceneTransition="*uid://cxu1wremp0bav"
 
 [display]
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
-window/size/resizable=false
 window/size/borderless=true
 window/stretch/mode="canvas_items"
 

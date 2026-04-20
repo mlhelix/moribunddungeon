@@ -11,7 +11,7 @@ signal attack_changed(new_attack)
 #signal magdef_changed(new_magdef)
 #signal resist_changed(new_resist)
 #signal crit_changed(new_crit)
-#signal currency_changed(new_curr)
+signal currency_changed(new_curr: int)
 
 
 @export var max_health: int = 100
@@ -53,6 +53,10 @@ func heal_damage(heal:int) -> void:
 func _change_attack(atk):
 	attack += attack + atk
 	attack_changed.emit()
+	
+func _change_currency(curr: int):
+	currency += curr
+	currency_changed.emit()
 
 func _on_health_set(new_value: int) -> void:
 	health = clampi(new_value, 0, max_health)

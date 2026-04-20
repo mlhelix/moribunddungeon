@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://cxu1wremp0bav"]
+
+[ext_resource type="Script" uid="uid://2p2rx7tf6533" path="res://Scripts/scene_transition.gd" id="1_crfs3"]
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=1909384493]
+process_mode = 3
+script = ExtResource("1_crfs3")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1145578021]
+modulate = Color(1, 1, 1, 0)
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0, 0, 0, 1)
