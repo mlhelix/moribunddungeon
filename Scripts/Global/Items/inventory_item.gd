@@ -6,7 +6,7 @@ extends Node2D
 @export var item_name = ""
 @export var item_texture = Texture
 @export var item_effect = ""
-#@export var item_quantity = 1
+@export var item_quantity = 1
 var scene_path: String = "res://Scenes/inventory_item.tscn"
 
 @onready var icon_sprite = $Sprite2D
@@ -31,7 +31,7 @@ func _process(_delta):
 
 func pickup_item():
 	var item = {
-		"quantity" : 1,
+		"quantity" : item_quantity,
 		"item_type" : item_type,
 		"item_name" : item_name,
 		"item_texture" : item_texture,
@@ -48,12 +48,13 @@ func set_item_data(data):
 	item_texture = data["item_texture"]
 	item_effect = data["item_effect"]
 	scene_path = data["scene_path"]
-#	item_quantity = data["quantity"]
+	item_quantity = data["quantity"]
 
 func _on_area_2d_body_entered(body):
 	if body.is_in_group("Player"):
 		player_in_range = true
 		body.ui_interact.visible = true
+		body._ui_interact("Press \"E\" to pick up")
 
 
 func _on_area_2d_body_exited(body):

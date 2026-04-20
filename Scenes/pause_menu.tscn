@@ -5,6 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://bbqplm021igbk" path="res://assets/Panels-small.png" id="3_vmyb1"]
 [ext_resource type="PackedScene" uid="uid://bnvaew7oovd3c" path="res://Scenes/inventory_ui.tscn" id="4_vmyb1"]
 [ext_resource type="PackedScene" uid="uid://beahysk81t5al" path="res://Scenes/player_stats_menu.tscn" id="5_vmyb1"]
+[ext_resource type="PackedScene" uid="uid://4b400jo5cgvm" path="res://Scenes/currency_menu.tscn" id="6_myy0f"]
+[ext_resource type="Resource" uid="uid://b3xnkkm1v444m" path="res://Scripts/Global/player_stats.tres" id="7_sjs17"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_k0w1u"]
 shader = ExtResource("1_emv3i")
@@ -32,6 +34,18 @@ tracks/1/path = NodePath("PanelContainer:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Currency:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
@@ -65,6 +79,18 @@ tracks/1/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Currency:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vmyb1"]
 _data = {
@@ -72,21 +98,17 @@ _data = {
 &"blur": SubResource("Animation_bpi0q")
 }
 
-[node name="Pause Menu" type="Control" unique_id=1849434806]
+[node name="Pause Menu" type="CanvasLayer" unique_id=1146775961]
 process_mode = 3
-layout_mode = 3
-anchors_preset = 0
 script = ExtResource("1_k0w1u")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=675856382]
 material = SubResource("ShaderMaterial_k0w1u")
-layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
 
 [node name="PanelContainer" type="NinePatchRect" parent="." unique_id=73315073]
 modulate = Color(1, 1, 1, 0)
-layout_mode = 0
 offset_left = -33.0
 offset_right = 477.0
 offset_bottom = 1080.0
@@ -154,6 +176,14 @@ focus_next = NodePath("../Resume")
 focus_previous = NodePath("../Settings")
 theme_override_font_sizes/font_size = 24
 text = "Quit"
+
+[node name="Currency" parent="." unique_id=179303436 instance=ExtResource("6_myy0f")]
+modulate = Color(1, 1, 1, 0)
+offset_left = 709.0
+offset_top = -538.0
+offset_right = 957.0
+offset_bottom = -466.0
+player_stats = ExtResource("7_sjs17")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=286674761]
 libraries/ = SubResource("AnimationLibrary_vmyb1")

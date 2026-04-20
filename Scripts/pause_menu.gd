@@ -1,4 +1,4 @@
-extends Control
+extends CanvasLayer
 
 #@export var equip_menu: Stats_Menu
 var equip_is_open = false

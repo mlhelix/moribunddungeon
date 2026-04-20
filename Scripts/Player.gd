@@ -6,6 +6,7 @@ class_name Player
 @onready var healthBar = $"../HUD/HealthBar"
 @onready var animated_sprite = $"AnimatedSprite2D"
 @onready var ui_interact = $InteractUI
+@onready var ui_interact_label = $InteractUI/ColorRect/Label
 
 var SPEED = 450.0
 const JUMP_VELOCITY = -600.0
@@ -60,6 +61,8 @@ func heal_damage(heal:int):
 #func add_item(item:Item):
 	##inventory.add_item(item)
 	#pass
+func change_currency(amt: int):
+	player_stats._change_currency(amt)
 
 func apply_item_effect(item):
 	match item["item_name"]:
@@ -67,7 +70,9 @@ func apply_item_effect(item):
 			heal_damage(20)
 		"Slot":
 			GlobalManager.increase_inventory_size(5)
+			
+func _ui_interact(text: String):
+	ui_interact_label.text = text
 
 func _on_exit_button_pressed() -> void:
 	get_tree().quit()
-	pass # Replace with function body.

@@ -1,0 +1,120 @@
+[gd_scene format=3 uid="uid://dq4vtt3kvihap"]
+
+[ext_resource type="Script" uid="uid://clgsfhek5o1ek" path="res://Scripts/item_shop.gd" id="1_utmhw"]
+[ext_resource type="Texture2D" uid="uid://bbqplm021igbk" path="res://assets/Panels-small.png" id="2_ueo13"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p81q3"]
+size = Vector2(80, 60)
+
+[node name="ItemShop" type="Node2D" unique_id=756697672]
+script = ExtResource("1_utmhw")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=2102379685]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1841004892]
+shape = SubResource("RectangleShape2D_p81q3")
+debug_color = Color(0.76, 0.68729335, 0.1368, 0.41960785)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1788971961]
+
+[node name="PanelContainer" type="NinePatchRect" parent="CanvasLayer" unique_id=1244799250]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -497.0
+offset_top = -279.0
+offset_right = -45.0
+offset_bottom = -112.0
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("2_ueo13")
+patch_margin_left = 22
+patch_margin_top = 24
+patch_margin_right = 24
+patch_margin_bottom = 20
+
+[node name="PanelContainer2" type="NinePatchRect" parent="CanvasLayer" unique_id=320352656]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -497.0
+offset_top = -105.0
+offset_right = -45.0
+offset_bottom = 303.0
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("2_ueo13")
+patch_margin_left = 22
+patch_margin_top = 24
+patch_margin_right = 24
+patch_margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/PanelContainer2" unique_id=1045336273]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = -16.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/PanelContainer2/VBoxContainer" unique_id=291719740]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/PanelContainer2/VBoxContainer/HBoxContainer" unique_id=843857442]
+layout_mode = 2
+text = "icon"
+
+[node name="Label2" type="Label" parent="CanvasLayer/PanelContainer2/VBoxContainer/HBoxContainer" unique_id=1427064199]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Item Name"
+
+[node name="Label3" type="Label" parent="CanvasLayer/PanelContainer2/VBoxContainer/HBoxContainer" unique_id=1950994403]
+layout_mode = 2
+text = "0"
+horizontal_alignment = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer/PanelContainer2/VBoxContainer" unique_id=1156496530]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/PanelContainer2/VBoxContainer/HBoxContainer2" unique_id=1167990684]
+layout_mode = 2
+text = "icon"
+
+[node name="Label2" type="Label" parent="CanvasLayer/PanelContainer2/VBoxContainer/HBoxContainer2" unique_id=513653206]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Item Name"
+
+[node name="Label3" type="Label" parent="CanvasLayer/PanelContainer2/VBoxContainer/HBoxContainer2" unique_id=716148746]
+layout_mode = 2
+text = "0"
+horizontal_alignment = 2
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="CanvasLayer/PanelContainer2/VBoxContainer" unique_id=1400348155]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/PanelContainer2/VBoxContainer/HBoxContainer3" unique_id=1924883733]
+layout_mode = 2
+text = "icon"
+
+[node name="Label2" type="Label" parent="CanvasLayer/PanelContainer2/VBoxContainer/HBoxContainer3" unique_id=1017458708]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Item Name"
+
+[node name="Label3" type="Label" parent="CanvasLayer/PanelContainer2/VBoxContainer/HBoxContainer3" unique_id=1174161233]
+layout_mode = 2
+text = "0"
+horizontal_alignment = 2
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

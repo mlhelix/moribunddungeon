@@ -101,4 +101,4 @@ offset_right = 77.0
 offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
-text = "Press \"E\" to pick up!"
+text = "Press \"E\" to interact!"

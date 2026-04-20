@@ -3,6 +3,19 @@
 [ext_resource type="Texture2D" uid="uid://bbqplm021igbk" path="res://assets/Panels-small.png" id="1_w1nlx"]
 [ext_resource type="Script" uid="uid://b7dfxukgid4h1" path="res://Scripts/currency_menu.gd" id="2_qo18d"]
 
+[sub_resource type="Animation" id="Animation_qo18d"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_s0fjm"]
+resource_name = "fadein_out"
+length = 0.3
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hcjs3"]
+_data = {
+&"RESET": SubResource("Animation_qo18d"),
+&"fadein_out": SubResource("Animation_s0fjm")
+}
+
 [node name="Currency" type="NinePatchRect" unique_id=179303436]
 anchors_preset = 8
 anchor_left = 0.5
@@ -18,23 +31,17 @@ grow_vertical = 2
 texture = ExtResource("1_w1nlx")
 region_rect = Rect2(0, 0, 433, 433)
 patch_margin_left = 25
-patch_margin_top = 24
-patch_margin_right = 21
-patch_margin_bottom = 22
+patch_margin_top = 25
+patch_margin_right = 25
+patch_margin_bottom = 25
 script = ExtResource("2_qo18d")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1592600293]
-layout_mode = 1
-anchors_preset = 14
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = 21.0
-offset_top = -17.0
-offset_right = -21.0
-offset_bottom = 17.0
-grow_horizontal = 2
-grow_vertical = 2
+layout_mode = 0
+offset_left = 19.0
+offset_top = 19.0
+offset_right = 229.0
+offset_bottom = 53.0
 
 [node name="Number" type="Label" parent="HBoxContainer" unique_id=2122869577]
 layout_mode = 2
@@ -49,3 +56,6 @@ size_flags_horizontal = 8
 theme_override_font_sizes/font_size = 24
 text = "Gold"
 horizontal_alignment = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1178381820]
+libraries/ = SubResource("AnimationLibrary_hcjs3")

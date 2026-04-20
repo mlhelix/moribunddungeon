@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://ddjyckdqblov2" path="res://Scripts/damage_zone.gd" id="8_hrjto"]
 [ext_resource type="PackedScene" uid="uid://duhk5yrp2k3qa" path="res://Scenes/pause_menu.tscn" id="8_pawyy"]
 [ext_resource type="PackedScene" uid="uid://b3fd6efftjlv1" path="res://Scenes/health_bar_player.tscn" id="9_boqko"]
+[ext_resource type="PackedScene" uid="uid://dq4vtt3kvihap" path="res://Scenes/item_shop.tscn" id="9_n62sy"]
 [ext_resource type="Texture2D" uid="uid://ck68syfbobx7v" path="res://assets/Healthbar_BG.png" id="9_pawyy"]
 [ext_resource type="PackedScene" uid="uid://dug2bbj6efba4" path="res://Scenes/inventory_item.tscn" id="11_3hlc8"]
 [ext_resource type="Texture2D" uid="uid://dm2n6ukn0te5w" path="res://assets/Items_Potion01.png" id="12_l5du1"]
@@ -93,6 +94,9 @@ layer = 3
 [node name="Pause Menu" parent="PauseMenuLayer" unique_id=1878498693 instance=ExtResource("8_pawyy")]
 metadata/_edit_use_anchors_ = true
 
+[node name="ItemShop" parent="." unique_id=756697672 instance=ExtResource("9_n62sy")]
+position = Vector2(2065, 897)
+
 [node name="Player" parent="." unique_id=1761386539 instance=ExtResource("2_5hb0q")]
 position = Vector2(690, 731)
 
@@ -106,13 +110,14 @@ item_type = "Useable"
 item_name = "Potion"
 item_texture = ExtResource("12_l5du1")
 item_effect = "Heals 20 HP"
+item_quantity = 2
 
 [node name="Inventory_Item2" parent="." unique_id=870944494 instance=ExtResource("11_3hlc8")]
 position = Vector2(1221, 886)
 item_type = "Useable"
 item_name = "Potion"
 item_texture = ExtResource("12_l5du1")
-item_effect = "Stuff"
+item_effect = "Heals 20 HP"
 
 [connection signal="body_entered" from="DamageZone" to="DamageZone" method="_on_body_entered"]
 [connection signal="pressed" from="HUD/Exit Button" to="." method="_on_exit_button_pressed"]

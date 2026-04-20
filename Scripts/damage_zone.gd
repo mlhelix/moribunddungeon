@@ -19,6 +19,8 @@ func _on_body_entered(body) -> void:
 		var direction = global_position.direction_to(body.global_position)
 		var explosive_force = direction * knockback_strength
 		body.knockback = explosive_force
+		body.change_currency(-200)
+		
 		
 		#print("Inventory size: " + str(body.inventory.items.size()))
 		#print("OUCH! Add a potion!")

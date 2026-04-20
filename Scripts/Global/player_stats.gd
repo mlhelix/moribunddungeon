@@ -41,7 +41,7 @@ func setup_stats() -> void:
 
 func take_damage(damage:int) -> void:
 	var damage_value = clampi(damage - defense, 1, max_health)
-	current_health -= damage_value
+	current_health = clampi(current_health - damage_value, 0, max_health)
 	health_changed.emit(current_health, max_health)
 	if health <= 0:
 		health_depleted.emit()
@@ -55,8 +55,8 @@ func _change_attack(atk):
 	attack_changed.emit()
 	
 func _change_currency(curr: int):
-	currency += curr
-	currency_changed.emit()
+	currency = clampi(curr + currency, 0, 999999)
+	currency_changed.emit(currency)
 
 func _on_health_set(new_value: int) -> void:
 	health = clampi(new_value, 0, max_health)
