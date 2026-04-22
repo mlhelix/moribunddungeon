@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://0dt2ok3nrg1q"]
+
+[node name="shop_inventory_slot" type="Control" unique_id=1778954333]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="." unique_id=690351376]
+custom_minimum_size = Vector2(419, 40)
+layout_mode = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Button" unique_id=1684112313]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Button/HBoxContainer" unique_id=1844752761]
+custom_minimum_size = Vector2(36, 36)
+layout_mode = 2
+text = "icon"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="Button/HBoxContainer" unique_id=872878434]
+custom_minimum_size = Vector2(0, 36)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Item Name"
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="Button/HBoxContainer" unique_id=1850244255]
+custom_minimum_size = Vector2(80, 36)
+layout_mode = 2
+text = "0"
+horizontal_alignment = 2
+vertical_alignment = 1

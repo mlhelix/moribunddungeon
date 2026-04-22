@@ -55,63 +55,100 @@ patch_margin_bottom = 20
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/PanelContainer2" unique_id=1045336273]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 16.0
-offset_top = 16.0
-offset_right = -16.0
-offset_bottom = -16.0
+anchors_preset = -1
+anchor_left = 0.035
+anchor_top = 0.042000003
+anchor_right = 0.96500003
+anchor_bottom = 0.95800006
+offset_left = 1.1800003
+offset_top = -0.13600159
+offset_right = -1.1800232
+offset_bottom = 1.1359863
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/PanelContainer2/VBoxContainer" unique_id=291719740]
+[node name="Button" type="Button" parent="CanvasLayer/PanelContainer2/VBoxContainer" unique_id=1452222757]
+custom_minimum_size = Vector2(0, 36)
 layout_mode = 2
 
-[node name="Label" type="Label" parent="CanvasLayer/PanelContainer2/VBoxContainer/HBoxContainer" unique_id=843857442]
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/PanelContainer2/VBoxContainer/Button" unique_id=291719740]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/PanelContainer2/VBoxContainer/Button/HBoxContainer" unique_id=843857442]
+custom_minimum_size = Vector2(36, 0)
 layout_mode = 2
 text = "icon"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="Label2" type="Label" parent="CanvasLayer/PanelContainer2/VBoxContainer/HBoxContainer" unique_id=1427064199]
+[node name="Label2" type="Label" parent="CanvasLayer/PanelContainer2/VBoxContainer/Button/HBoxContainer" unique_id=1427064199]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Item Name"
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="CanvasLayer/PanelContainer2/VBoxContainer/Button/HBoxContainer" unique_id=1950994403]
+layout_mode = 2
+text = "0"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Button2" type="Button" parent="CanvasLayer/PanelContainer2/VBoxContainer" unique_id=2077792238]
+custom_minimum_size = Vector2(0, 36)
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer/PanelContainer2/VBoxContainer/Button2" unique_id=1156496530]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/PanelContainer2/VBoxContainer/Button2/HBoxContainer2" unique_id=1167990684]
+custom_minimum_size = Vector2(36, 0)
+layout_mode = 2
+text = "icon"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="CanvasLayer/PanelContainer2/VBoxContainer/Button2/HBoxContainer2" unique_id=513653206]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Item Name"
 
-[node name="Label3" type="Label" parent="CanvasLayer/PanelContainer2/VBoxContainer/HBoxContainer" unique_id=1950994403]
+[node name="Label3" type="Label" parent="CanvasLayer/PanelContainer2/VBoxContainer/Button2/HBoxContainer2" unique_id=716148746]
 layout_mode = 2
 text = "0"
 horizontal_alignment = 2
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer/PanelContainer2/VBoxContainer" unique_id=1156496530]
+[node name="Button3" type="Button" parent="CanvasLayer/PanelContainer2/VBoxContainer" unique_id=1078269343]
+custom_minimum_size = Vector2(0, 36)
 layout_mode = 2
 
-[node name="Label" type="Label" parent="CanvasLayer/PanelContainer2/VBoxContainer/HBoxContainer2" unique_id=1167990684]
+[node name="HBoxContainer3" type="HBoxContainer" parent="CanvasLayer/PanelContainer2/VBoxContainer/Button3" unique_id=1400348155]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/PanelContainer2/VBoxContainer/Button3/HBoxContainer3" unique_id=1924883733]
+custom_minimum_size = Vector2(36, 0)
 layout_mode = 2
 text = "icon"
 
-[node name="Label2" type="Label" parent="CanvasLayer/PanelContainer2/VBoxContainer/HBoxContainer2" unique_id=513653206]
+[node name="Label2" type="Label" parent="CanvasLayer/PanelContainer2/VBoxContainer/Button3/HBoxContainer3" unique_id=1017458708]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Item Name"
 
-[node name="Label3" type="Label" parent="CanvasLayer/PanelContainer2/VBoxContainer/HBoxContainer2" unique_id=716148746]
-layout_mode = 2
-text = "0"
-horizontal_alignment = 2
-
-[node name="HBoxContainer3" type="HBoxContainer" parent="CanvasLayer/PanelContainer2/VBoxContainer" unique_id=1400348155]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="CanvasLayer/PanelContainer2/VBoxContainer/HBoxContainer3" unique_id=1924883733]
-layout_mode = 2
-text = "icon"
-
-[node name="Label2" type="Label" parent="CanvasLayer/PanelContainer2/VBoxContainer/HBoxContainer3" unique_id=1017458708]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "Item Name"
-
-[node name="Label3" type="Label" parent="CanvasLayer/PanelContainer2/VBoxContainer/HBoxContainer3" unique_id=1174161233]
+[node name="Label3" type="Label" parent="CanvasLayer/PanelContainer2/VBoxContainer/Button3/HBoxContainer3" unique_id=1174161233]
 layout_mode = 2
 text = "0"
 horizontal_alignment = 2
