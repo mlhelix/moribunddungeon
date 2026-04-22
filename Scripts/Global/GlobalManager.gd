@@ -1,15 +1,30 @@
 extends Node
 
 signal inventory_updated
+signal shop_inventory_updated
 
 var stats = preload("res://Scripts/Global/player_stats.tres")
 var inventory = []
+#Main Hub Shop Inventory
+var shop_00_inventory = []
+
+#Items
+var item_potion = {
+		"quantity" : 1,
+		"item_type" : "Useable",
+		"item_name" : "Potion",
+		"item_texture" : "res://assets/Items_Potion01.png",
+		"item_effect" : "Heals 20 HP",
+		"scene_path" : "res://Scenes/inventory_item.tscn",
+		"item_price" : 100
+	}
 
 var player_node: Node = null
 @onready var inventory_slot_scene = preload("res://Scenes/player_inventory_slot.tscn")
 
 func _ready():
 	inventory.resize(21)
+	_init_shops()
 
 func add_item(item):
 	for i in range(inventory.size()):
@@ -45,10 +60,38 @@ func drop_item(item_data, drop_position):
 func adjust_drop_position(position):
 	return position
 
-
 func increase_inventory_size(extra_slots):
 	inventory.resize(inventory.size() + extra_slots)
 	inventory_updated.emit()
 
 func set_player_reference(player):
 	player_node = player
+
+func add_shop_item(item, shop_inv):
+	for i in range(shop_inv.size()):
+		#if shop_inv[i] != null and shop_inv[i]["item_type"] == item["item_type"] and shop_inv[i]["item_effect"] == item["item_effect"]:
+			#shop_inv[i]["quantity"] += item["quantity"]
+			#shop_inventory_updated.emit()
+			#return true
+		#elif shop_inv[i] == null:
+		if shop_inv[i] == null:
+			shop_inv[i] = item
+			shop_inventory_updated.emit()
+			return true
+		return false
+		
+func remove_shop_item(item_type, item_effect, shop_inv):
+	for i in range(shop_inv.size()):
+		if shop_inv[i] != null and shop_inv[i]["item_type"] == item_type and shop_inv[i]["item_effect"] == item_effect:
+			shop_inv[i]["quantity"] -= 1
+			if shop_inv[i]["quantity"] <= 0:
+				shop_inv[i] = null
+			shop_inventory_updated.emit()
+			return true
+	return false
+	
+func _init_shops():
+	#Shop 00
+	shop_00_inventory.resize(3)
+	for i in shop_00_inventory:
+		add_shop_item(item_potion, shop_00_inventory)

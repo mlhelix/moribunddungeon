@@ -7,6 +7,7 @@ extends Node2D
 @export var item_texture = Texture
 @export var item_effect = ""
 @export var item_quantity = 1
+@export var item_price = 0
 var scene_path: String = "res://Scenes/inventory_item.tscn"
 
 @onready var icon_sprite = $Sprite2D
@@ -36,7 +37,8 @@ func pickup_item():
 		"item_name" : item_name,
 		"item_texture" : item_texture,
 		"item_effect" : item_effect,
-		"scene_path" : scene_path
+		"scene_path" : scene_path,
+		"item_price" : item_price
 	}
 	if GlobalManager.player_node:
 		GlobalManager.add_item(item)
@@ -49,6 +51,7 @@ func set_item_data(data):
 	item_effect = data["item_effect"]
 	scene_path = data["scene_path"]
 	item_quantity = data["quantity"]
+	item_price = data["item_price"]
 
 func _on_area_2d_body_entered(body):
 	if body.is_in_group("Player"):

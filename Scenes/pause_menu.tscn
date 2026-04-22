@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://bnvaew7oovd3c" path="res://Scenes/inventory_ui.tscn" id="4_vmyb1"]
 [ext_resource type="PackedScene" uid="uid://beahysk81t5al" path="res://Scenes/player_stats_menu.tscn" id="5_vmyb1"]
 [ext_resource type="PackedScene" uid="uid://4b400jo5cgvm" path="res://Scenes/currency_menu.tscn" id="6_myy0f"]
-[ext_resource type="Resource" uid="uid://b3xnkkm1v444m" path="res://Scripts/Global/player_stats.tres" id="7_sjs17"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_k0w1u"]
 shader = ExtResource("1_emv3i")
@@ -183,7 +182,6 @@ offset_left = 709.0
 offset_top = -538.0
 offset_right = 957.0
 offset_bottom = -466.0
-player_stats = ExtResource("7_sjs17")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=286674761]
 libraries/ = SubResource("AnimationLibrary_vmyb1")

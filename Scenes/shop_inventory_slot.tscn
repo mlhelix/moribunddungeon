@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://0dt2ok3nrg1q"]
 
+[ext_resource type="Script" uid="uid://bgdhsgox3ncf4" path="res://Scenes/shop_inventory_slot.gd" id="1_rmn2s"]
+
 [node name="shop_inventory_slot" type="Control" unique_id=1778954333]
 layout_mode = 3
 anchors_preset = 15
@@ -7,6 +9,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_rmn2s")
 
 [node name="Button" type="Button" parent="." unique_id=690351376]
 custom_minimum_size = Vector2(419, 40)
@@ -20,23 +23,56 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="Button/HBoxContainer" unique_id=1844752761]
+[node name="Icon" type="PanelContainer" parent="Button/HBoxContainer" unique_id=1888451558]
 custom_minimum_size = Vector2(36, 36)
 layout_mode = 2
-text = "icon"
-horizontal_alignment = 1
-vertical_alignment = 1
 
-[node name="Label2" type="Label" parent="Button/HBoxContainer" unique_id=872878434]
+[node name="ItemIcon" type="Sprite2D" parent="Button/HBoxContainer/Icon" unique_id=1265377859]
+scale = Vector2(0.1, 0.1)
+
+[node name="ItemName" type="Label" parent="Button/HBoxContainer" unique_id=872878434]
 custom_minimum_size = Vector2(0, 36)
 layout_mode = 2
 size_flags_horizontal = 3
-text = "Item Name"
 vertical_alignment = 1
 
-[node name="Label3" type="Label" parent="Button/HBoxContainer" unique_id=1850244255]
+[node name="ItemPrice" type="Label" parent="Button/HBoxContainer" unique_id=1850244255]
 custom_minimum_size = Vector2(80, 36)
 layout_mode = 2
-text = "0"
+text = "0 G"
 horizontal_alignment = 2
 vertical_alignment = 1
+
+[node name="PurchasePanel" type="ColorRect" parent="." unique_id=1780348824]
+layout_mode = 0
+offset_top = -95.0
+offset_right = 140.0
+offset_bottom = -5.0
+color = Color(0.3647059, 0.27058825, 0.53333336, 1)
+
+[node name="PurchaseButton" type="Button" parent="PurchasePanel" unique_id=177245525]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = -5.0
+offset_bottom = 36.0
+grow_horizontal = 2
+text = "Purchase"
+
+[node name="CancelButton" type="Button" parent="PurchasePanel" unique_id=1952475911]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_top = -36.0
+offset_right = -5.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Cancel"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

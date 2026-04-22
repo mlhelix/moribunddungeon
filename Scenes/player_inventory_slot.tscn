@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://cxl4m1jlnf7wq"]
 
 [ext_resource type="Script" uid="uid://cnpf4swf5fqf5" path="res://Scripts/Global/player_inventory_slot.gd" id="1_gceos"]
-[ext_resource type="Texture2D" uid="uid://dm2n6ukn0te5w" path="res://assets/Items_Potion01.png" id="2_g80t3"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ysxd8"]
 
@@ -38,14 +37,12 @@ color = Color(0.2784, 0.232, 0.29, 1)
 [node name="ItemIcon" type="Sprite2D" parent="InnerBorder" unique_id=221738122]
 position = Vector2(35, 35)
 scale = Vector2(0.1, 0.1)
-texture = ExtResource("2_g80t3")
 
 [node name="ItemQuantity" type="Label" parent="InnerBorder" unique_id=325782837]
 layout_mode = 0
 offset_right = 24.0
 offset_bottom = 23.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.60784316)
-text = "1"
 
 [node name="ItemButton" type="Button" parent="." unique_id=5435042]
 layout_mode = 1

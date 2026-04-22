@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bbqplm021igbk" path="res://assets/Panels-small.png" id="1_w1nlx"]
 [ext_resource type="Script" uid="uid://b7dfxukgid4h1" path="res://Scripts/currency_menu.gd" id="2_qo18d"]
+[ext_resource type="Resource" uid="uid://b3xnkkm1v444m" path="res://Scripts/Global/player_stats.tres" id="3_s0fjm"]
 
 [sub_resource type="Animation" id="Animation_qo18d"]
 length = 0.001
@@ -35,6 +36,7 @@ patch_margin_top = 25
 patch_margin_right = 25
 patch_margin_bottom = 25
 script = ExtResource("2_qo18d")
+player_stats = ExtResource("3_s0fjm")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1592600293]
 layout_mode = 0
@@ -54,7 +56,7 @@ horizontal_alignment = 2
 layout_mode = 2
 size_flags_horizontal = 8
 theme_override_font_sizes/font_size = 24
-text = "Gold"
+text = " G"
 horizontal_alignment = 2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1178381820]
