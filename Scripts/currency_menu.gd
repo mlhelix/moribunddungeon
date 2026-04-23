@@ -1,16 +1,17 @@
 extends NinePatchRect
 
+@export var player_money: PlayerStats
 @onready var player_currency_value = $HBoxContainer/Number
-@export var player_stats: PlayerStats
 
 # Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	player_currency_value.text = str(player_stats.currency)
-	player_stats.currency_changed.connect(_change_currency)
+func _ready():
+	player_currency_value.text = str(GlobalManager.stats.currency)
+	player_money.currency_changed.connect(change_currency)
 
-func _change_currency(curr: int):
+func change_currency(curr):
+	print("My money? - ", player_currency_value)
 	player_currency_value.text = str(curr)
+	player_currency_value.text = str(player_money.currency)
+	print("curr = ", curr)
+	print("My money??! - ", player_currency_value)
 	
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta: float) -> void:
-	#pass

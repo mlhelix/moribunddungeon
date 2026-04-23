@@ -28,6 +28,7 @@ func pause():
 func esc_pressed():
 	$"PanelContainer/VBoxContainer/Equipment/PlayerStatsMenu".update_stats()
 	if Input.is_action_just_pressed("esc") and get_tree().paused == false:
+		$Currency/HBoxContainer/Number.text = str(GlobalManager.stats.currency)
 		hud_pos.offset.x += 518
 		pause()
 	elif Input.is_action_just_pressed("esc") and get_tree().paused == true:

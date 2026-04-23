@@ -5,7 +5,7 @@ extends Resource
 signal health_depleted
 signal health_changed(cur_health: int, maximum_health: int)
 signal sp_changed(cur_sp: int, maximum_sp: int)
-signal attack_changed(new_attack)
+signal attack_changed(new_attack: int)
 #signal defense_changed(new_defense)
 #signal magic_changed(new_magic)
 #signal magdef_changed(new_magdef)
@@ -24,7 +24,7 @@ signal currency_changed(new_curr: int)
 @export var magdef: int = 10
 @export var resist: int = 10
 @export var crit: int = 2
-@export var currency: int = 420
+@export var currency: int = 220
 
 #@export var current_dodge: int = 2
 
@@ -35,6 +35,10 @@ var sp: int = 0: set = _on_sp_set
 func _init() -> void:
 	setup_stats.call_deferred()
 	pass
+	
+func _did_it_work(new_val):
+	print("Did it work? - ", new_val)
+	
 	
 func setup_stats() -> void:
 	health = max_health
@@ -54,7 +58,7 @@ func _change_attack(atk):
 	attack += attack + atk
 	attack_changed.emit()
 	
-func _change_currency(curr: int):
+func _change_currency(curr:int):
 	currency = clampi(curr + currency, 0, 999999)
 	currency_changed.emit(currency)
 

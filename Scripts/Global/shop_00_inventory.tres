@@ -5,3 +5,4 @@
 
 [resource]
 script = ExtResource("2_h57vx")
+items = Array[ExtResource("1_um70b")]([null])

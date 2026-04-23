@@ -2,7 +2,11 @@
 
 [ext_resource type="Texture2D" uid="uid://bbqplm021igbk" path="res://assets/Panels-small.png" id="1_w1nlx"]
 [ext_resource type="Script" uid="uid://b7dfxukgid4h1" path="res://Scripts/currency_menu.gd" id="2_qo18d"]
-[ext_resource type="Resource" uid="uid://b3xnkkm1v444m" path="res://Scripts/Global/player_stats.tres" id="3_s0fjm"]
+[ext_resource type="Script" uid="uid://dqwi88cntmkq1" path="res://Scripts/Global/player_stats.gd" id="3_s0fjm"]
+
+[sub_resource type="Resource" id="Resource_hcjs3"]
+script = ExtResource("3_s0fjm")
+metadata/_custom_type_script = "uid://dqwi88cntmkq1"
 
 [sub_resource type="Animation" id="Animation_qo18d"]
 length = 0.001
@@ -36,7 +40,7 @@ patch_margin_top = 25
 patch_margin_right = 25
 patch_margin_bottom = 25
 script = ExtResource("2_qo18d")
-player_stats = ExtResource("3_s0fjm")
+player_money = SubResource("Resource_hcjs3")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1592600293]
 layout_mode = 0
@@ -61,3 +65,5 @@ horizontal_alignment = 2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1178381820]
 libraries/ = SubResource("AnimationLibrary_hcjs3")
+
+[connection signal="ready" from="." to="." method="_on_ready"]

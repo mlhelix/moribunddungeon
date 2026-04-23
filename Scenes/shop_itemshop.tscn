@@ -15,7 +15,11 @@ script = ExtResource("1_utmhw")
 shape = SubResource("RectangleShape2D_p81q3")
 debug_color = Color(0.76, 0.68729335, 0.1368, 0.41960785)
 
-[node name="StoreInventoryGUI" parent="." unique_id=1887999182 instance=ExtResource("2_t17jr")]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=791963242]
+process_mode = 3
+visible = false
+
+[node name="StoreInventoryGUI" parent="CanvasLayer" unique_id=1887999182 instance=ExtResource("2_t17jr")]
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

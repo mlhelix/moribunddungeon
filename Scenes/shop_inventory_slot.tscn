@@ -1,34 +1,44 @@
 [gd_scene format=3 uid="uid://0dt2ok3nrg1q"]
 
-[ext_resource type="Script" uid="uid://bgdhsgox3ncf4" path="res://Scenes/shop_inventory_slot.gd" id="1_rmn2s"]
+[ext_resource type="Script" uid="uid://bgdhsgox3ncf4" path="res://Scripts/Global/shop_inventory_slot.gd" id="1_rmn2s"]
+[ext_resource type="Resource" uid="uid://b3xnkkm1v444m" path="res://Scripts/Global/player_stats.tres" id="2_y4wi6"]
 
 [node name="shop_inventory_slot" type="Control" unique_id=1778954333]
+custom_minimum_size = Vector2(419, 40)
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+anchors_preset = 0
 script = ExtResource("1_rmn2s")
+player_stats = ExtResource("2_y4wi6")
 
 [node name="Button" type="Button" parent="." unique_id=690351376]
 custom_minimum_size = Vector2(419, 40)
-layout_mode = 0
+layout_mode = 1
+offset_right = 419.0
+offset_bottom = 40.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Button" unique_id=1684112313]
+custom_minimum_size = Vector2(419, 36)
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -209.5
+offset_top = -18.0
+offset_right = 209.5
+offset_bottom = 18.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 4
 
 [node name="Icon" type="PanelContainer" parent="Button/HBoxContainer" unique_id=1888451558]
 custom_minimum_size = Vector2(36, 36)
 layout_mode = 2
+size_flags_horizontal = 4
 
 [node name="ItemIcon" type="Sprite2D" parent="Button/HBoxContainer/Icon" unique_id=1265377859]
-scale = Vector2(0.1, 0.1)
+position = Vector2(18, 18)
 
 [node name="ItemName" type="Label" parent="Button/HBoxContainer" unique_id=872878434]
 custom_minimum_size = Vector2(0, 36)
@@ -39,11 +49,11 @@ vertical_alignment = 1
 [node name="ItemPrice" type="Label" parent="Button/HBoxContainer" unique_id=1850244255]
 custom_minimum_size = Vector2(80, 36)
 layout_mode = 2
-text = "0 G"
 horizontal_alignment = 2
 vertical_alignment = 1
 
 [node name="PurchasePanel" type="ColorRect" parent="." unique_id=1780348824]
+visible = false
 layout_mode = 0
 offset_top = -95.0
 offset_right = 140.0
@@ -59,6 +69,8 @@ offset_top = 5.0
 offset_right = -5.0
 offset_bottom = 36.0
 grow_horizontal = 2
+focus_next = NodePath(".")
+focus_previous = NodePath("../CancelButton")
 text = "Purchase"
 
 [node name="CancelButton" type="Button" parent="PurchasePanel" unique_id=1952475911]
@@ -73,6 +85,10 @@ offset_right = -5.0
 offset_bottom = -5.0
 grow_horizontal = 2
 grow_vertical = 0
+focus_next = NodePath("../PurchaseButton")
+focus_previous = NodePath("../PurchaseButton")
 text = "Cancel"
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="PurchasePanel/PurchaseButton" to="." method="_on_purchase_button_pressed"]
+[connection signal="pressed" from="PurchasePanel/CancelButton" to="." method="_on_cancel_button_pressed"]

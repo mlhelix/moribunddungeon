@@ -39,7 +39,7 @@ func set_empty():
 	
 func set_item(new_item):
 	slot_item = new_item
-	icon.texture = new_item["item_texture"]
+	icon.texture = slot_item["item_texture"]
 	quantity_label.text = str(slot_item["quantity"])
 	item_name.text = str(slot_item["item_name"])
 	item_type.text = str(slot_item["item_type"])

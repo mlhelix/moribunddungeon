@@ -26,4 +26,10 @@ func _on_area_2d_body_exited(body) -> void:
 		body.ui_interact.visible = false
 
 func open_sales_menu():
+	get_tree().paused = true
+	$CanvasLayer/StoreInventoryGUI/Currency/HBoxContainer/Number.text = str(GlobalManager.stats.currency)
+	$CanvasLayer.visible = !$CanvasLayer.visible
+	var getting_focus = $CanvasLayer/StoreInventoryGUI/ShopItems/VBoxContainer.get_child(0)
+	if getting_focus != null:
+		$CanvasLayer/StoreInventoryGUI/ShopItems/VBoxContainer.get_child(0).get_node("Button").grab_focus()
 	pass

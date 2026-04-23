@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://bra0qas1duesw"]
 
 [ext_resource type="Texture2D" uid="uid://bbqplm021igbk" path="res://assets/Panels-small.png" id="1_762mo"]
-[ext_resource type="Script" uid="uid://hidtvwofppdn" path="res://Scripts/shop_inventory_GUI.gd" id="1_qncrx"]
+[ext_resource type="Script" uid="uid://hidtvwofppdn" path="res://Scripts/shop_inventory_UI.gd" id="1_qncrx"]
+[ext_resource type="PackedScene" uid="uid://0dt2ok3nrg1q" path="res://Scenes/shop_inventory_slot.tscn" id="3_1i6k3"]
 [ext_resource type="PackedScene" uid="uid://4b400jo5cgvm" path="res://Scenes/currency_menu.tscn" id="3_r27vm"]
 
 [node name="StoreInventoryGUI" type="Control" unique_id=1887999182]
@@ -13,20 +14,18 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_qncrx")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=599789613]
-layer = 4
-
-[node name="ShopInfo" type="NinePatchRect" parent="CanvasLayer" unique_id=1436587261]
-anchors_preset = 6
-anchor_left = 1.0
+[node name="ShopInfo" type="NinePatchRect" parent="." unique_id=1436587261]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
 anchor_top = 0.5
-anchor_right = 1.0
+anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -497.0
+offset_left = 465.0
 offset_top = -279.0
-offset_right = -45.0
+offset_right = 917.0
 offset_bottom = -112.0
-grow_horizontal = 0
+grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_762mo")
 patch_margin_left = 22
@@ -34,17 +33,37 @@ patch_margin_top = 24
 patch_margin_right = 24
 patch_margin_bottom = 20
 
-[node name="ShopItems" type="NinePatchRect" parent="CanvasLayer" unique_id=1234795948]
-anchors_preset = 6
-anchor_left = 1.0
+[node name="Label" type="Label" parent="ShopInfo" unique_id=2093912051]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 20.0
+offset_right = 443.0
+offset_bottom = 102.0
+theme_override_font_sizes/font_size = 24
+text = "Welcome to the shop! Take any item 
+you like!"
+
+[node name="Label2" type="Label" parent="ShopInfo" unique_id=729445466]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 125.0
+offset_right = 437.0
+offset_bottom = 152.0
+text = "...So long as you have the money."
+horizontal_alignment = 2
+
+[node name="ShopItems" type="NinePatchRect" parent="." unique_id=1234795948]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
 anchor_top = 0.5
-anchor_right = 1.0
+anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -497.0
-offset_top = -105.0
-offset_right = -45.0
-offset_bottom = 303.0
-grow_horizontal = 0
+offset_left = 464.0
+offset_top = -103.0
+offset_right = 916.0
+offset_bottom = 305.0
+grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_762mo")
 patch_margin_left = 22
@@ -52,7 +71,7 @@ patch_margin_top = 24
 patch_margin_right = 24
 patch_margin_bottom = 20
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/ShopItems" unique_id=1057472634]
+[node name="VBoxContainer" type="VBoxContainer" parent="ShopItems" unique_id=1057472634]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.035
@@ -65,9 +84,25 @@ offset_right = -0.1800232
 offset_bottom = 1.1359863
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 4
 
-[node name="Currency" parent="CanvasLayer" unique_id=179303436 instance=ExtResource("3_r27vm")]
+[node name="shop_inventory_slot" parent="ShopItems/VBoxContainer" unique_id=1778954333 instance=ExtResource("3_1i6k3")]
+layout_mode = 2
+
+[node name="Currency" parent="." unique_id=179303436 instance=ExtResource("3_r27vm")]
+layout_mode = 1
 offset_left = 667.0
 offset_top = -359.0
 offset_right = 915.0
 offset_bottom = -287.0
+
+[node name="ExitShopButton" type="Button" parent="." unique_id=907523478]
+layout_mode = 0
+offset_left = 1768.0
+offset_top = 852.0
+offset_right = 1859.0
+offset_bottom = 894.0
+theme_override_font_sizes/font_size = 24
+text = "Leave"
+
+[connection signal="pressed" from="ExitShopButton" to="." method="_on_exit_shop_button_pressed"]
