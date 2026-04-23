@@ -61,6 +61,9 @@ func _process(_delta):
 
 func _on_equipment_pressed() -> void:
 	equip_is_open = true
+	var equipment_menu = $PanelContainer/VBoxContainer/Equipment/EquipmentUI
+	equipment_menu.visible = !equipment_menu.visible
+	equipment_menu._grab_focus()
 	#$PanelContainer/VBoxContainer/Equipment/PlayerInventoryGUI/AnimationPlayer.play("fade_inout")
 	#get_node("$PanelContainer/VBoxContainer/Equipment/PlayerStatsMenu")
 	#$"../Equipment".update_stats()

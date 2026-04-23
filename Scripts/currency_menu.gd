@@ -9,9 +9,9 @@ func _ready():
 	player_money.currency_changed.connect(change_currency)
 
 func change_currency(curr):
-	print("My money? - ", player_currency_value)
+	#print("My money? - ", player_currency_value)
 	player_currency_value.text = str(curr)
 	player_currency_value.text = str(player_money.currency)
-	print("curr = ", curr)
-	print("My money??! - ", player_currency_value)
+	#print("curr = ", curr)
+	#print("My money??! - ", player_currency_value)
 	

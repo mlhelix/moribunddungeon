@@ -1,7 +1,7 @@
 extends Control
 
-@onready var icon = $InnerBorder/ItemIcon
-@onready var quantity_label = $InnerBorder/ItemQuantity
+@onready var icon = $OuterBorder/InnerBorder/ItemIcon
+#@onready var quantity_label = $InnerBorder/ItemQuantity
 @onready var details_panel = $"Detail Panel"
 @onready var item_name = $"Detail Panel/ItemName"
 @onready var item_type = $"Detail Panel/ItemType"
@@ -36,7 +36,7 @@ func _on_item_button_focus_exited() -> void:
 	
 func set_empty():
 	icon.texture = null
-	quantity_label.text = ""
+#	quantity_label.text = ""
 
 func set_slot_type(new_type):
 	slot_type = new_type
@@ -44,7 +44,7 @@ func set_slot_type(new_type):
 func set_item(new_item):
 	slot_item = new_item
 	icon.texture = slot_item["item_texture"]
-	quantity_label.text = str(slot_item["quantity"])
+#	quantity_label.text = str(slot_item["quantity"])
 	item_name.text = str(slot_item["item_name"])
 	item_type.text = str(slot_item["item_type"])
 	if slot_item["item_effect"] != "":

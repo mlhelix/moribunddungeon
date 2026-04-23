@@ -12,19 +12,36 @@ func _on_inventory_updated():
 	clear_grid_container()
 	var count = 0
 	for item in GlobalManager.equipment:
-		if count == 0:
-			var slot = GlobalManager.equipment_slot_scene.instantiate()
-			slot.get_node("EquipmentSlot")
+		var slot = GlobalManager.equipment_slot_scene.instantiate()
+		if item == "Necklace":
 			necklace_container.add_child(slot)
-			_if_item(slot, item)
-		elif count == 1 or count == 2:
-			var slot = GlobalManager.equipment_slot_scene.instantiate()
+		elif item == "Bracelet L" or "Bracelet R":
 			brace_container.add_child(slot)
-			_if_item(slot, item)
-		elif count == 3 or count == 4: 
-			var slot = GlobalManager.equipment_slot_scene.instantiate()
+		elif item == "Ring 1" or "Ring 2":
 			ring_container.add_child(slot)
-			_if_item(slot, item)
+		if GlobalManager[item] != null:
+			slot.set_item(GlobalManager[item])
+		else:
+			slot.set_empty()
+		#if count == 0:
+			#var slot = GlobalManager.equipment_slot_scene.instantiate()
+			#slot.set_slot_type("Necklace")
+			#GlobalManager.equipment["Necklace"] = slot
+			#necklace_container.add_child(slot)
+			#_if_item(slot, GlobalManager.equipment[str(item)])
+		#elif count == 1 or count == 2:
+			#var slot = GlobalManager.equipment_slot_scene.instantiate()
+			#slot.set_slot_type("Bracelet")
+			#GlobalManager.equipment["Bracelet"] = slot
+			#brace_container.add_child(slot)
+			#_if_item(slot, item)
+		#elif count == 3 or count == 4: 
+			#var slot = GlobalManager.equipment_slot_scene.instantiate()
+			#slot.set_slot_type("Ring")
+			#GlobalManager.equipment["Ring"] = slot
+			#ring_container.add_child(slot)
+			#_if_item(slot, item)
+		count += 1
 
 func _if_item(slot, item):
 	if item != null:
