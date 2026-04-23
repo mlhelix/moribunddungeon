@@ -1,0 +1,142 @@
+[gd_scene format=3 uid="uid://drlhln70lty1b"]
+
+[ext_resource type="Script" uid="uid://dfuud14on78ev" path="res://Scripts/equipment_inventory_slot.gd" id="1_1lww3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bptat"]
+
+[node name="EquipmentSlot" type="Control" unique_id=1616000619]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1lww3")
+
+[node name="OuterBorder" type="ColorRect" parent="." unique_id=175651808]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 0
+color = Color(0.3647059, 0.27058825, 0.53333336, 1)
+
+[node name="InnerBorder" type="ColorRect" parent="OuterBorder" unique_id=833868652]
+custom_minimum_size = Vector2(36, 36)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -18.0
+offset_top = -18.0
+offset_right = 18.0
+offset_bottom = 18.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.2784, 0.232, 0.29, 1)
+
+[node name="ItemIcon" type="Sprite2D" parent="OuterBorder/InnerBorder" unique_id=650858218]
+position = Vector2(18, 18)
+scale = Vector2(0.1, 0.1)
+
+[node name="ItemButton" type="Button" parent="." unique_id=1148636794]
+custom_minimum_size = Vector2(36, 36)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -958.0
+offset_top = -538.0
+offset_right = -922.0
+offset_bottom = -502.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_bptat")
+
+[node name="UnequipPanel" type="ColorRect" parent="." unique_id=1492615758]
+visible = false
+layout_mode = 0
+offset_top = -95.0
+offset_right = 140.0
+offset_bottom = -5.0
+color = Color(0.3647059, 0.27058825, 0.53333336, 1)
+
+[node name="UnequipButton" type="Button" parent="UnequipPanel" unique_id=437989272]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = -5.0
+offset_bottom = 36.0
+grow_horizontal = 2
+text = "Unequip"
+
+[node name="CancelButton" type="Button" parent="UnequipPanel" unique_id=1584611798]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_top = -36.0
+offset_right = -5.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Cancel"
+
+[node name="Detail Panel" type="ColorRect" parent="." unique_id=1742746350]
+visible = false
+layout_mode = 0
+offset_top = -95.0
+offset_right = 294.0
+offset_bottom = -5.0
+color = Color(0.3647059, 0.27058825, 0.53333336, 1)
+
+[node name="ItemName" type="Label" parent="Detail Panel" unique_id=290905242]
+layout_mode = 1
+offset_left = 5.0
+offset_right = 45.0
+offset_bottom = 23.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.60784316)
+theme_override_font_sizes/font_size = 10
+text = "NAME"
+
+[node name="ItemType" type="Label" parent="Detail Panel" unique_id=2135786329]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 5.0
+offset_top = -11.5
+offset_right = 45.0
+offset_bottom = 11.5
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.60784316)
+theme_override_font_sizes/font_size = 10
+text = "TYPE"
+
+[node name="ItemEffect" type="Label" parent="Detail Panel" unique_id=1433468449]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_top = -23.0
+offset_right = 45.0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.78775924, 0.78775924, 0.78775924, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.60784316)
+theme_override_font_sizes/font_size = 10
+text = "EFFECT"
+
+[connection signal="focus_entered" from="ItemButton" to="." method="_on_item_button_focus_entered"]
+[connection signal="focus_exited" from="ItemButton" to="." method="_on_item_button_focus_exited"]
+[connection signal="mouse_entered" from="ItemButton" to="." method="_on_item_button_mouse_entered"]
+[connection signal="mouse_exited" from="ItemButton" to="." method="_on_item_button_mouse_exited"]
+[connection signal="pressed" from="ItemButton" to="." method="_on_item_button_pressed"]
+[connection signal="pressed" from="UnequipPanel/UnequipButton" to="." method="_on_unequip_button_pressed"]
+[connection signal="pressed" from="UnequipPanel/CancelButton" to="." method="_on_cancel_button_pressed"]

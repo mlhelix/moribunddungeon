@@ -32,7 +32,7 @@ var item_potion = {
 var player_node: Node = null
 @onready var inventory_slot_scene = preload("res://Scenes/player_inventory_slot.tscn")
 @onready var shop_slot_scene = preload("res://Scenes/shop_inventory_slot.tscn")
-#@onready var equipment_slot_scene = preload("res://Scenes/equipment_inventory_slot.tscn")
+@onready var equipment_slot_scene = preload("res://Scenes/equipment_inventory_slot.tscn")
 
 func _ready():
 	inventory.resize(21)
@@ -61,7 +61,13 @@ func remove_item(item_type, item_effect):
 			inventory_updated.emit()
 			return true
 	return false
-
+	
+func unequip_(item):
+	
+	add_item(item)
+	equipment_updated.emit()
+	pass
+	
 func drop_item(item_data, drop_position):
 	var item_scene = load(item_data["scene_path"])
 	var item_instance = item_scene.instantiate()
@@ -72,7 +78,7 @@ func drop_item(item_data, drop_position):
 	if "Equipment:" in item_instance["item_type"]:
 		item_instance.get_node("Rarity").visible = true
 		item_instance.get_node("Rarity").play("default")
-
+	inventory_updated.emit()
 
 func adjust_drop_position(position):
 	return position
@@ -106,6 +112,7 @@ func remove_shop_item(item_pos, shop_inv):
 			#shop_inventory_updated.emit()
 			#return true
 	return false
+
 
 func _init_shops():
 	_init_shops_00(shop_00_inventory)
