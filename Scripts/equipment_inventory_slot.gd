@@ -43,7 +43,7 @@ func set_slot_type(new_type):
 	
 func set_item(new_item):
 	slot_item = new_item
-	icon.texture = slot_item["item_texture"]
+s	icon.texture = slot_item["item_texture"]
 #	quantity_label.text = str(slot_item["quantity"])
 	item_name.text = str(slot_item["item_name"])
 	item_type.text = str(slot_item["item_type"])
