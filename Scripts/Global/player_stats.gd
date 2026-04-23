@@ -1,16 +1,17 @@
 class_name PlayerStats
 extends Resource
-
+#Make into a List or Definition
+#Above creates ease of use for curses
 
 signal health_depleted
 signal health_changed(cur_health: int, maximum_health: int)
 signal sp_changed(cur_sp: int, maximum_sp: int)
 signal attack_changed(new_attack: int)
-#signal defense_changed(new_defense)
-#signal magic_changed(new_magic)
-#signal magdef_changed(new_magdef)
-#signal resist_changed(new_resist)
-#signal crit_changed(new_crit)
+signal defense_changed(new_defense)
+signal magic_changed(new_magic)
+signal magdef_changed(new_magdef)
+signal resist_changed(new_resist)
+signal crit_changed(new_crit)
 signal currency_changed(new_curr: int)
 
 
@@ -54,10 +55,30 @@ func heal_damage(heal:int) -> void:
 	health = current_health + heal
 	health_changed.emit(current_health, max_health)
 
-func _change_attack(atk):
-	attack += attack + atk
-	attack_changed.emit()
-	
+func _change_attack(val:int):
+	attack += val
+	attack_changed.emit(attack)
+
+func _change_defense(val:int):
+	defense += val
+	defense_changed.emit(attack)
+
+func _change_magic(val:int):
+	magic += val
+	magic_changed.emit(attack)
+
+func _change_magdef(val:int):
+	magdef += val
+	magdef_changed.emit(attack)
+
+func _change_resist(val:int):
+	resist += val
+	resist_changed.emit(attack)
+
+func _change_crit(val:int):
+	crit += val
+	crit_changed.emit(attack)
+
 func _change_currency(curr:int):
 	currency = clampi(curr + currency, 0, 999999)
 	currency_changed.emit(currency)

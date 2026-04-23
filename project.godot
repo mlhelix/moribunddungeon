@@ -35,6 +35,8 @@ window/stretch/mode="canvas_items"
 
 Items=""
 Player=""
+Equipment="Player equippable Items"
+Enemy=""
 
 [input]
 
@@ -89,4 +91,4 @@ ui_add={
 
 [physics]
 
-2d/default_gravity=1080.0
+2d/default_gravity=2080.0

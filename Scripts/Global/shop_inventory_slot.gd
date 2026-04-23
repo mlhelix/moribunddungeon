@@ -60,6 +60,7 @@ func _on_purchase_button_pressed() -> void:
 		#full_buttons.get_children()[0].get_node("Button").grab_focus()
 		if full_buttons.get_child(0) != null:
 			full_buttons.get_child(0).get_node("Button").grab_focus()
+		self.queue_free()
 	else:
 		$PurchasePanel.visible = !$PurchasePanel.visible
 		pass

@@ -1,0 +1,177 @@
+[gd_scene format=3 uid="uid://dh5hkoesq2g1m"]
+
+[ext_resource type="Script" uid="uid://5o0p8v6ifeem" path="res://Scripts/equipment_item.gd" id="1_mvjdx"]
+[ext_resource type="Texture2D" uid="uid://c3aj2hvplyrx4" path="res://assets/Rarity Glow/Common/Rarity Glow Common_0000.png" id="2_okdeh"]
+[ext_resource type="Texture2D" uid="uid://b5temvnp7r1a7" path="res://assets/Rarity Glow/Common/Rarity Glow Common_0001.png" id="3_i75f2"]
+[ext_resource type="Texture2D" uid="uid://dx7h4q4xm3w0u" path="res://assets/Rarity Glow/Common/Rarity Glow Common_0002.png" id="4_ado5s"]
+[ext_resource type="Texture2D" uid="uid://isnxiahmglbw" path="res://assets/Rarity Glow/Common/Rarity Glow Common_0003.png" id="5_btqqx"]
+[ext_resource type="Texture2D" uid="uid://baoq6iwfqrj6l" path="res://assets/Rarity Glow/Common/Rarity Glow Common_0004.png" id="6_4ntmo"]
+[ext_resource type="Texture2D" uid="uid://bicd32ktr5wpy" path="res://assets/Rarity Glow/Common/Rarity Glow Common_0005.png" id="7_fc3f7"]
+[ext_resource type="Texture2D" uid="uid://bgyw87goslld3" path="res://assets/Rarity Glow/Common/Rarity Glow Common_0006.png" id="8_4vcpa"]
+[ext_resource type="Texture2D" uid="uid://b7y3xba3hvs5t" path="res://assets/Rarity Glow/Common/Rarity Glow Common_0007.png" id="9_47d5v"]
+[ext_resource type="Texture2D" uid="uid://hwh8gwjpe52r" path="res://assets/Rarity Glow/Common/Rarity Glow Common_0008.png" id="10_rjq38"]
+[ext_resource type="Texture2D" uid="uid://dqtl1lv6aj33h" path="res://assets/Rarity Glow/Common/Rarity Glow Common_0009.png" id="11_b81k1"]
+[ext_resource type="Texture2D" uid="uid://c2evk6cq1jk51" path="res://assets/Rarity Glow/Common/Rarity Glow Common_0010.png" id="12_keuwt"]
+[ext_resource type="Texture2D" uid="uid://bkf510if4rj43" path="res://assets/Rarity Glow/Common/Rarity Glow Common_0011.png" id="13_4e1v1"]
+[ext_resource type="Texture2D" uid="uid://8rrdmnm5nld5" path="res://assets/Rarity Glow/Common/Rarity Glow Common_0012.png" id="14_j4uq8"]
+[ext_resource type="Texture2D" uid="uid://dje38oqigf0s1" path="res://assets/Rarity Glow/Common/Rarity Glow Common_0013.png" id="15_vh3ob"]
+[ext_resource type="Texture2D" uid="uid://covtpn3184ahx" path="res://assets/Rarity Glow/Common/Rarity Glow Common_0014.png" id="16_vxa6y"]
+[ext_resource type="Texture2D" uid="uid://dc4siq8l5wh66" path="res://assets/Rarity Glow/Common/Rarity Glow Common_0015.png" id="17_e3dkc"]
+[ext_resource type="Texture2D" uid="uid://bi6qgmxju28sd" path="res://assets/Rarity Glow/Common/Rarity Glow Common_0016.png" id="18_oc0q8"]
+[ext_resource type="Texture2D" uid="uid://ctwj1q0ydsw34" path="res://assets/Rarity Glow/Common/Rarity Glow Common_0017.png" id="19_ou42h"]
+[ext_resource type="Texture2D" uid="uid://miovqwml7yu1" path="res://assets/Rarity Glow/Common/Rarity Glow Common_0018.png" id="20_f73ru"]
+[ext_resource type="Texture2D" uid="uid://ukallhqp8e2p" path="res://assets/Rarity Glow/Common/Rarity Glow Common_0019.png" id="21_bxdbi"]
+[ext_resource type="Texture2D" uid="uid://2ubnl5rntyg6" path="res://assets/Rarity Glow/Common/Rarity Glow Common_0020.png" id="22_cgqn8"]
+[ext_resource type="Texture2D" uid="uid://drc4lhqe2hxyp" path="res://assets/Rarity Glow/Common/Rarity Glow Common_0021.png" id="23_hq1g3"]
+[ext_resource type="Texture2D" uid="uid://dj5pnn2calvh8" path="res://assets/Rarity Glow/Common/Rarity Glow Common_0022.png" id="24_c43wk"]
+[ext_resource type="Texture2D" uid="uid://s4daqhb5wgbd" path="res://assets/Rarity Glow/Common/Rarity Glow Common_0023.png" id="25_gbp6g"]
+[ext_resource type="Texture2D" uid="uid://b5iphkuq2spq8" path="res://assets/Rarity Glow/Common/Rarity Glow Common_0024.png" id="26_mbpa4"]
+[ext_resource type="Texture2D" uid="uid://7nd0bggcdtnw" path="res://assets/Rarity Glow/Common/Rarity Glow Common_0025.png" id="27_x6mgs"]
+[ext_resource type="Texture2D" uid="uid://bq7rqp7svhys6" path="res://assets/Rarity Glow/Common/Rarity Glow Common_0026.png" id="28_mcqme"]
+[ext_resource type="Texture2D" uid="uid://bebuhb7jyl4k" path="res://assets/Rarity Glow/Common/Rarity Glow Common_0027.png" id="29_eaprw"]
+[ext_resource type="Texture2D" uid="uid://raoamaccxsid" path="res://assets/Rarity Glow/Common/Rarity Glow Common_0028.png" id="30_2bcd0"]
+[ext_resource type="Texture2D" uid="uid://dyyivcfqnd0ja" path="res://assets/Rarity Glow/Common/Rarity Glow Common_0029.png" id="31_fgqnw"]
+[ext_resource type="Texture2D" uid="uid://c0jnivctkjygf" path="res://assets/Rarity Glow/Common/Rarity Glow Common_0030.png" id="32_iloyq"]
+[ext_resource type="Texture2D" uid="uid://dfrq8y51sp83k" path="res://assets/Rarity Glow/Common/Rarity Glow Common_0031.png" id="33_yb538"]
+[ext_resource type="Texture2D" uid="uid://b2nhuoodgiv6k" path="res://assets/Rarity Glow/Common/Rarity Glow Common_0032.png" id="34_salnn"]
+[ext_resource type="Texture2D" uid="uid://cipd841lih7iy" path="res://assets/Rarity Glow/Common/Rarity Glow Common_0033.png" id="35_02gm1"]
+[ext_resource type="Texture2D" uid="uid://b5rhy2bnfma60" path="res://assets/Rarity Glow/Common/Rarity Glow Common_0034.png" id="36_pkfb8"]
+[ext_resource type="Texture2D" uid="uid://b58jpadf0m06u" path="res://assets/Rarity Glow/Common/Rarity Glow Common_0035.png" id="37_tbctg"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_n3a3i"]
+radius = 13.0
+height = 28.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1tgxo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_okdeh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_i75f2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ado5s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_btqqx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_4ntmo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_fc3f7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_4vcpa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_47d5v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_rjq38")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_b81k1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_keuwt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_4e1v1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_j4uq8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_vh3ob")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_vxa6y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_e3dkc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_oc0q8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_ou42h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_f73ru")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_bxdbi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_cgqn8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_hq1g3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_c43wk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_gbp6g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_mbpa4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_x6mgs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_mcqme")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_eaprw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_2bcd0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_fgqnw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_iloyq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_yb538")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_salnn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_02gm1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_pkfb8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_tbctg")
+}],
+"loop": true,
+"name": &"default",
+"speed": 24.0
+}]
+
+[node name="Equipment_Item" type="Node2D" unique_id=1819998663 groups=["Equipment"]]
+script = ExtResource("1_mvjdx")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1581525024]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1058699214]
+shape = SubResource("CapsuleShape2D_n3a3i")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1800128434]
+scale = Vector2(0.053333327, 0.053333327)
+
+[node name="Rarity" type="AnimatedSprite2D" parent="." unique_id=602969812]
+scale = Vector2(0.06333333, 0.06333333)
+sprite_frames = SubResource("SpriteFrames_1tgxo")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

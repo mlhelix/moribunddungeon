@@ -1,9 +1,309 @@
 [gd_scene format=3 uid="uid://okiwrru8omxb"]
 
-[node name="Equipment_UI" type="Control" unique_id=930149928]
+[ext_resource type="Texture2D" uid="uid://bbqplm021igbk" path="res://assets/Panels-small.png" id="1_n0re5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pu85d"]
+
+[node name="EquipmentUI" type="Control" unique_id=230443845]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=1474900985]
+layout_mode = 0
+offset_right = 321.0
+offset_bottom = 334.0
+texture = ExtResource("1_n0re5")
+
+[node name="Label" type="Label" parent="NinePatchRect" unique_id=2129527911]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_top = 15.0
+offset_right = 20.0
+offset_bottom = 38.0
+grow_horizontal = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.78431374)
+theme_override_font_sizes/font_size = 24
+text = "Equipment"
+
+[node name="EquipType" type="VBoxContainer" parent="NinePatchRect" unique_id=1948336511]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -143.5
+offset_top = -114.0
+offset_right = 143.5
+offset_bottom = 114.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="NecklaceRow" type="HBoxContainer" parent="NinePatchRect/EquipType" unique_id=1703194637]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="NinePatchRect/EquipType/NecklaceRow" unique_id=640606501]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.78431374)
+text = "Necklace"
+
+[node name="EquipSlot" type="HBoxContainer" parent="NinePatchRect/EquipType/NecklaceRow" unique_id=859320810]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="OuterBorder" type="ColorRect" parent="NinePatchRect/EquipType/NecklaceRow/EquipSlot" unique_id=588202294]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+color = Color(0.3647059, 0.27058825, 0.53333336, 1)
+
+[node name="InnerBorder" type="ColorRect" parent="NinePatchRect/EquipType/NecklaceRow/EquipSlot/OuterBorder" unique_id=654186709]
+custom_minimum_size = Vector2(36, 36)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -18.0
+offset_top = -18.0
+offset_right = 18.0
+offset_bottom = 18.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.2784, 0.232, 0.29, 1)
+
+[node name="ItemIcon" type="Sprite2D" parent="NinePatchRect/EquipType/NecklaceRow/EquipSlot/OuterBorder/InnerBorder" unique_id=802895383]
+position = Vector2(18, 18)
+scale = Vector2(0.1, 0.1)
+
+[node name="ItemButton" type="Button" parent="NinePatchRect/EquipType/NecklaceRow/EquipSlot/OuterBorder" unique_id=1512198465]
+custom_minimum_size = Vector2(36, 36)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -18.0
+offset_top = -18.0
+offset_right = 18.0
+offset_bottom = 18.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_pu85d")
+
+[node name="BraceleteRow" type="HBoxContainer" parent="NinePatchRect/EquipType" unique_id=1814485493]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="NinePatchRect/EquipType/BraceleteRow" unique_id=248361566]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.78431374)
+text = "Bracelets"
+
+[node name="EquipSlot1" type="HBoxContainer" parent="NinePatchRect/EquipType/BraceleteRow" unique_id=1338598350]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="OuterBorder" type="ColorRect" parent="NinePatchRect/EquipType/BraceleteRow/EquipSlot1" unique_id=2139522486]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+color = Color(0.3647059, 0.27058825, 0.53333336, 1)
+
+[node name="InnerBorder" type="ColorRect" parent="NinePatchRect/EquipType/BraceleteRow/EquipSlot1/OuterBorder" unique_id=1300374105]
+custom_minimum_size = Vector2(36, 36)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -18.0
+offset_top = -18.0
+offset_right = 18.0
+offset_bottom = 18.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.2784, 0.232, 0.29, 1)
+
+[node name="ItemIcon" type="Sprite2D" parent="NinePatchRect/EquipType/BraceleteRow/EquipSlot1/OuterBorder/InnerBorder" unique_id=1146733963]
+position = Vector2(18, 18)
+scale = Vector2(0.1, 0.1)
+
+[node name="ItemButton" type="Button" parent="NinePatchRect/EquipType/BraceleteRow/EquipSlot1/OuterBorder" unique_id=305186665]
+custom_minimum_size = Vector2(36, 36)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -18.0
+offset_top = -18.0
+offset_right = 18.0
+offset_bottom = 18.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_pu85d")
+
+[node name="EquipSlot2" type="HBoxContainer" parent="NinePatchRect/EquipType/BraceleteRow" unique_id=1480755597]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="OuterBorder" type="ColorRect" parent="NinePatchRect/EquipType/BraceleteRow/EquipSlot2" unique_id=1716948265]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+color = Color(0.3647059, 0.27058825, 0.53333336, 1)
+
+[node name="InnerBorder" type="ColorRect" parent="NinePatchRect/EquipType/BraceleteRow/EquipSlot2/OuterBorder" unique_id=952196739]
+custom_minimum_size = Vector2(36, 36)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -18.0
+offset_top = -18.0
+offset_right = 18.0
+offset_bottom = 18.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.2784, 0.232, 0.29, 1)
+
+[node name="ItemIcon" type="Sprite2D" parent="NinePatchRect/EquipType/BraceleteRow/EquipSlot2/OuterBorder/InnerBorder" unique_id=872033512]
+position = Vector2(18, 18)
+scale = Vector2(0.1, 0.1)
+
+[node name="ItemButton" type="Button" parent="NinePatchRect/EquipType/BraceleteRow/EquipSlot2/OuterBorder" unique_id=1133308583]
+custom_minimum_size = Vector2(36, 36)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -18.0
+offset_top = -18.0
+offset_right = 18.0
+offset_bottom = 18.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_pu85d")
+
+[node name="RingRow" type="HBoxContainer" parent="NinePatchRect/EquipType" unique_id=606027263]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="NinePatchRect/EquipType/RingRow" unique_id=553056332]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.78431374)
+text = "Rings"
+
+[node name="EquipSlot1" type="HBoxContainer" parent="NinePatchRect/EquipType/RingRow" unique_id=634139941]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="OuterBorder" type="ColorRect" parent="NinePatchRect/EquipType/RingRow/EquipSlot1" unique_id=377589325]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+color = Color(0.3647059, 0.27058825, 0.53333336, 1)
+
+[node name="InnerBorder" type="ColorRect" parent="NinePatchRect/EquipType/RingRow/EquipSlot1/OuterBorder" unique_id=895307561]
+custom_minimum_size = Vector2(36, 36)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -18.0
+offset_top = -18.0
+offset_right = 18.0
+offset_bottom = 18.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.2784, 0.232, 0.29, 1)
+
+[node name="ItemIcon" type="Sprite2D" parent="NinePatchRect/EquipType/RingRow/EquipSlot1/OuterBorder/InnerBorder" unique_id=1339139252]
+position = Vector2(18, 18)
+scale = Vector2(0.1, 0.1)
+
+[node name="ItemButton" type="Button" parent="NinePatchRect/EquipType/RingRow/EquipSlot1/OuterBorder" unique_id=15092642]
+custom_minimum_size = Vector2(36, 36)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -18.0
+offset_top = -18.0
+offset_right = 18.0
+offset_bottom = 18.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_pu85d")
+
+[node name="EquipSlot2" type="HBoxContainer" parent="NinePatchRect/EquipType/RingRow" unique_id=1742029600]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="OuterBorder" type="ColorRect" parent="NinePatchRect/EquipType/RingRow/EquipSlot2" unique_id=1173946133]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+color = Color(0.3647059, 0.27058825, 0.53333336, 1)
+
+[node name="InnerBorder" type="ColorRect" parent="NinePatchRect/EquipType/RingRow/EquipSlot2/OuterBorder" unique_id=624304556]
+custom_minimum_size = Vector2(36, 36)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -18.0
+offset_top = -18.0
+offset_right = 18.0
+offset_bottom = 18.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.2784, 0.232, 0.29, 1)
+
+[node name="ItemIcon" type="Sprite2D" parent="NinePatchRect/EquipType/RingRow/EquipSlot2/OuterBorder/InnerBorder" unique_id=361408897]
+position = Vector2(18, 18)
+scale = Vector2(0.1, 0.1)
+
+[node name="ItemButton" type="Button" parent="NinePatchRect/EquipType/RingRow/EquipSlot2/OuterBorder" unique_id=1919968988]
+custom_minimum_size = Vector2(36, 36)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -18.0
+offset_top = -18.0
+offset_right = 18.0
+offset_bottom = 18.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_pu85d")
+
+[node name="Button" type="Button" parent="NinePatchRect/EquipType" unique_id=791831850]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 10
+text = "Close"

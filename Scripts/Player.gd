@@ -9,7 +9,7 @@ class_name Player
 @onready var ui_interact_label = $InteractUI/ColorRect/Label
 
 var SPEED = 450.0
-const JUMP_VELOCITY = -600.0
+const JUMP_VELOCITY = -1000.0
 
 var knockback = Vector2.ZERO
 

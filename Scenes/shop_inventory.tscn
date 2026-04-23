@@ -40,8 +40,8 @@ offset_top = 20.0
 offset_right = 443.0
 offset_bottom = 102.0
 theme_override_font_sizes/font_size = 24
-text = "Welcome to the shop! Take any item 
-you like!"
+text = "Welcome to the shop!
+Take any item you'd like!"
 
 [node name="Label2" type="Label" parent="ShopInfo" unique_id=729445466]
 layout_mode = 0

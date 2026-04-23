@@ -1,10 +1,18 @@
 extends Node
 
 signal inventory_updated
+signal equipment_updated
 signal shop_inventory_updated
 
 var stats = preload("res://Scripts/Global/player_stats.tres")
 var inventory = []
+var equipment = {
+	"Necklace" : null,
+	"Bracelet L" : null,
+	"Bracelet R" : null,
+	"Ring 1" : null,
+	"Ring 2" : null
+}
 #Main Hub Shop Inventory
 var shop_00_inventory = []
 
@@ -24,9 +32,11 @@ var item_potion = {
 var player_node: Node = null
 @onready var inventory_slot_scene = preload("res://Scenes/player_inventory_slot.tscn")
 @onready var shop_slot_scene = preload("res://Scenes/shop_inventory_slot.tscn")
+#@onready var equipment_slot_scene = preload("res://Scenes/equipment_inventory_slot.tscn")
 
 func _ready():
 	inventory.resize(21)
+	#equipment.resize(6)
 	_init_shops()
 
 func add_item(item):
@@ -59,6 +69,10 @@ func drop_item(item_data, drop_position):
 	item_instance["item_quantity"] = 1
 	item_instance.global_position = drop_position
 	get_tree().current_scene.add_child(item_instance)
+	if "Equipment:" in item_instance["item_type"]:
+		item_instance.get_node("Rarity").visible = true
+		item_instance.get_node("Rarity").play("default")
+
 
 func adjust_drop_position(position):
 	return position

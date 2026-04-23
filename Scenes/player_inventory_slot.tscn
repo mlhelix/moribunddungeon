@@ -57,7 +57,7 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_ysxd8")
 visible = false
 layout_mode = 0
 offset_top = -95.0
-offset_right = 140.0
+offset_right = 294.0
 offset_bottom = -5.0
 color = Color(0.3647059, 0.27058825, 0.53333336, 1)
 
@@ -131,6 +131,39 @@ grow_horizontal = 2
 grow_vertical = 0
 text = "Drop"
 
+[node name="EquipPanel" type="ColorRect" parent="." unique_id=440422261]
+visible = false
+layout_mode = 0
+offset_top = -95.0
+offset_right = 140.0
+offset_bottom = -5.0
+color = Color(0.3647059, 0.27058825, 0.53333336, 1)
+
+[node name="EquipButton" type="Button" parent="EquipPanel" unique_id=1828628724]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = -5.0
+offset_bottom = 36.0
+grow_horizontal = 2
+text = "Equip"
+
+[node name="DropButton" type="Button" parent="EquipPanel" unique_id=843254180]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_top = -36.0
+offset_right = -5.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Drop"
+
 [connection signal="focus_entered" from="ItemButton" to="." method="_on_item_button_focus_entered"]
 [connection signal="focus_exited" from="ItemButton" to="." method="_on_item_button_focus_exited"]
 [connection signal="mouse_entered" from="ItemButton" to="." method="_on_item_button_mouse_entered"]
@@ -138,3 +171,5 @@ text = "Drop"
 [connection signal="pressed" from="ItemButton" to="." method="_on_item_button_pressed"]
 [connection signal="pressed" from="UsagePanel/UseButton" to="." method="_on_use_button_pressed"]
 [connection signal="pressed" from="UsagePanel/DropButton" to="." method="_on_drop_button_pressed"]
+[connection signal="pressed" from="EquipPanel/EquipButton" to="." method="_on_equip_button_pressed"]
+[connection signal="pressed" from="EquipPanel/DropButton" to="." method="_on_drop_button_pressed"]

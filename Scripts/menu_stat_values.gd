@@ -24,6 +24,7 @@ func _ready() -> void:
 	res_value.text = str(player_stats.resist)
 	crit_value.text = str(player_stats.crit)
 	player_stats.health_changed.connect(update_hp)
+	player_stats.attack_changed.connect(change_atk)
 
 
 func update_stats():

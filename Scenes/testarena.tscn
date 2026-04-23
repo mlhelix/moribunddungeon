@@ -13,6 +13,8 @@
 [ext_resource type="Texture2D" uid="uid://ck68syfbobx7v" path="res://assets/Healthbar_BG.png" id="9_pawyy"]
 [ext_resource type="PackedScene" uid="uid://dug2bbj6efba4" path="res://Scenes/inventory_item.tscn" id="11_3hlc8"]
 [ext_resource type="Texture2D" uid="uid://dm2n6ukn0te5w" path="res://assets/Items_Potion01.png" id="12_l5du1"]
+[ext_resource type="PackedScene" uid="uid://dh5hkoesq2g1m" path="res://Scenes/equipment_item.tscn" id="14_tpeae"]
+[ext_resource type="Texture2D" uid="uid://fps2j3mc628h" path="res://assets/Items - Gianas Necklace.png" id="15_tlat5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fl7sg"]
 size = Vector2(3307, 125)
@@ -108,6 +110,7 @@ item_name = "Potion"
 item_texture = ExtResource("12_l5du1")
 item_effect = "Heals 20 HP"
 item_quantity = 2
+item_price = 100
 
 [node name="Inventory_Item2" parent="." unique_id=870944494 instance=ExtResource("11_3hlc8")]
 position = Vector2(1221, 886)
@@ -115,9 +118,22 @@ item_type = "Useable"
 item_name = "Potion"
 item_texture = ExtResource("12_l5du1")
 item_effect = "Heals 20 HP"
+item_price = 100
 
 [node name="ItemShop" parent="." unique_id=756697672 instance=ExtResource("9_n62sy")]
 position = Vector2(2065, 897)
+
+[node name="Equipment_Item" parent="." unique_id=1819998663 instance=ExtResource("14_tpeae")]
+position = Vector2(944, 893)
+item_name = "Giana's Necklace"
+item_type = "Equipment: Necklace"
+item_effect = "Equipment"
+item_texture = ExtResource("15_tlat5")
+item_price = 20
+attack = 2
+defense = 2
+crit = 3
+descript = "An old necklace Giana has had for ages"
 
 [connection signal="body_entered" from="DamageZone" to="DamageZone" method="_on_body_entered"]
 [connection signal="pressed" from="HUD/Exit Button" to="." method="_on_exit_button_pressed"]

@@ -8,13 +8,18 @@ extends Control
 @onready var item_effect = $"Detail Panel/ItemEffect"
 @onready var usage_panel = $UsagePanel
 @onready var usage_panel_use = $UsagePanel/UseButton
+@onready var equip_panel = $EquipPanel
+@onready var equip_panel_use = $EquipPanel/EquipButton
 @onready var item_button = $ItemButton
 var slot_item = null
 
 func _on_item_button_pressed() -> void:
-	if slot_item != null:
+	if slot_item != null and item_type.text == "Useable":
 		usage_panel.visible = !usage_panel.visible
 		usage_panel_use.grab_focus()
+	elif slot_item != null and "Equipment:" in item_type.text:
+		equip_panel.visible = !equip_panel.visible
+		equip_panel_use.grab_focus()
 
 func _on_item_button_mouse_entered() -> void:
 	if slot_item != null:
@@ -60,18 +65,7 @@ func _on_use_button_pressed() -> void:
 			GlobalManager.player_node.apply_item_effect(slot_item)
 			GlobalManager.remove_item(slot_item["item_type"], slot_item["item_effect"])
 
-		
-#@onready var itemSprite: Sprite2D = $CenterContainer/Panel/Item
-#
-#func _ready() -> void:
-	#grab_focus()
-#
-#func update(item: Item):
-	#if !item:
-		#itemSprite.visible = false
-	#else:
-		#itemSprite.visible = true
-		#itemSprite.texture = item.sprite
-		#var scaling = Vector2(($".".size.x / itemSprite.texture.get_width()) - 0.02, ($".".size.y / itemSprite.texture.get_height()) - 0.02)
-		#itemSprite.apply_scale(Vector2(scaling))
-		#print("Updated")
+func _on_equip_button_pressed() -> void:
+	if slot_item != null and "Equipment:" in slot_item["item_type"]:
+		pass
+	pass # Replace with function body.
