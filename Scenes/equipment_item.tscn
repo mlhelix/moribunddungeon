@@ -174,7 +174,12 @@ scale = Vector2(0.053333327, 0.053333327)
 [node name="Rarity" type="AnimatedSprite2D" parent="." unique_id=602969812]
 scale = Vector2(0.06333333, 0.06333333)
 sprite_frames = SubResource("SpriteFrames_1tgxo")
-frame_progress = 0.5219379
+frame_progress = 0.8939878
+
+[node name="Rarity2" type="AnimatedSprite2D" parent="." unique_id=515886044]
+scale = Vector2(0.06333333, 0.06333333)
+sprite_frames = SubResource("SpriteFrames_1tgxo")
+frame_progress = 0.10810623
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
