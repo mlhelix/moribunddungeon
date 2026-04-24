@@ -88,9 +88,14 @@ func equip_(item):
 			add_item(equipment["Ring 1"])
 			equipment["Ring 1"] = item
 	remove_item(item["item_type"], item["item_effect"])
+	stats._change_attack(item["attack"])
+	stats._change_defense(item["defense"])
+	stats._change_crit(item["crit"])
+	stats._change_max_health(item["health"])
 	equipment_updated.emit()
 	
 func unequip_(item):
+	item["quantity"] += 1
 	add_item(item)
 	if "Necklace" in item["item_type"]:
 		equipment["Necklace"] = null
@@ -104,6 +109,10 @@ func unequip_(item):
 			equipment["Ring 1"] = null
 		elif item["item_name"] == equipment["Ring 2"]:
 			equipment["Ring 2"] = null
+	stats._change_attack(-item["attack"])
+	stats._change_defense(-item["defense"])
+	stats._change_crit(-item["crit"])
+	stats._change_max_health(-item["health"])
 	equipment_updated.emit()
 	
 func drop_item(item_data, drop_position):

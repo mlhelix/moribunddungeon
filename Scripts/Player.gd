@@ -62,6 +62,15 @@ func _physics_process(delta: float) -> void:
 		return
 	if Input.is_action_just_pressed("attack"):
 		$AnimationPlayer.play("attack1")
+		var rand_sound = randi_range(0, 2)
+		match rand_sound:
+			0:
+				$AnimatedSprite2D/SlashAttack/Sword1.play()
+			1:
+				$AnimatedSprite2D/SlashAttack/Sword2.play()
+			2:
+				$AnimatedSprite2D/SlashAttack/Sword3.play()
+		
 		attack_cooldown = BASE_COOLDOWN
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.

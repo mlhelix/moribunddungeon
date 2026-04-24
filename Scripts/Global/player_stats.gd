@@ -5,6 +5,7 @@ extends Resource
 
 signal health_depleted
 signal health_changed(cur_health: int, maximum_health: int)
+signal max_health_changed(new_health)
 signal sp_changed(cur_sp: int, maximum_sp: int)
 signal attack_changed(new_attack: int)
 signal defense_changed(new_defense)
@@ -54,6 +55,11 @@ func take_damage(damage:int) -> void:
 
 func heal_damage(heal:int) -> void:
 	health = current_health + heal
+	health_changed.emit(current_health, max_health)
+	
+func _change_max_health(val:int):
+	max_health += val
+	max_health_changed.emit(max_health)
 	health_changed.emit(current_health, max_health)
 
 func _change_attack(val:int):

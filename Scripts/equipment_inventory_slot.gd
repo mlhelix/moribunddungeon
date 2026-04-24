@@ -10,6 +10,7 @@ extends Control
 @onready var unequip_panel_use = $UnequipPanel/UnequipButton
 @onready var item_button = $ItemButton
 @onready var slot_type = ""
+@onready var upper_window_ref = $"."/ItemButton
 var scene_path: String = ""
 var slot_item = null
 
@@ -70,3 +71,4 @@ func _on_unequip_button_pressed() -> void:
 	if slot_item != null:
 		GlobalManager.unequip_(slot_item)
 		slot_item = null
+		upper_window_ref.grab_focus()

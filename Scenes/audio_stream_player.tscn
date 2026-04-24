@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://3pr5n56wnvhr"]
+
+[ext_resource type="AudioStream" uid="uid://ddc4ug08miyb3" path="res://assets/Music Sounds/vespidaze-upbeat-rpg-battle.mp3" id="1_jxntt"]
+[ext_resource type="Script" uid="uid://dlx5eq7ql8t0a" path="res://audio_stream_player.gd" id="2_5g7r6"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" unique_id=1772203548]
+stream = ExtResource("1_jxntt")
+script = ExtResource("2_5g7r6")

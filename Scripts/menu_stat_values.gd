@@ -25,6 +25,9 @@ func _ready() -> void:
 	crit_value.text = str(player_stats.crit)
 	player_stats.health_changed.connect(update_hp)
 	player_stats.attack_changed.connect(change_atk)
+	player_stats.crit_changed.connect(change_crit)
+	player_stats.defense_changed.connect(change_def)
+	player_stats.max_health_changed.connect(change_maxhp)
 
 
 func update_stats():
@@ -43,7 +46,10 @@ func update_hp(newHealth, maxHealth):
 
 
 func change_hp(newValue):
-	hp_value.text = str(newValue)
+	hp_value.text = str(newValue) + "/" + str(player_stats.max_health)
+
+func change_maxhp(newValue):
+	hp_value.text = str(player_stats.current_health) + "/" + str(newValue)
 
 func change_sp(newValue):
 	sp_value.text = str(newValue)

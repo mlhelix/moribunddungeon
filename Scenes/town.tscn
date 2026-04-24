@@ -1,3 +1,144 @@
 [gd_scene format=3 uid="uid://c1lbs3kfyjq4c"]
 
-[node name="Town" type="Node2D" unique_id=691422211]
+[ext_resource type="Texture2D" uid="uid://ckkecq0gy4ydm" path="res://assets/World 01.png" id="1_kswdu"]
+[ext_resource type="PackedScene" uid="uid://dq4vtt3kvihap" path="res://Scenes/shop_itemshop.tscn" id="2_poxg2"]
+[ext_resource type="Texture2D" uid="uid://431wel46n2vi" path="res://assets/000 - Logo SHARK.png" id="3_7kgdu"]
+[ext_resource type="PackedScene" uid="uid://dug2bbj6efba4" path="res://Scenes/inventory_item.tscn" id="4_gflae"]
+[ext_resource type="Texture2D" uid="uid://dm2n6ukn0te5w" path="res://assets/Items_Potion01.png" id="5_2rtke"]
+[ext_resource type="PackedScene" uid="uid://cidvvqspq8q1l" path="res://Scenes/enemy_cactynee.tscn" id="6_7kgdu"]
+[ext_resource type="PackedScene" uid="uid://dv2ux6rg6cwf7" path="res://Scenes/Player.tscn" id="7_8t1t8"]
+[ext_resource type="PackedScene" uid="uid://ddb5iqgjrdjcl" path="res://Scenes/hud.tscn" id="8_kl8ok"]
+[ext_resource type="PackedScene" uid="uid://duhk5yrp2k3qa" path="res://Scenes/pause_menu.tscn" id="9_emwlo"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_iau6b"]
+normal = Vector2(-0.01162712, -0.99993235)
+distance = 81.42182
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kswdu"]
+size = Vector2(36, 1526)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iau6b"]
+size = Vector2(758, 161)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_28ev0"]
+size = Vector2(358, 146.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ckvn4"]
+size = Vector2(178, 146.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_poxg2"]
+size = Vector2(178, 138.25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7kgdu"]
+size = Vector2(364, 365.125)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gflae"]
+size = Vector2(364, 146.5625)
+
+[node name="Town" type="Control" unique_id=1556098001]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="HUD" parent="." unique_id=1860006041 instance=ExtResource("8_kl8ok")]
+
+[node name="Pause Menu" parent="." unique_id=1146775961 instance=ExtResource("9_emwlo")]
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=289154385]
+layout_mode = 0
+offset_right = 7680.0
+offset_bottom = 1369.0
+texture = ExtResource("1_kswdu")
+metadata/_edit_lock_ = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="TextureRect" unique_id=20190738]
+metadata/_edit_lock_ = true
+
+[node name="World Border" type="CollisionShape2D" parent="TextureRect/StaticBody2D" unique_id=1313246288]
+position = Vector2(3848.75, 1300.5)
+shape = SubResource("WorldBoundaryShape2D_iau6b")
+metadata/_edit_lock_ = true
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="TextureRect" unique_id=130545602]
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TextureRect/StaticBody2D2" unique_id=1762819492]
+position = Vector2(8, 753)
+shape = SubResource("RectangleShape2D_kswdu")
+metadata/_edit_lock_ = true
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="TextureRect" unique_id=562615014]
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TextureRect/StaticBody2D3" unique_id=1553905252]
+position = Vector2(7689, 753)
+shape = SubResource("RectangleShape2D_kswdu")
+metadata/_edit_lock_ = true
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="TextureRect" unique_id=1688621523]
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TextureRect/StaticBody2D4" unique_id=294611791]
+position = Vector2(1226, 1192.5)
+shape = SubResource("RectangleShape2D_iau6b")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="TextureRect/StaticBody2D4" unique_id=112727254]
+position = Vector2(1608, 1081.75)
+shape = SubResource("RectangleShape2D_28ev0")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="TextureRect/StaticBody2D4" unique_id=377887338]
+position = Vector2(2820, 1191)
+shape = SubResource("RectangleShape2D_ckvn4")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="TextureRect/StaticBody2D4" unique_id=71776533]
+position = Vector2(3127, 1027.875)
+shape = SubResource("RectangleShape2D_poxg2")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="TextureRect/StaticBody2D4" unique_id=801353035]
+position = Vector2(3516, 1081.4375)
+shape = SubResource("RectangleShape2D_7kgdu")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="TextureRect/StaticBody2D4" unique_id=1190851597]
+position = Vector2(5325, 1003.71875)
+shape = SubResource("RectangleShape2D_gflae")
+metadata/_edit_lock_ = true
+
+[node name="ItemShop" parent="." unique_id=756697672 instance=ExtResource("2_poxg2")]
+position = Vector2(607, 1179)
+
+[node name="Sprite2D" type="Sprite2D" parent="ItemShop" unique_id=999153269]
+position = Vector2(6.4999886, -6.4999886)
+scale = Vector2(0.0881818, 0.0881818)
+texture = ExtResource("3_7kgdu")
+
+[node name="Inventory_Item" parent="." unique_id=464058434 instance=ExtResource("4_gflae")]
+position = Vector2(553, 1197)
+item_type = "Useable"
+item_name = "Potion"
+item_texture = ExtResource("5_2rtke")
+item_effect = "Heals 20 HP"
+item_price = 100
+
+[node name="Cactynee" parent="." unique_id=559483369 instance=ExtResource("6_7kgdu")]
+position = Vector2(1727, 957)
+
+[node name="Cactynee2" parent="." unique_id=1149432283 instance=ExtResource("6_7kgdu")]
+position = Vector2(3521, 850)
+
+[node name="Cactynee3" parent="." unique_id=1858688559 instance=ExtResource("6_7kgdu")]
+position = Vector2(5324, 879)
+
+[node name="Cactynee4" parent="." unique_id=991865733 instance=ExtResource("6_7kgdu")]
+position = Vector2(5332, 1150)
+
+[node name="Cactynee5" parent="." unique_id=2118594991 instance=ExtResource("6_7kgdu")]
+position = Vector2(7291, 1160)
+health = 350
+attack = 30
+
+[node name="Player" parent="." unique_id=1761386539 instance=ExtResource("7_8t1t8")]
+position = Vector2(98, 1130)

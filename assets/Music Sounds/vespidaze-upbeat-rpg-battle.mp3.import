@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ddc4ug08miyb3"
+path="res://.godot/imported/vespidaze-upbeat-rpg-battle.mp3-9ff17157c08fa2916d80b1b3498f825b.mp3str"
+
+[deps]
+
+source_file="res://assets/Music Sounds/vespidaze-upbeat-rpg-battle.mp3"
+dest_files=["res://.godot/imported/vespidaze-upbeat-rpg-battle.mp3-9ff17157c08fa2916d80b1b3498f825b.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

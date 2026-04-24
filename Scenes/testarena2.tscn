@@ -1,0 +1,207 @@
+[gd_scene format=3 uid="uid://cvprbolll8skb"]
+
+[ext_resource type="Script" uid="uid://dwyc3tx2uriyw" path="res://Scripts/testarena.gd" id="1_rsi32"]
+[ext_resource type="Texture2D" uid="uid://q5beafrapbc4" path="res://assets/Moribund Dungeon Floorthingy.png" id="2_q7pnp"]
+[ext_resource type="Texture2D" uid="uid://ckkecq0gy4ydm" path="res://assets/World 01.png" id="6_c7q26"]
+[ext_resource type="Texture2D" uid="uid://ck68syfbobx7v" path="res://assets/Healthbar_BG.png" id="6_o0wuh"]
+[ext_resource type="PackedScene" uid="uid://b3fd6efftjlv1" path="res://Scenes/health_bar_player.tscn" id="7_nk1fb"]
+[ext_resource type="Texture2D" uid="uid://431wel46n2vi" path="res://assets/000 - Logo SHARK.png" id="8_1hpiv"]
+[ext_resource type="PackedScene" uid="uid://duhk5yrp2k3qa" path="res://Scenes/pause_menu.tscn" id="8_sxk5k"]
+[ext_resource type="PackedScene" uid="uid://dv2ux6rg6cwf7" path="res://Scenes/Player.tscn" id="9_md26s"]
+[ext_resource type="PackedScene" uid="uid://dq4vtt3kvihap" path="res://Scenes/shop_itemshop.tscn" id="10_nei6c"]
+[ext_resource type="PackedScene" uid="uid://dug2bbj6efba4" path="res://Scenes/inventory_item.tscn" id="11_47pje"]
+[ext_resource type="Texture2D" uid="uid://dm2n6ukn0te5w" path="res://assets/Items_Potion01.png" id="12_2v07s"]
+[ext_resource type="PackedScene" uid="uid://dh5hkoesq2g1m" path="res://Scenes/equipment_item.tscn" id="13_ygp4r"]
+[ext_resource type="Texture2D" uid="uid://fps2j3mc628h" path="res://assets/Items - Gianas Necklace.png" id="14_sgugj"]
+[ext_resource type="PackedScene" uid="uid://cidvvqspq8q1l" path="res://Scenes/enemy_cactynee.tscn" id="15_8oulo"]
+[ext_resource type="PackedScene" uid="uid://3pr5n56wnvhr" path="res://Scenes/audio_stream_player.tscn" id="15_rsi32"]
+
+[sub_resource type="SystemFont" id="SystemFont_l5du1"]
+font_names = PackedStringArray("Cambria")
+subpixel_positioning = 0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c7q26"]
+size = Vector2(7753.5, 167)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sxk5k"]
+size = Vector2(390, 1526)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rsi32"]
+size = Vector2(396, 1526)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q7pnp"]
+size = Vector2(758, 161)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qdl7g"]
+size = Vector2(358, 146.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e3rtr"]
+size = Vector2(178, 146.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vpu7b"]
+size = Vector2(178, 116)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o0wuh"]
+size = Vector2(364, 365.125)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nk1fb"]
+size = Vector2(364, 110)
+
+[node name="TestArena" type="Node2D" unique_id=1312225794]
+script = ExtResource("1_rsi32")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1263241964]
+visible = false
+offset_right = 3840.0
+offset_bottom = 2160.0
+texture = ExtResource("2_q7pnp")
+metadata/_edit_lock_ = true
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=195876428]
+layer = 4
+
+[node name="TextureRect" type="TextureRect" parent="HUD" unique_id=1058004148]
+offset_left = 16.0
+offset_top = 12.0
+offset_right = 421.06207
+offset_bottom = 130.0
+texture = ExtResource("6_o0wuh")
+expand_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="HealthBar" parent="HUD" unique_id=2083968175 instance=ExtResource("7_nk1fb")]
+offset_left = 113.99999
+offset_top = 29.000002
+offset_right = 859.0
+offset_bottom = 126.0
+scale = Vector2(0.4, 0.4)
+metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
+
+[node name="Exit Button" type="Button" parent="HUD" unique_id=1553030140]
+offset_left = 1760.0
+offset_top = 18.0
+offset_right = 1875.0
+offset_bottom = 109.0
+theme_override_fonts/font = SubResource("SystemFont_l5du1")
+theme_override_font_sizes/font_size = 60
+text = "Exit"
+
+[node name="PauseMenuLayer" type="CanvasLayer" parent="." unique_id=674850790]
+layer = 3
+
+[node name="Pause Menu" parent="PauseMenuLayer" unique_id=1878498693 instance=ExtResource("8_sxk5k")]
+metadata/_edit_use_anchors_ = true
+
+[node name="AudioStreamPlayer" parent="PauseMenuLayer/Pause Menu" unique_id=1772203548 instance=ExtResource("15_rsi32")]
+volume_db = -12.0
+autoplay = true
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=1238598216]
+offset_right = 7680.0
+offset_bottom = 1369.0
+texture = ExtResource("6_c7q26")
+metadata/_edit_lock_ = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="TextureRect2" unique_id=2112714217]
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TextureRect2/StaticBody2D" unique_id=2057935667]
+position = Vector2(3819.25, 1300.5)
+shape = SubResource("RectangleShape2D_c7q26")
+
+[node name="Equipment_Item" parent="TextureRect2/StaticBody2D" unique_id=271677067 instance=ExtResource("13_ygp4r")]
+position = Vector2(2827, 1093)
+item_name = "Giana's Necklace"
+item_type = "Equipment: Necklace"
+item_texture = ExtResource("14_sgugj")
+item_price = 20
+max_health = 5
+attack = 2
+defense = 2
+crit = 3
+descript = "An old necklace Giana has had for ages"
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="TextureRect2" unique_id=1167961136]
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TextureRect2/StaticBody2D2" unique_id=1286119088]
+position = Vector2(-158, 753)
+shape = SubResource("RectangleShape2D_sxk5k")
+metadata/_edit_lock_ = true
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="TextureRect2" unique_id=1566345938]
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TextureRect2/StaticBody2D3" unique_id=1423140002]
+position = Vector2(7124, 753)
+shape = SubResource("RectangleShape2D_rsi32")
+metadata/_edit_lock_ = true
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="TextureRect2" unique_id=2119599341]
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TextureRect2/StaticBody2D4" unique_id=840365749]
+position = Vector2(1226, 1192.5)
+shape = SubResource("RectangleShape2D_q7pnp")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="TextureRect2/StaticBody2D4" unique_id=472709257]
+position = Vector2(1608, 1081.75)
+shape = SubResource("RectangleShape2D_qdl7g")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="TextureRect2/StaticBody2D4" unique_id=1820975226]
+position = Vector2(2820, 1191)
+shape = SubResource("RectangleShape2D_e3rtr")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="TextureRect2/StaticBody2D4" unique_id=1082091950]
+position = Vector2(3127, 1040)
+shape = SubResource("RectangleShape2D_vpu7b")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="TextureRect2/StaticBody2D4" unique_id=1626286786]
+position = Vector2(3516, 1081.4375)
+shape = SubResource("RectangleShape2D_o0wuh")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="TextureRect2/StaticBody2D4" unique_id=988283005]
+position = Vector2(5325, 1022)
+shape = SubResource("RectangleShape2D_nk1fb")
+metadata/_edit_lock_ = true
+
+[node name="ItemShop" parent="." unique_id=756697672 instance=ExtResource("10_nei6c")]
+position = Vector2(609, 1164)
+
+[node name="Sprite2D" type="Sprite2D" parent="ItemShop" unique_id=1008147890]
+position = Vector2(6.4999886, -6.4999886)
+scale = Vector2(0.0881818, 0.0881818)
+texture = ExtResource("8_1hpiv")
+
+[node name="Inventory_Item" parent="." unique_id=464058434 instance=ExtResource("11_47pje")]
+position = Vector2(555, 1182)
+item_type = "Useable"
+item_name = "Potion"
+item_texture = ExtResource("12_2v07s")
+item_effect = "Heals 20 HP"
+item_price = 100
+
+[node name="Cactynee" parent="." unique_id=559483369 instance=ExtResource("15_8oulo")]
+position = Vector2(1727, 957)
+
+[node name="Cactynee2" parent="." unique_id=394588432 instance=ExtResource("15_8oulo")]
+position = Vector2(3521, 850)
+
+[node name="Cactynee3" parent="." unique_id=651962381 instance=ExtResource("15_8oulo")]
+position = Vector2(5324, 879)
+
+[node name="Cactynee5" parent="." unique_id=323163078 instance=ExtResource("15_8oulo")]
+position = Vector2(6671, 1160)
+health = 350
+attack = 30
+
+[node name="Player" parent="." unique_id=1761386539 instance=ExtResource("9_md26s")]
+position = Vector2(98, 1104)
+
+[connection signal="pressed" from="HUD/Exit Button" to="HUD/HealthBar" method="_on_exit_button_pressed"]

@@ -4,9 +4,10 @@
 [ext_resource type="Script" uid="uid://bhlcyuo14o8oe" path="res://Scripts/enemy_cactynee.gd" id="1_sy6et"]
 [ext_resource type="Script" uid="uid://bhej6i2uikfag" path="res://Scripts/state_machine.gd" id="3_yrwhs"]
 [ext_resource type="Script" uid="uid://n2ag6w4flvhm" path="res://Scripts/enemy_idle.gd" id="4_juysa"]
+[ext_resource type="Script" uid="uid://cn0h2os7gw364" path="res://Scripts/enemy_follow.gd" id="5_17dyd"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_sy6et"]
-radius = 39.0
+radius = 44.0
 height = 90.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_minqi"]
@@ -264,11 +265,16 @@ show_percentage = false
 
 [node name="StateMachine" type="Node" parent="." unique_id=1285199814 node_paths=PackedStringArray("initial_state")]
 script = ExtResource("3_yrwhs")
-initial_state = NodePath("EnemyIdle")
+initial_state = NodePath("Idle")
 
-[node name="EnemyIdle" type="Node" parent="StateMachine" unique_id=1665055540 node_paths=PackedStringArray("enemy")]
+[node name="Idle" type="Node" parent="StateMachine" unique_id=1665055540 node_paths=PackedStringArray("enemy")]
 script = ExtResource("4_juysa")
 enemy = NodePath("../..")
 metadata/_custom_type_script = "uid://n2ag6w4flvhm"
+
+[node name="Follow" type="Node" parent="StateMachine" unique_id=282389681 node_paths=PackedStringArray("enemy")]
+script = ExtResource("5_17dyd")
+enemy = NodePath("../..")
+metadata/_custom_type_script = "uid://cn0h2os7gw364"
 
 [connection signal="body_entered" from="contact_damage" to="." method="_on_contact_damage_body_entered"]

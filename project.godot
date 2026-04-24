@@ -23,6 +23,7 @@ config/icon="res://icon.svg"
 
 GlobalManager="*uid://e4i7icifuqps"
 SceneTransition="*uid://cxu1wremp0bav"
+GlobalAudioStreamPlayer="*uid://3pr5n56wnvhr"
 
 [display]
 

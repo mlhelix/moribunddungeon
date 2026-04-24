@@ -3,13 +3,13 @@
 [ext_resource type="Script" uid="uid://c42e40dwdv244" path="res://Scripts/title_screen.gd" id="1_klylv"]
 [ext_resource type="Texture2D" uid="uid://ddoqffxl6oncd" path="res://assets/Moribund Dungeon.png" id="2_sqelc"]
 [ext_resource type="Texture2D" uid="uid://ums66c51xy6f" path="res://assets/Options.png" id="3_6vd4x"]
-[ext_resource type="Texture2D" uid="uid://cpp6xobyyocnp" path="res://assets/Start Game.png" id="3_n82rj"]
-[ext_resource type="Script" uid="uid://sewb822yy6jd" path="res://Scripts/texturebutton_focus.gd" id="4_0061g"]
+[ext_resource type="Texture2D" uid="uid://b0g55sugh3xxq" path="res://assets/Start Game/Start_Game_0000.png" id="3_8mikk"]
 [ext_resource type="Texture2D" uid="uid://cjhxcbbjw4bkx" path="res://assets/Exit.png" id="4_n82rj"]
 [ext_resource type="Texture2D" uid="uid://bs82ukot87lcb" path="res://assets/Arena.png" id="5_0061g"]
 [ext_resource type="Texture2D" uid="uid://ct38c001wyqor" path="res://assets/Options/options_0021.png" id="7_6vd4x"]
-[ext_resource type="Texture2D" uid="uid://ck0gewp7sq2go" path="res://assets/Start Game/Start_Game_0021.png" id="7_sqelc"]
+[ext_resource type="Texture2D" uid="uid://b05c5ap04fgqb" path="res://assets/Start Game/Start_Game_0022.png" id="8_sqelc"]
 [ext_resource type="Texture2D" uid="uid://bsnifsefktsgo" path="res://assets/Exit/Exit_0021.png" id="10_sqelc"]
+[ext_resource type="AudioStream" uid="uid://dksjs5bmwvjl" path="res://assets/Music Sounds/nobodysland-a-way-out.mp3" id="11_sqelc"]
 [ext_resource type="Texture2D" uid="uid://cduo4qe5fhqj1" path="res://assets/Arena/Arena_0021.png" id="11_w5sh6"]
 
 [sub_resource type="AnimatedTexture" id="AnimatedTexture_w5sh6"]
@@ -78,7 +78,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.4),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [ExtResource("3_n82rj"), ExtResource("7_sqelc")]
+"values": [null, ExtResource("8_sqelc")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -166,9 +166,20 @@ offset_right = 2166.0
 offset_bottom = 709.0
 scale = Vector2(0.5, 0.5)
 focus_next = NodePath("../Exit")
-texture_normal = ExtResource("3_n82rj")
+texture_normal = ExtResource("3_8mikk")
 texture_focused = SubResource("AnimatedTexture_w5sh6")
-script = ExtResource("4_0061g")
+
+[node name="Start Game2" type="TextureButton" parent="." unique_id=1891272703]
+visible = false
+layout_mode = 0
+offset_left = 1585.0
+offset_top = 575.0
+offset_right = 2166.0
+offset_bottom = 709.0
+scale = Vector2(0.5, 0.5)
+focus_next = NodePath("../Exit")
+texture_normal = ExtResource("3_8mikk")
+texture_focused = ExtResource("8_sqelc")
 
 [node name="Options" type="TextureButton" parent="." unique_id=643646131]
 layout_mode = 0
@@ -218,9 +229,17 @@ theme_override_font_sizes/font_size = 24
 text = "ver 0.26.0420"
 horizontal_alignment = 1
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=950035245]
+stream = ExtResource("11_sqelc")
+autoplay = true
+parameters/looping = true
+
 [connection signal="focus_entered" from="." to="." method="_on_focus_entered"]
 [connection signal="focus_entered" from="Start Game" to="." method="_on_start_game_focus_entered"]
+[connection signal="pressed" from="Start Game" to="." method="_on_start_game_pressed"]
+[connection signal="pressed" from="Start Game2" to="." method="_on_start_game_pressed"]
 [connection signal="focus_entered" from="Options" to="." method="_on_options_focus_entered"]
 [connection signal="pressed" from="Options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
+[connection signal="focus_entered" from="Arena" to="." method="_on_arena_focus_entered"]
 [connection signal="pressed" from="Arena" to="." method="_on_arena_pressed"]

@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://ddb5iqgjrdjcl"]
+
+[ext_resource type="Texture2D" uid="uid://ck68syfbobx7v" path="res://assets/Healthbar_BG.png" id="1_fccik"]
+[ext_resource type="PackedScene" uid="uid://b3fd6efftjlv1" path="res://Scenes/health_bar_player.tscn" id="2_bjfho"]
+
+[sub_resource type="SystemFont" id="SystemFont_l5du1"]
+font_names = PackedStringArray("Cambria")
+subpixel_positioning = 0
+
+[node name="HUD" type="CanvasLayer" unique_id=1860006041]
+layer = 4
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1256910891]
+offset_left = 16.0
+offset_top = 12.0
+offset_right = 421.06207
+offset_bottom = 130.0
+texture = ExtResource("1_fccik")
+expand_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="HealthBar" parent="." unique_id=2083968175 instance=ExtResource("2_bjfho")]
+offset_left = 113.99999
+offset_top = 29.000002
+offset_right = 859.0
+offset_bottom = 126.0
+scale = Vector2(0.4, 0.4)
+metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
+
+[node name="Exit Button" type="Button" parent="." unique_id=146720479]
+offset_left = 1760.0
+offset_top = 18.0
+offset_right = 1875.0
+offset_bottom = 109.0
+theme_override_fonts/font = SubResource("SystemFont_l5du1")
+theme_override_font_sizes/font_size = 60
+text = "Exit"
+
+[connection signal="pressed" from="Exit Button" to="HealthBar" method="_on_exit_button_pressed"]

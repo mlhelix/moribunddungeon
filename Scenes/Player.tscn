@@ -22,7 +22,10 @@
 [ext_resource type="Texture2D" uid="uid://bmfr1yrputndd" path="res://assets/Giana_Slash/Slash_0004.png" id="19_8flut"]
 [ext_resource type="Texture2D" uid="uid://bn623s8s3i3jv" path="res://assets/Giana_Slash/Slash_0005.png" id="20_u7x0b"]
 [ext_resource type="Texture2D" uid="uid://cup1lrucwodmu" path="res://assets/Giana_Slash/Slash_0006.png" id="21_utwlt"]
+[ext_resource type="AudioStream" uid="uid://bdnls7v3swf5d" path="res://assets/Music Sounds/Sword_WEP_Sword_20.wav" id="22_8flut"]
 [ext_resource type="Texture2D" uid="uid://baw6ru8c0w45c" path="res://assets/Giana_Slash/Slash_0007.png" id="22_kih0c"]
+[ext_resource type="AudioStream" uid="uid://x3co130urkxl" path="res://assets/Music Sounds/Sword_WEP_Sword_10.wav" id="23_u7x0b"]
+[ext_resource type="AudioStream" uid="uid://c7itlycriwskj" path="res://assets/Music Sounds/Sword_WEP_Sword_1.wav" id="24_utwlt"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_glyrq"]
 animations = [{
@@ -354,6 +357,15 @@ shape = SubResource("CapsuleShape2D_c43xd")
 disabled = true
 debug_color = Color(0.95686275, 0.1764706, 0.2901961, 0.23529412)
 
+[node name="Sword1" type="AudioStreamPlayer2D" parent="AnimatedSprite2D/SlashAttack" unique_id=1513070610]
+stream = ExtResource("22_8flut")
+
+[node name="Sword2" type="AudioStreamPlayer2D" parent="AnimatedSprite2D/SlashAttack" unique_id=1267102813]
+stream = ExtResource("23_u7x0b")
+
+[node name="Sword3" type="AudioStreamPlayer2D" parent="AnimatedSprite2D/SlashAttack" unique_id=1481986442]
+stream = ExtResource("24_utwlt")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1926136278]
 position = Vector2(0, 2)
 shape = SubResource("CapsuleShape2D_88kja")
@@ -361,8 +373,7 @@ shape = SubResource("CapsuleShape2D_88kja")
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1886186785]
 limit_left = 0
 limit_top = 0
-limit_right = 2636
-limit_bottom = 1080
+limit_bottom = 1369
 editor_draw_limits = true
 
 [node name="PressY" type="AnimatedSprite2D" parent="." unique_id=1993709433]

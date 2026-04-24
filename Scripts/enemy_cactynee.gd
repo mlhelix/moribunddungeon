@@ -1,6 +1,8 @@
 extends CharacterBody2D
 class_name Cactynee
 
+signal hp_depleted
+
 const MAX_HEALTH = 65
 @export var health = MAX_HEALTH
 @export var attack = 9
@@ -29,12 +31,15 @@ func take_damage(atk):
 	_update_healthbar(health)
 	$AnimationPlayer.play("damage")
 	if health <= 0:
+		hp_depleted.emit()
 		_death()
 		
 func _update_healthbar(hp):
 	healthbar.value = hp
 
 func _death():
+	velocity.x = 0
+	velocity.y = 0
 	add_collision_exception_with(get_tree().get_nodes_in_group("Player")[0])
 	$contact_damage/CollisionShape2D.set_deferred("disabled", true)
 	$AnimationPlayer.play("death")

@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://b3fd6efftjlv1" path="res://Scenes/health_bar_player.tscn" id="9_boqko"]
 [ext_resource type="PackedScene" uid="uid://dq4vtt3kvihap" path="res://Scenes/shop_itemshop.tscn" id="9_n62sy"]
 [ext_resource type="Texture2D" uid="uid://ck68syfbobx7v" path="res://assets/Healthbar_BG.png" id="9_pawyy"]
+[ext_resource type="Texture2D" uid="uid://431wel46n2vi" path="res://assets/000 - Logo SHARK.png" id="11_tlat5"]
 [ext_resource type="PackedScene" uid="uid://dug2bbj6efba4" path="res://Scenes/inventory_item.tscn" id="12_l5du1"]
 [ext_resource type="Texture2D" uid="uid://dm2n6ukn0te5w" path="res://assets/Items_Potion01.png" id="13_n62sy"]
 [ext_resource type="PackedScene" uid="uid://dh5hkoesq2g1m" path="res://Scenes/equipment_item.tscn" id="14_tpeae"]
@@ -19,10 +20,14 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fl7sg"]
 size = Vector2(3307, 125)
 
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_tpeae"]
+distance = 58.0
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_boqko"]
 
 [sub_resource type="SystemFont" id="SystemFont_l5du1"]
 font_names = PackedStringArray("Cambria")
+subpixel_positioning = 0
 
 [node name="TestArena" type="Node2D" unique_id=1312225794]
 script = ExtResource("1_fl7sg")
@@ -43,8 +48,11 @@ scale = Vector2(15, 1)
 texture = ExtResource("3_5hb0q")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1317680397]
-position = Vector2(1060, 1.5)
+position = Vector2(1060, 139)
 shape = SubResource("RectangleShape2D_fl7sg")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=908847593]
+shape = SubResource("WorldBoundaryShape2D_tpeae")
 
 [node name="DamageZone" type="Area2D" parent="." unique_id=1262171411]
 position = Vector2(976, 822)
@@ -102,6 +110,10 @@ position = Vector2(690, 731)
 [node name="ItemShop" parent="." unique_id=756697672 instance=ExtResource("9_n62sy")]
 position = Vector2(2065, 897)
 
+[node name="Sprite2D" type="Sprite2D" parent="ItemShop" unique_id=792947550]
+scale = Vector2(0.14727272, 0.14727272)
+texture = ExtResource("11_tlat5")
+
 [node name="Inventory_Item" parent="." unique_id=464058434 instance=ExtResource("12_l5du1")]
 position = Vector2(1214, 893)
 item_type = "Useable"
@@ -117,13 +129,13 @@ item_type = "Equipment: Necklace"
 item_texture = ExtResource("15_tlat5")
 item_price = 20
 max_health = 5
-attack = 1
+attack = 2
 defense = 2
 crit = 3
 descript = "An old necklace Giana has had for ages"
 
 [node name="Cactynee" parent="." unique_id=559483369 instance=ExtResource("15_tpeae")]
-position = Vector2(907, 919)
+position = Vector2(1513, 910)
 
 [connection signal="body_entered" from="DamageZone" to="DamageZone" method="_on_body_entered"]
-[connection signal="pressed" from="HUD/Exit Button" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="HUD/Exit Button" to="HUD/HealthBar" method="_on_exit_button_pressed"]
