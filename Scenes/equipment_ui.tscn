@@ -4,18 +4,24 @@
 [ext_resource type="Script" uid="uid://dyuwqbocog7nk" path="res://Scripts/equipment_ui.gd" id="1_pu85d"]
 
 [node name="EquipmentUI" type="Control" unique_id=230443845]
+process_mode = 3
+custom_minimum_size = Vector2(300, 365)
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_right = 0.155
+anchor_bottom = 0.33400002
+offset_right = 2.399994
+offset_bottom = 4.2799683
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_pu85d")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=1474900985]
-layout_mode = 0
-offset_right = 321.0
-offset_bottom = 334.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("1_n0re5")
 
 [node name="Label" type="Label" parent="NinePatchRect" unique_id=2129527911]
@@ -34,26 +40,25 @@ text = "Equipment"
 
 [node name="EquipType" type="VBoxContainer" parent="NinePatchRect" unique_id=1948336511]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -143.5
-offset_top = -114.0
-offset_right = 143.5
-offset_bottom = 114.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = 58.5
+offset_right = -16.0
+offset_bottom = -19.5
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="NecklaceRow" type="HBoxContainer" parent="NinePatchRect/EquipType" unique_id=1703194637]
-custom_minimum_size = Vector2(0, 40)
+custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
 size_flags_horizontal = 3
 
 [node name="Label" type="Label" parent="NinePatchRect/EquipType/NecklaceRow" unique_id=640606501]
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_vertical = 0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.78431374)
 text = "Necklace"
 
@@ -62,13 +67,14 @@ layout_mode = 2
 size_flags_horizontal = 4
 
 [node name="BraceleteRow" type="HBoxContainer" parent="NinePatchRect/EquipType" unique_id=1814485493]
-custom_minimum_size = Vector2(0, 40)
+custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
 size_flags_horizontal = 3
 
 [node name="Label" type="Label" parent="NinePatchRect/EquipType/BraceleteRow" unique_id=248361566]
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_vertical = 0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.78431374)
 text = "Bracelets"
 
@@ -77,13 +83,14 @@ layout_mode = 2
 size_flags_horizontal = 4
 
 [node name="RingRow" type="HBoxContainer" parent="NinePatchRect/EquipType" unique_id=606027263]
-custom_minimum_size = Vector2(0, 40)
+custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
 size_flags_horizontal = 3
 
 [node name="Label" type="Label" parent="NinePatchRect/EquipType/RingRow" unique_id=553056332]
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_vertical = 0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.78431374)
 text = "Rings"
 
@@ -97,3 +104,5 @@ layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 10
 text = "Close"
+
+[connection signal="pressed" from="NinePatchRect/EquipType/Button" to="." method="_on_button_pressed"]

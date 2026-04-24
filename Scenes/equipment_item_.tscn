@@ -1,0 +1,183 @@
+[gd_scene format=3 uid="uid://om1pj1ibm3e5"]
+
+[ext_resource type="Script" uid="uid://5o0p8v6ifeem" path="res://Scripts/equipment_item.gd" id="1_8jmsx"]
+[ext_resource type="Texture2D" uid="uid://c3aj2hvplyrx4" path="res://assets/Rarity Glow/Common/Rarity Glow Common_0000.png" id="2_dv3d6"]
+[ext_resource type="Texture2D" uid="uid://b5temvnp7r1a7" path="res://assets/Rarity Glow/Common/Rarity Glow Common_0001.png" id="3_3yp02"]
+[ext_resource type="Texture2D" uid="uid://dx7h4q4xm3w0u" path="res://assets/Rarity Glow/Common/Rarity Glow Common_0002.png" id="4_7ikxx"]
+[ext_resource type="Texture2D" uid="uid://isnxiahmglbw" path="res://assets/Rarity Glow/Common/Rarity Glow Common_0003.png" id="5_wo62o"]
+[ext_resource type="Texture2D" uid="uid://baoq6iwfqrj6l" path="res://assets/Rarity Glow/Common/Rarity Glow Common_0004.png" id="6_3oea6"]
+[ext_resource type="Texture2D" uid="uid://bicd32ktr5wpy" path="res://assets/Rarity Glow/Common/Rarity Glow Common_0005.png" id="7_cxnxr"]
+[ext_resource type="Texture2D" uid="uid://bgyw87goslld3" path="res://assets/Rarity Glow/Common/Rarity Glow Common_0006.png" id="8_lbjc2"]
+[ext_resource type="Texture2D" uid="uid://b7y3xba3hvs5t" path="res://assets/Rarity Glow/Common/Rarity Glow Common_0007.png" id="9_vwf2h"]
+[ext_resource type="Texture2D" uid="uid://hwh8gwjpe52r" path="res://assets/Rarity Glow/Common/Rarity Glow Common_0008.png" id="10_myvre"]
+[ext_resource type="Texture2D" uid="uid://dqtl1lv6aj33h" path="res://assets/Rarity Glow/Common/Rarity Glow Common_0009.png" id="11_xx8fy"]
+[ext_resource type="Texture2D" uid="uid://c2evk6cq1jk51" path="res://assets/Rarity Glow/Common/Rarity Glow Common_0010.png" id="12_0i8tj"]
+[ext_resource type="Texture2D" uid="uid://bkf510if4rj43" path="res://assets/Rarity Glow/Common/Rarity Glow Common_0011.png" id="13_15w00"]
+[ext_resource type="Texture2D" uid="uid://8rrdmnm5nld5" path="res://assets/Rarity Glow/Common/Rarity Glow Common_0012.png" id="14_damsr"]
+[ext_resource type="Texture2D" uid="uid://dje38oqigf0s1" path="res://assets/Rarity Glow/Common/Rarity Glow Common_0013.png" id="15_qbvaj"]
+[ext_resource type="Texture2D" uid="uid://covtpn3184ahx" path="res://assets/Rarity Glow/Common/Rarity Glow Common_0014.png" id="16_pk3hx"]
+[ext_resource type="Texture2D" uid="uid://dc4siq8l5wh66" path="res://assets/Rarity Glow/Common/Rarity Glow Common_0015.png" id="17_227f6"]
+[ext_resource type="Texture2D" uid="uid://bi6qgmxju28sd" path="res://assets/Rarity Glow/Common/Rarity Glow Common_0016.png" id="18_sas0k"]
+[ext_resource type="Texture2D" uid="uid://ctwj1q0ydsw34" path="res://assets/Rarity Glow/Common/Rarity Glow Common_0017.png" id="19_j6j5q"]
+[ext_resource type="Texture2D" uid="uid://miovqwml7yu1" path="res://assets/Rarity Glow/Common/Rarity Glow Common_0018.png" id="20_7j53s"]
+[ext_resource type="Texture2D" uid="uid://ukallhqp8e2p" path="res://assets/Rarity Glow/Common/Rarity Glow Common_0019.png" id="21_s7gk0"]
+[ext_resource type="Texture2D" uid="uid://2ubnl5rntyg6" path="res://assets/Rarity Glow/Common/Rarity Glow Common_0020.png" id="22_tall4"]
+[ext_resource type="Texture2D" uid="uid://drc4lhqe2hxyp" path="res://assets/Rarity Glow/Common/Rarity Glow Common_0021.png" id="23_87uxd"]
+[ext_resource type="Texture2D" uid="uid://dj5pnn2calvh8" path="res://assets/Rarity Glow/Common/Rarity Glow Common_0022.png" id="24_di6ov"]
+[ext_resource type="Texture2D" uid="uid://s4daqhb5wgbd" path="res://assets/Rarity Glow/Common/Rarity Glow Common_0023.png" id="25_7g8kp"]
+[ext_resource type="Texture2D" uid="uid://b5iphkuq2spq8" path="res://assets/Rarity Glow/Common/Rarity Glow Common_0024.png" id="26_o61ja"]
+[ext_resource type="Texture2D" uid="uid://7nd0bggcdtnw" path="res://assets/Rarity Glow/Common/Rarity Glow Common_0025.png" id="27_63ava"]
+[ext_resource type="Texture2D" uid="uid://bq7rqp7svhys6" path="res://assets/Rarity Glow/Common/Rarity Glow Common_0026.png" id="28_a0bd8"]
+[ext_resource type="Texture2D" uid="uid://bebuhb7jyl4k" path="res://assets/Rarity Glow/Common/Rarity Glow Common_0027.png" id="29_awctn"]
+[ext_resource type="Texture2D" uid="uid://raoamaccxsid" path="res://assets/Rarity Glow/Common/Rarity Glow Common_0028.png" id="30_hpt6b"]
+[ext_resource type="Texture2D" uid="uid://dyyivcfqnd0ja" path="res://assets/Rarity Glow/Common/Rarity Glow Common_0029.png" id="31_8fd6d"]
+[ext_resource type="Texture2D" uid="uid://c0jnivctkjygf" path="res://assets/Rarity Glow/Common/Rarity Glow Common_0030.png" id="32_ysd6o"]
+[ext_resource type="Texture2D" uid="uid://dfrq8y51sp83k" path="res://assets/Rarity Glow/Common/Rarity Glow Common_0031.png" id="33_5ade0"]
+[ext_resource type="Texture2D" uid="uid://b2nhuoodgiv6k" path="res://assets/Rarity Glow/Common/Rarity Glow Common_0032.png" id="34_ndtvf"]
+[ext_resource type="Texture2D" uid="uid://cipd841lih7iy" path="res://assets/Rarity Glow/Common/Rarity Glow Common_0033.png" id="35_nnqyn"]
+[ext_resource type="Texture2D" uid="uid://b5rhy2bnfma60" path="res://assets/Rarity Glow/Common/Rarity Glow Common_0034.png" id="36_6o61m"]
+[ext_resource type="Texture2D" uid="uid://b58jpadf0m06u" path="res://assets/Rarity Glow/Common/Rarity Glow Common_0035.png" id="37_btbm6"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_okdeh"]
+radius = 13.0
+height = 28.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_i75f2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_dv3d6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_3yp02")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_7ikxx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_wo62o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_3oea6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_cxnxr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_lbjc2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_vwf2h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_myvre")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_xx8fy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_0i8tj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_15w00")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_damsr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_qbvaj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_pk3hx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_227f6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_sas0k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_j6j5q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_7j53s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_s7gk0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_tall4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_87uxd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_di6ov")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_7g8kp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_o61ja")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_63ava")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_a0bd8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_awctn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_hpt6b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_8fd6d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_ysd6o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_5ade0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_ndtvf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_nnqyn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_6o61m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_btbm6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 24.0
+}]
+
+[node name="Equipment_Item" type="Node2D" unique_id=271677067 groups=["Equipment"]]
+script = ExtResource("1_8jmsx")
+item_texture = Object(GDScriptNativeClass,"script":null)
+
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1913499841]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=722346914]
+shape = SubResource("CapsuleShape2D_okdeh")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=76533372]
+scale = Vector2(0.053333327, 0.053333327)
+
+[node name="Rarity" type="AnimatedSprite2D" parent="." unique_id=766122715]
+scale = Vector2(0.06333333, 0.06333333)
+sprite_frames = SubResource("SpriteFrames_i75f2")
+
+[node name="Rarity2" type="AnimatedSprite2D" parent="." unique_id=1294535106]
+scale = Vector2(0.06333333, 0.06333333)
+sprite_frames = SubResource("SpriteFrames_i75f2")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

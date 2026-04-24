@@ -1,6 +1,4 @@
-@tool
 extends Node2D
-class_name Equipment
 
 # Exports ==================================
 @export var item_name = ""
@@ -29,9 +27,6 @@ var player_in_range = false
 var player_stats: PlayerStats # Player stats
 var equip_stats = {}
 #Add Special Modifier
-
-func _init():
-	pass
 	
 func _ready():
 	equip_stats = {
@@ -60,6 +55,7 @@ func _ready():
 	if rarity_anim.visible:
 		rarity_anim.play("default")
 		rarity_anim.scale = Vector2(65.0/icon_sprite.texture.get_width(), 65.0/icon_sprite.texture.get_height())
+
 func _process(_delta):
 	if not Engine.is_editor_hint():
 		icon_sprite.texture = item_texture
@@ -68,10 +64,11 @@ func _process(_delta):
 		pickup_item()
 
 func pickup_item():
-	var item = _get_stats()
+	#var item = _get_stats()
+	var item = equip_stats
 	rarity_anim.visible = false
 	if GlobalManager.player_node:
-		GlobalManager.add_item(item)
+		GlobalManager.add_item(item) 
 		self.queue_free()
 
 func set_item_data(data):
@@ -93,6 +90,7 @@ func set_item_data(data):
 	descript = data["descript"]
 	equip_stats = _get_stats()
 	
+	
 func _on_equip():
 	pass
 	
@@ -109,10 +107,14 @@ func _get_stats():
 func _on_area_2d_body_entered(body):
 	if body.is_in_group("Player"):
 		player_in_range = true
+		body.press_y.visible = true
+		body.press_y.play("default")
 		body.ui_interact.visible = true
 		body._ui_interact("Press \"E\" to pick up")
 
 func _on_area_2d_body_exited(body):
 	if body.is_in_group("Player"):
 		player_in_range = false
+		body.press_y.visible = false
+		body.press_y.stop()
 		body.ui_interact.visible = false

@@ -48,8 +48,9 @@ func take_damage(damage:int) -> void:
 	var damage_value = clampi(damage - defense, 1, max_health)
 	current_health = clampi(current_health - damage_value, 0, max_health)
 	health_changed.emit(current_health, max_health)
-	if health <= 0:
+	if current_health <= 0:
 		health_depleted.emit()
+		GlobalManager._gameover()
 
 func heal_damage(heal:int) -> void:
 	health = current_health + heal

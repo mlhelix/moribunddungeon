@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d1j0sl818klfa"
-path="res://.godot/imported/Timeline 1_0028.png-d51efedf9e09d10c2711c2d0abf253d0.ctex"
+uid="uid://bn623s8s3i3jv"
+path="res://.godot/imported/Slash_0005.png-471467631b2d32649202d43e25302006.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Giana Run/Timeline 1_0028.png"
-dest_files=["res://.godot/imported/Timeline 1_0028.png-d51efedf9e09d10c2711c2d0abf253d0.ctex"]
+source_file="res://assets/Giana_Slash/Slash_0005.png"
+dest_files=["res://.godot/imported/Slash_0005.png-471467631b2d32649202d43e25302006.ctex"]
 
 [params]
 

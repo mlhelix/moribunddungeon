@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cnccjiodxx1t4"
-path="res://.godot/imported/Timeline 1_0024.png-16be66fba18bd36ef30c7be9f909d6fe.ctex"
+uid="uid://btt85i4jb8wlk"
+path="res://.godot/imported/Y-Button.png-8fa2828f4362ede5794dd10fb6d60797.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Giana Run/Timeline 1_0024.png"
-dest_files=["res://.godot/imported/Timeline 1_0024.png-16be66fba18bd36ef30c7be9f909d6fe.ctex"]
+source_file="res://assets/Y-Button.png"
+dest_files=["res://.godot/imported/Y-Button.png-8fa2828f4362ede5794dd10fb6d60797.ctex"]
 
 [params]
 

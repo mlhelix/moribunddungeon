@@ -67,3 +67,14 @@ grow_vertical = 2
 theme_override_constants/h_separation = 8
 theme_override_constants/v_separation = 80
 columns = 7
+
+[node name="Button" type="Button" parent="NinePatchRect" unique_id=116009639]
+layout_mode = 0
+offset_left = 626.5
+offset_top = 513.5
+offset_right = 686.5
+offset_bottom = 549.5
+theme_override_font_sizes/font_size = 20
+text = "Close"
+
+[connection signal="pressed" from="NinePatchRect/Button" to="." method="_on_button_pressed"]

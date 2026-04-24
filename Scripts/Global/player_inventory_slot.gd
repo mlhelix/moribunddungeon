@@ -11,6 +11,7 @@ extends Control
 @onready var equip_panel = $EquipPanel
 @onready var equip_panel_use = $EquipPanel/EquipButton
 @onready var item_button = $ItemButton
+@onready var upper_window_ref = $"../../.."
 var slot_item = null
 
 func _on_item_button_pressed() -> void:
@@ -67,5 +68,5 @@ func _on_use_button_pressed() -> void:
 
 func _on_equip_button_pressed() -> void:
 	if slot_item != null and "Equipment:" in slot_item["item_type"]:
-		pass
-	pass # Replace with function body.
+		GlobalManager.equip_(slot_item)
+		upper_window_ref._grab_focus()

@@ -1,10 +1,12 @@
 extends CanvasLayer
 
 #@export var equip_menu: Stats_Menu
-var equip_is_open = false
 var bag_is_open = false
 @onready var bag_visibility = $PanelContainer/VBoxContainer/Bag/InventoryUI
 @onready var hud_pos = $"../../HUD"
+@onready var equipment_menu = $PanelContainer/VBoxContainer/Equipment/EquipmentUI
+@onready var equipment_button = $PanelContainer/VBoxContainer/Equipment
+@onready var bag_button = $PanelContainer/VBoxContainer/Bag
 
 func _ready():
 	$".".visible = false
@@ -17,6 +19,7 @@ func resume():
 	$".".visible = false
 	bag_visibility.visible = false
 	hud_pos.offset.x -= 518
+	equipment_menu.visible = false
 	
 func pause():
 	$".".visible = true
@@ -33,11 +36,12 @@ func esc_pressed():
 		pause()
 	elif Input.is_action_just_pressed("esc") and get_tree().paused == true:
 		#$AnimationPlayer.play_backwards("blur")
-		if equip_is_open:
-			#get_node("../Equipment/AnimationPlayer").play_backwards("fade_inout")
-			equip_is_open = false
+		if equipment_menu.visible:
+			equip_visibility()
 		if bag_visibility.visible:
 			bag_visibility.visible = !bag_visibility.visible
+		if equipment_menu.visible:
+			equipment_menu.visible = false
 		resume()
 
 func _on_resume_pressed() -> void:
@@ -60,24 +64,31 @@ func _process(_delta):
 
 
 func _on_equipment_pressed() -> void:
-	equip_is_open = true
-	var equipment_menu = $PanelContainer/VBoxContainer/Equipment/EquipmentUI
-	equipment_menu.visible = !equipment_menu.visible
-	equipment_menu._grab_focus()
-	#$PanelContainer/VBoxContainer/Equipment/PlayerInventoryGUI/AnimationPlayer.play("fade_inout")
-	#get_node("$PanelContainer/VBoxContainer/Equipment/PlayerStatsMenu")
-	#$"../Equipment".update_stats()
-	#get_node("../Equipment/AnimationPlayer").play("fade_inout")
+	equip_visibility()
 	
 
 func _on_equipment_focus_exited() -> void:
-	if equip_is_open:
-		#$PanelContainer/VBoxContainer/Equipment/PlayerInventoryGUI/AnimationPlayer.play_backwards("fade_inout")
-		#get_node("../Equipment/AnimationPlayer").play_backwards("fade_inout")
-		equip_is_open = false
+
+	pass
 
 
 func _on_bag_pressed() -> void:
 	bag_visibility.visible = !bag_visibility.visible
 	$PanelContainer/VBoxContainer/Bag/InventoryUI/Inventory_UI._grab_focus()
 	pass # Replace with function body.
+
+func equip_visibility():
+	if !equipment_menu.visible:
+		equipment_menu.visible = !equipment_menu.visible
+		equipment_menu._grab_focus()
+	elif equipment_menu.visible:
+		equipment_menu.visible = !equipment_menu.visible
+		equipment_button.grab_focus()
+		
+func _bag_visibility():
+	if bag_visibility.visible:
+		bag_visibility.visible = !bag_visibility.visible
+		$PanelContainer/VBoxContainer/Bag.grab_focus()
+	elif !bag_visibility.visible:
+		bag_visibility.visible = !bag_visibility.visible
+		$PanelContainer/VBoxContainer/Bag/InventoryUI/Inventory_UI._grab_focus()

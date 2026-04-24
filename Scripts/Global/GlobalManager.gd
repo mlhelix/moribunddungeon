@@ -3,6 +3,7 @@ extends Node
 signal inventory_updated
 signal equipment_updated
 signal shop_inventory_updated
+signal gameover
 
 var stats = preload("res://Scripts/Global/player_stats.tres")
 var inventory = []
@@ -49,7 +50,7 @@ func add_item(item):
 			inventory[i] = item
 			inventory_updated.emit()
 			return true
-		return false
+	return false
 
 
 func remove_item(item_type, item_effect):
@@ -62,11 +63,48 @@ func remove_item(item_type, item_effect):
 			return true
 	return false
 	
-func unequip_(item):
-	
-	add_item(item)
+func equip_(item):
+	if "Necklace" in item["item_type"]:
+		if equipment["Necklace"] == null:
+			equipment["Necklace"] = item
+		else:
+			add_item(equipment["Necklace"])
+			equipment["Necklace"] = item
+	elif "Bracelet" in item["item_type"]:
+		#item._on_equip()
+		if equipment["Bracelet L"] == null:
+			equipment["Bracelet L"] = item
+		elif equipment["Bracelet R"] == null:
+			equipment["Bracelet R"] = item
+		else:
+			add_item(equipment["Bracelet L"])
+			equipment["Bracelet L"] = item
+	elif "Ring" in item["item_type"]:
+		if equipment["Ring 1"] == null:
+			equipment["Ring 1"] = item
+		elif equipment["Ring 2"] == null:
+			equipment["Ring 2"] = item
+		else:
+			add_item(equipment["Ring 1"])
+			equipment["Ring 1"] = item
+	remove_item(item["item_type"], item["item_effect"])
 	equipment_updated.emit()
-	pass
+	
+func unequip_(item):
+	add_item(item)
+	if "Necklace" in item["item_type"]:
+		equipment["Necklace"] = null
+	elif "Bracelet" in item["item_type"]:
+		if item["item_name"] == equipment["Bracelet L"]:
+			equipment["Bracelet L"] = null
+		elif item["item_name"] == equipment["Bracelet R"]:
+			equipment["Bracelet R"] = null
+	elif "Ring" in item["item_type"]:
+		if item["item_name"] == equipment["Ring 1"]:
+			equipment["Ring 1"] = null
+		elif item["item_name"] == equipment["Ring 2"]:
+			equipment["Ring 2"] = null
+	equipment_updated.emit()
 	
 func drop_item(item_data, drop_position):
 	var item_scene = load(item_data["scene_path"])
@@ -123,3 +161,9 @@ func _init_shops_00(shop_inv):
 		item_potion["shop_position"] = each
 		shop_inv[each] = item_potion
 		shop_inventory_updated.emit()
+		
+func _gameover():
+	_init_shops()
+	SceneTransition.change_scene_to("res://Scenes/gameover.tscn")
+	player_node.heal_damage(9999)
+	gameover.emit()

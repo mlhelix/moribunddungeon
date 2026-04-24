@@ -4,6 +4,7 @@ extends Control
 
 func _ready():
 	GlobalManager.inventory_updated.connect(_on_inventory_updated)
+	GlobalManager.gameover.connect(_gameover)
 	_on_inventory_updated()
 
 func _on_inventory_updated():
@@ -26,3 +27,17 @@ func _grab_focus():
 	grid_container.get_child(0).get_node("ItemButton").grab_focus()
 	#grid_container.get_child(0)
 	pass
+
+func _gameover():
+	for item in GlobalManager.inventory:
+		var slot = GlobalManager.inventory_slot_scene.instantiate()
+		grid_container.add_child(slot)
+		slot.set_empty()
+	GlobalManager.inventory = []
+	GlobalManager.inventory.resize(21)
+	#for item in GlobalManager.inventory:
+		#GlobalManager.remove_item(item["item_type"], item["item_effect"])
+	GlobalManager.inventory_updated.emit()
+
+func _on_button_pressed() -> void:
+	$"../../../../.."._bag_visibility()

@@ -1,5 +1,4 @@
 
-@tool
 extends Node2D
 
 @export var item_type = ""
@@ -56,6 +55,8 @@ func set_item_data(data):
 func _on_area_2d_body_entered(body):
 	if body.is_in_group("Player"):
 		player_in_range = true
+		body.press_y.visible = true
+		body.press_y.play("default")
 		body.ui_interact.visible = true
 		body._ui_interact("Press \"E\" to pick up")
 
@@ -63,4 +64,6 @@ func _on_area_2d_body_entered(body):
 func _on_area_2d_body_exited(body):
 	if body.is_in_group("Player"):
 		player_in_range = false
+		body.press_y.visible = false
+		body.press_y.stop()
 		body.ui_interact.visible = false

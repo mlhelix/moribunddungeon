@@ -140,6 +140,7 @@ text = "Bag"
 [node name="InventoryUI" type="CanvasLayer" parent="PanelContainer/VBoxContainer/Bag" unique_id=1262005819]
 process_mode = 3
 layer = 4
+visible = false
 
 [node name="Inventory_UI" parent="PanelContainer/VBoxContainer/Bag/InventoryUI" unique_id=1582478301 instance=ExtResource("4_vmyb1")]
 
@@ -168,17 +169,20 @@ layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
 anchor_top = 0.5
+anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = 1169.0
-offset_top = -84.0
-offset_right = 1169.0
-offset_bottom = -84.0
+offset_left = 894.0
+offset_top = 90.0
+offset_right = 1194.0
+offset_bottom = 455.0
 grow_horizontal = 0
 
 [node name="Settings" type="Button" parent="PanelContainer/VBoxContainer" unique_id=1376550828]
 layout_mode = 2
 focus_next = NodePath("../Quit")
 focus_previous = NodePath("../Resume")
+focus_mode = 0
+theme_override_colors/font_color = Color(0.32915804, 0.32915863, 0.32915813, 1)
 theme_override_font_sizes/font_size = 24
 text = "Settings"
 

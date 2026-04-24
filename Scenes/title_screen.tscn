@@ -165,7 +165,7 @@ offset_top = 575.0
 offset_right = 2166.0
 offset_bottom = 709.0
 scale = Vector2(0.5, 0.5)
-focus_next = NodePath("../Options")
+focus_next = NodePath("../Exit")
 texture_normal = ExtResource("3_n82rj")
 texture_focused = SubResource("AnimatedTexture_w5sh6")
 script = ExtResource("4_0061g")
@@ -179,6 +179,7 @@ offset_bottom = 799.0
 scale = Vector2(0.5, 0.5)
 focus_next = NodePath("../Exit")
 focus_previous = NodePath("../Start Game")
+focus_mode = 0
 texture_normal = ExtResource("3_6vd4x")
 texture_focused = ExtResource("3_6vd4x")
 
@@ -190,7 +191,7 @@ offset_right = 2166.0
 offset_bottom = 889.0
 scale = Vector2(0.5, 0.5)
 focus_next = NodePath("../Arena")
-focus_previous = NodePath("../Options")
+focus_previous = NodePath("../Start Game")
 texture_normal = ExtResource("4_n82rj")
 texture_focused = ExtResource("4_n82rj")
 
